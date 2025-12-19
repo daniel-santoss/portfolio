@@ -1,53 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="dark">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Daniel Vinicius</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Public+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    
-    <!-- Material Symbols -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#39FF14", // Neon Green
-              "primary-detail": "#38e07b", // Softer Green for Detail page
-              "secondary": "#FFFFFF",
-              "background-light": "#f6f8f7",
-              "background-dark": "#1A1C20", // Main Dark
-              "background-detail-dark": "#122017", // Detail page Dark
-              "card-dark": "#23262B",
-              "surface-dark": "#25282e",
-              "surface-detail": "#1a2620", // Detail page surface
-              "surface-highlight": "#23332a", // Detail page highlight
-              "text-primary": "#FFFFFF",
-              "text-secondary": "#C5C6C7",
-              "accent-hover": "#32D911",
-              "border-dark": "#2C3035",
-            },
-            fontFamily: {
-              "display": ["Spline Sans", "sans-serif"],
-              "body": ["Noto Sans", "sans-serif"],
-              "public": ["Public Sans", "sans-serif"],
-            },
-            borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "2xl": "3rem", "full": "9999px" },
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Daniel Vinicius</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Public+Sans:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#39FF14", // Neon Green
+            "primary-detail": "#38e07b", // Softer Green for Detail page
+            "secondary": "#FFFFFF",
+            "background-light": "#f6f8f7",
+            "background-dark": "#1A1C20", // Main Dark
+            "background-detail-dark": "#122017", // Detail page Dark
+            "card-dark": "#23262B",
+            "surface-dark": "#25282e",
+            "surface-detail": "#1a2620", // Detail page surface
+            "surface-highlight": "#23332a", // Detail page highlight
+            "text-primary": "#FFFFFF",
+            "text-secondary": "#C5C6C7",
+            "accent-hover": "#32D911",
+            "border-dark": "#2C3035",
           },
+          fontFamily: {
+            "display": ["Spline Sans", "sans-serif"],
+            "body": ["Noto Sans", "sans-serif"],
+            "public": ["Public Sans", "sans-serif"],
+          },
+          borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "2xl": "3rem", "full": "9999px" },
         },
-      }
-    </script>
-    <style type="text/tailwindcss">
-      @layer utilities {
+      },
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
         .glass-panel {
           @apply bg-white/5 border border-white/10 backdrop-blur-sm;
         }
@@ -57,11 +61,18 @@
         .hero-glow {
             animation: subtle-pulse 4s infinite ease-in-out;
         }
+        .animate-border-pulse {
+            animation: border-pulse 3s infinite ease-in-out;
+        }
       }
       @keyframes subtle-pulse {
             0% { box-shadow: 0 0 20px -10px rgba(56, 224, 123, 0.1); }
             50% { box-shadow: 0 0 30px -5px rgba(56, 224, 123, 0.25); }
             100% { box-shadow: 0 0 20px -10px rgba(56, 224, 123, 0.1); }
+      }
+      @keyframes border-pulse {
+            0%, 100% { border-color: rgba(57, 255, 20, 0.3); box-shadow: 0 0 20px rgba(57, 255, 20, 0.2); }
+            50% { border-color: rgba(57, 255, 20, 1); box-shadow: 0 0 50px rgba(57, 255, 20, 0.6); }
       }
       
       /* Custom scrollbar */
@@ -89,10 +100,13 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
-  <body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-text-secondary font-display overflow-x-hidden min-h-screen flex flex-col">
-    <div id="root"></div>
+
+<body
+  class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-text-secondary font-display overflow-x-hidden min-h-screen flex flex-col">
+  <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>

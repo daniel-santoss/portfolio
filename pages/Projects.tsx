@@ -88,24 +88,24 @@ const Projects: React.FC = () => {
               Explore minha jornada de desenvolvimento. Aqui detalho não apenas o código, mas os desafios reais que enfrentei e como apliquei novas tecnologias para criar soluções eficientes e escaláveis.
             </p>
           </div>
-          <div className="flex gap-3 flex-wrap pt-2">
+          <section aria-label="Filtros de Projetos" className="flex gap-3 flex-wrap pt-2">
             {['Todos', 'Front-end', 'Back-end', 'Mobile'].map((category) => (
               <button
                 key={category}
                 onClick={() => setFilter(category)}
                 className={`flex h-9 items-center justify-center px-5 rounded-full text-sm font-bold transition-all border ${filter === category
-                    ? 'bg-primary border-primary text-[#1A1C20] shadow-[0_0_10px_rgba(57,255,20,0.2)]'
-                    : 'bg-white/5 border-white/10 text-gray-300 hover:bg-primary hover:border-primary hover:text-[#1A1C20]'
+                  ? 'bg-primary border-primary text-[#1A1C20] shadow-[0_0_10px_rgba(57,255,20,0.2)]'
+                  : 'bg-white/5 border-white/10 text-gray-300 hover:bg-primary hover:border-primary hover:text-[#1A1C20]'
                   }`
                 }
               >
                 {category}
               </button>
             ))}
-          </div>
+          </section>
         </div>
 
-        <div className="flex flex-col gap-8">
+        <section aria-label="Lista de Projetos" className="flex flex-col gap-8">
           {filteredProjects.map((project) => (
             <article key={project.id} className="group @container p-0 animate-fade-in">
               <div className="flex flex-col items-stretch justify-start rounded-2xl @xl:flex-row shadow-md hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] transition-all duration-300 bg-[#33363B] border border-transparent overflow-hidden">
@@ -125,28 +125,28 @@ const Projects: React.FC = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <ul className="flex flex-wrap gap-2">
                     {project.tags.map((tag, index) => (
-                      <span key={index} className={`px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold ${tag.color}`}>
+                      <li key={index} className={`px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold ${tag.color}`}>
                         {tag.name}
-                      </span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                   <div className="flex flex-col gap-3 p-4 rounded-xl bg-black/20 border border-transparent text-sm">
-                    <div className="flex gap-3 items-start">
+                    <section className="flex gap-3 items-start">
                       <span className="material-symbols-outlined text-orange-500 mt-0.5 text-lg shrink-0">psychology</span>
                       <div>
                         <span className="font-bold text-white block mb-0.5">O Desafio</span>
                         <p className="text-gray-400 text-xs leading-relaxed">{project.challenge}</p>
                       </div>
-                    </div>
-                    <div className="flex gap-3 items-start">
+                    </section>
+                    <section className="flex gap-3 items-start">
                       <span className="material-symbols-outlined text-primary mt-0.5 text-lg shrink-0">auto_awesome</span>
                       <div>
                         <span className="font-bold text-white block mb-0.5">Minha Solução e Aprendizado</span>
                         <p className="text-gray-400 text-xs leading-relaxed">{project.solution}</p>
                       </div>
-                    </div>
+                    </section>
                   </div>
                   <div className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
                     <div className="flex items-center gap-2 text-xs text-gray-400">
@@ -173,7 +173,7 @@ const Projects: React.FC = () => {
               </div>
             </article>
           ))}
-        </div>
+        </section>
       </div>
     </main>
   );

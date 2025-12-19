@@ -14,10 +14,10 @@ const Home: React.FC = () => {
                     Buscando vaga de Estágio / Júnior
                   </div>
                   <h1 className="text-4xl md:text-6xl font-black leading-tight tracking-[-0.033em] text-white">
-                    Olá, eu sou <span className="text-primary drop-shadow-[0_0_8px_rgba(57,255,20,0.3)]">Daniel Santos</span>
+                    Bem-vindo! Eu sou o <span className="text-primary drop-shadow-[0_0_8px_rgba(57,255,20,0.3)]">Daniel Vinicius</span>
                   </h1>
                   <h2 className="text-base md:text-lg font-normal text-gray-300 leading-relaxed max-w-xl mx-auto md:mx-0">
-                    Desenvolvedor apaixonado por criar soluções web. Com foco em React, TypeScript e Node.js, estou em busca de uma oportunidade de <span className="text-primary font-medium">estágio ou júnior</span> para aprender com a equipe, aplicar meus conhecimentos e evoluir na carreira.
+                    Sou um desenvolvedor apaixonado por criar soluções web e atualmente estou focado no desenvolvimento de back-end utilizando .NET. Estou em busca de uma oportunidade de <span className="text-primary font-medium">estágio ou júnior</span> para aprender com a equipe, aplicar meus conhecimentos e evoluir na carreira.
                   </h2>
                 </div>
               </div>
@@ -25,7 +25,7 @@ const Home: React.FC = () => {
                 <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-secondary opacity-10 blur-3xl "></div>
                   <div
-                    className="relative w-full h-full rounded-full border-4 border-none overflow-hidden bg-surface-dark bg-cover bg-center"
+                    className="relative w-full h-full rounded-full animate-border-pulse overflow-hidden bg-surface-dark bg-cover bg-center"
                     style={{ backgroundImage: "url('/images/foto-d.jpeg')" }}
                     role="img"
                     aria-label="Portrait of a smiling software developer with a clean background"
@@ -37,13 +37,13 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-secondary/5 py-16 px-4 md:px-40 flex justify-center border-y border-secondary/10">
+      <section className="w-full bg-secondary/5 py-16 px-4 md:px-40 flex justify-center border-y border-secondary/10">
         <div className="max-w-[960px] w-full flex flex-col gap-8">
           <div className="flex flex-col items-center gap-2">
             <h2 className="text-2xl md:text-3xl font-bold text-center text-white">Principais Stacks</h2>
             <div className="h-1 w-20 bg-primary rounded-full shadow-[0_0_10px_#39FF14]"></div>
           </div>
-          <div className="flex flex-wrap justify-center gap-4">
+          <ul className="flex flex-wrap justify-center gap-4">
             {['JavaScript', 'C#', '.NET', 'MySQL', 'Azure'].map((stack, index) => {
               let icon = '';
               let colorClass = '';
@@ -55,26 +55,26 @@ const Home: React.FC = () => {
                 case 'Azure': icon = 'cloud'; colorClass = 'text-blue-400'; break;
               }
               return (
-                <div key={index} className="flex h-10 items-center gap-x-3 rounded-full bg-surface-dark border border-secondary/20 pl-3 pr-5">
+                <li key={index} className="flex h-10 items-center gap-x-3 rounded-full bg-surface-dark border border-secondary/20 pl-3 pr-5">
                   <span className={`material-symbols-outlined ${colorClass}`}>{icon}</span>
                   <p className="text-white text-sm font-medium">{stack}</p>
-                </div>
+                </li>
               )
             })}
-          </div>
+          </ul>
         </div>
-      </div>
-      <div className="w-full px-4 md:px-40 py-16 flex justify-center mb-10">
+      </section>
+      <section className="w-full px-4 md:px-40 py-16 flex justify-center mb-10">
         <div className="max-w-[960px] w-full flex flex-col items-center gap-10">
           <h2 className="text-2xl font-bold text-center text-white">Conecte-se Comigo</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-3xl">
-            <a className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-surface-dark border border-secondary/10 hover:border-primary/40 hover:shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:-translate-y-1 transition-all group" href="#">
+          <nav className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-3xl">
+            <a className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-surface-dark border border-secondary/10 hover:border-primary/40 hover:shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:-translate-y-1 transition-all group" href="https://github.com/daniel-santoss" target="_blank" rel="noopener noreferrer">
               <div className="rounded-full bg-background-dark p-4 text-white transition-colors border border-secondary/10 group-hover:bg-primary group-hover:text-black group-hover:border-primary">
                 <span className="material-symbols-outlined text-[32px]">source</span>
               </div>
               <span className="font-medium text-sm text-white group-hover:text-white transition-colors">GitHub</span>
             </a>
-            <a className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-surface-dark border border-secondary/10 hover:border-primary/40 hover:shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:-translate-y-1 transition-all group" href="#">
+            <a className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-surface-dark border border-secondary/10 hover:border-primary/40 hover:shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:-translate-y-1 transition-all group" href="https://www.linkedin.com/in/daniel-vinicius-07a278275/" target="_blank" rel="noopener noreferrer">
               <div className="rounded-full bg-background-dark p-4 text-white transition-colors border border-secondary/10 group-hover:bg-primary group-hover:text-black group-hover:border-primary">
                 <span className="material-symbols-outlined text-[32px]">connect_without_contact</span>
               </div>
@@ -86,9 +86,9 @@ const Home: React.FC = () => {
               </div>
               <span className="font-medium text-sm text-white group-hover:text-white transition-colors">Email</span>
             </a>
-          </div>
+          </nav>
         </div>
-      </div>
+      </section>
     </main>
   );
 };
