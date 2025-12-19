@@ -1,0 +1,190 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const ProjectDetail: React.FC = () => {
+    return (
+        <div className="bg-background-dark min-h-screen text-white font-public">
+            <header className="w-full border-b border-white/10 px-4 py-3 sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md">
+                <div className="max-w-7xl mx-auto flex items-center justify-between">
+                    <div className="flex items-center gap-3 text-white cursor-pointer group">
+                        <div className="size-8 flex items-center justify-center text-primary transition-transform group-hover:scale-110">
+                            <span className="material-symbols-outlined text-3xl">terminal</span>
+                        </div>
+                        <h2 className="text-xl font-bold leading-tight tracking-tight">DevPortfolio</h2>
+                    </div>
+                    <nav className="hidden md:flex items-center gap-8">
+                        <a className="text-sm font-medium hover:text-primary transition-colors" href="#">Sobre</a>
+                        <a className="text-sm font-medium text-primary" href="#">Projetos</a>
+                        <a className="text-sm font-medium hover:text-primary transition-colors" href="#">Habilidades</a>
+                        <a className="text-sm font-medium hover:text-primary transition-colors" href="#">Contato</a>
+                    </nav>
+                    <button className="hidden sm:flex items-center justify-center rounded-full h-10 px-6 bg-primary hover:bg-accent-hover text-background-dark text-sm font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(57,255,20,0.3)]">
+                        <span className="mr-2 material-symbols-outlined text-lg">download</span>
+                        Baixar CV
+                    </button>
+                    <button className="md:hidden p-2 text-white">
+                        <span className="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </header>
+
+            <main className="flex-grow">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+                    <div className="mb-8">
+                        <Link to="/projects" className="inline-flex items-center text-sm text-gray-400 hover:text-primary transition-colors group">
+                            <span className="material-symbols-outlined mr-1 text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                            Voltar para Projetos
+                        </Link>
+                    </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                        <div className="lg:col-span-7 flex flex-col gap-6">
+                            <div className="relative w-full rounded-2xl overflow-hidden bg-surface-dark border border-white/5 shadow-2xl hero-glow aspect-video group">
+                                <div className="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-end p-6">
+                                    <span className="text-white text-sm font-medium px-3 py-1 bg-black/50 backdrop-blur rounded-full border border-white/10">Preview em alta resolução</span>
+                                </div>
+                                <div
+                                    className="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-105"
+                                    style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMZqjCSfnqSKmESiFaGh8LOnV6vs-DBKqTdGaPPvf2aF-lZdXASFy8NVj28OOCEyy_7t_yeDMw4blQ1UnCYsoVYFiSvrUCJap49IIT9iJJSU_qkRGapiz6YDyzb7nXY4fpKpPLcJquc7t8x0qizYUBEvzy7rV1TX05qEjomvB78yo9iYCQeRVsr7AyoBvh7k-UXU-3i80gMHt3uB1W9AN9Y_OBJodUM-yruoKm2_plXPpcgSv-FLPmV6QDHiV-2MqwJlaJ_NJ6QkNm")' }}
+                                    data-alt="Modern dark dashboard interface displaying sales charts and real-time data visualization"
+                                >
+                                </div>
+                                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                    <div className="size-16 rounded-full bg-primary/90 backdrop-blur flex items-center justify-center shadow-[0_0_30px_rgba(57,255,20,0.5)] transform scale-0 group-hover:scale-100 transition-transform duration-300">
+                                        <span className="material-symbols-outlined text-background-dark text-4xl fill-current">play_arrow</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex flex-wrap gap-3">
+                                {['React', 'Redux Toolkit', 'Tailwind CSS', 'Node.js', 'Figma'].map((tech, index) => {
+                                    let color = '#61DAFB';
+                                    if (tech === 'Redux Toolkit') color = '#764ABC';
+                                    if (tech === 'Tailwind CSS') color = '#38B2AC';
+                                    if (tech === 'Node.js') color = '#339933';
+                                    if (tech === 'Figma') color = '#F24E1E';
+
+                                    return (
+                                        <div key={index} className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors cursor-default">
+                                            <span className="size-2 rounded-full" style={{ backgroundColor: color }}></span>
+                                            <span className="text-sm font-medium text-gray-300">{tech}</span>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                            <div className="grid grid-cols-3 gap-4">
+                                <div className="aspect-[4/3] rounded-xl bg-surface-dark overflow-hidden cursor-pointer border-2 border-primary">
+                                    <div className="w-full h-full bg-cover bg-center hover:opacity-80 transition-opacity" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuA5rgeuUyFBEBT4qGjHZ-ljUioYqfcthIuW0YKHejbO7V1v2DtrgAhIbszda3u1moG-OU8ZiQkFOUM0gQu9f5NcYg4kv0nhWH13zPlC94MkFbT_tZQw2ia4tVDgppFizYU53qLvuYlrTLQ9I391aoEQZKK8ScnSE3Zl9Q7UqOzoglh8cYvFX4-_IYW_p1pIdPVKPN_c4lL5514lDOOS-Zd76tvp0WgL29kySsQyXzDjuPilV7y5yrwwe-0nWOtLfjkcbFd-I-FHOUzI")' }}></div>
+                                </div>
+                                <div className="aspect-[4/3] rounded-xl bg-surface-dark overflow-hidden cursor-pointer border-2 border-transparent hover:border-gray-600">
+                                    <div className="w-full h-full bg-cover bg-center hover:opacity-80 transition-opacity" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuD1k_51Ge4Xkt4U6dXP_ke33G1w8xXAS1pxGvbi1C7NlMndSu3rjHKjjRORmS2QUYH-DmlHHGVCeneATXXUe6dJbMUCckwI0O2i0LmeEP5-aj0ImCvPeffgPqa7hRzZ_kbmLYy4xK_8H-ZAMxHRTVcCA_2RKbQneRsyDz7AQvmYkJxnAlysOA1qUmE-OJ8igMi7qbAPNbwBXBRKpxSGfRcLMDGLclBZ6MuHCE-Kn3z2jSnGwWV1AMeFppQrAoL-EqAEzgyL6htk6Gpi")' }}></div>
+                                </div>
+                                <div className="aspect-[4/3] rounded-xl bg-surface-dark overflow-hidden cursor-pointer border-2 border-transparent hover:border-gray-600 relative group">
+                                    <div className="w-full h-full bg-cover bg-center hover:opacity-80 transition-opacity" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWS7SE2-yDZ3J16Rbb61XB0RadDLn5oJiSCD7ygnvPlg114HfNd6wh2NIS6NPIXDq7vaxl0XEtBXZxDQU3sHHwhY9HPAjeG-NwTOb3ZDKhrTNkix0_rkrXg3WLhwFZ6oTnIlXOK0vOu1AiWaadIFAXnmxjmgAHaQBAyWDSDIzJkOsJEZBYnmVT_OBqY6YWVqFQjD1iWGInLZBp_7lq8-b161n1tU9y226KJ02lzwayk2YQ3VjbmDDmPIra674jslGDbdjRmtvZ9Qv8")' }}></div>
+                                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <span className="text-white text-xs font-bold">+5 Imagens</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="lg:col-span-5 flex flex-col h-full">
+                            <div className="sticky top-24 flex flex-col gap-8">
+                                <div className="space-y-3">
+                                    <div className="flex items-center gap-3">
+                                        <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 rounded-full border border-primary/20">Web App</span>
+                                        <span className="text-gray-500 text-sm flex items-center gap-1">
+                                            <span className="material-symbols-outlined text-base">calendar_month</span>
+                                            Out 2023
+                                        </span>
+                                    </div>
+                                    <h1 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
+                                        Dashboard <span className="text-primary">E-Commerce</span>
+                                    </h1>
+                                    <p className="text-lg text-gray-400 leading-relaxed">
+                                        Uma plataforma responsiva full-stack para gestão de inventário e análise de vendas em tempo real, focada em performance e UX.
+                                    </p>
+                                </div>
+                                <div className="flex flex-col sm:flex-row gap-4">
+                                    <a className="flex-1 h-14 bg-primary text-background-dark font-bold text-base rounded-full flex items-center justify-center gap-2 hover:bg-accent-hover hover:shadow-[0_0_20px_rgba(57,255,20,0.4)] " href="#">
+                                        <span className="material-symbols-outlined">code</span>
+                                        Ver no GitHub
+                                    </a>
+                                    <a className="flex-1 h-14 bg-transparent border-2 border-gray-600 text-white font-bold text-base rounded-full flex items-center justify-center gap-2 hover:border-white hover:bg-white/5 transition-all" href="#">
+                                        <span className="material-symbols-outlined">open_in_new</span>
+                                        Visitar Site
+                                    </a>
+                                </div>
+                                <div className="border-t border-white/10 my-2"></div>
+                                <div className="space-y-8">
+                                    <div className="group">
+                                        <div className="flex items-center gap-3 mb-3">
+                                            <div className="p-2 rounded-lg bg-red-500/10 text-red-400 border border-red-500/20">
+                                                <span className="material-symbols-outlined">warning</span>
+                                            </div>
+                                            <h3 className="text-xl font-bold text-white">O Desafio</h3>
+                                        </div>
+                                        <p className="text-gray-400 leading-relaxed pl-[3.25rem]">
+                                            Pequenos lojistas precisavam de uma maneira de visualizar dados complexos de vendas sem a latência de sistemas legados. O principal obstáculo foi renderizar milhares de transações no frontend mantendo a interface fluida e responsiva em dispositivos móveis.
+                                        </p>
+                                    </div>
+                                    <div className="group">
+                                        <div className="flex items-center gap-3 mb-3">
+                                            <div className="p-2 rounded-lg bg-primary/10 text-primary border border-primary/20">
+                                                <span className="material-symbols-outlined">lightbulb</span>
+                                            </div>
+                                            <h3 className="text-xl font-bold text-white">A Solução</h3>
+                                        </div>
+                                        <p className="text-gray-400 leading-relaxed pl-[3.25rem]">
+                                            Desenvolvi uma arquitetura baseada em componentes reutilizáveis. Utilizei <strong className="text-white">Redux Toolkit</strong> para gerenciamento de estado global eficiente e implementei virtualização de listas para lidar com grandes volumes de dados. O backend em Node.js utiliza cacheamento com Redis para reduzir o tempo de resposta das APIs em 40%.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="bg-surface-dark rounded-2xl p-6 border border-white/5 mt-4">
+                                    <h4 className="text-white font-bold mb-4 flex items-center gap-2">
+                                        <span className="material-symbols-outlined text-primary">stars</span>
+                                        Destaques Técnicos
+                                    </h4>
+                                    <ul className="space-y-3">
+                                        <li className="flex items-start gap-3 text-gray-300 text-sm">
+                                            <span className="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                                            <span>Autenticação JWT segura com refresh tokens.</span>
+                                        </li>
+                                        <li className="flex items-start gap-3 text-gray-300 text-sm">
+                                            <span className="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                                            <span>Design System próprio com suporte a Dark Mode.</span>
+                                        </li>
+                                        <li className="flex items-start gap-3 text-gray-300 text-sm">
+                                            <span className="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                                            <span>Deploy automatizado via CI/CD (GitHub Actions).</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="mt-20 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+                        <a className="group flex items-center gap-4 text-left w-full md:w-auto p-4 rounded-xl hover:bg-surface-dark transition-colors" href="#">
+                            <div className="size-12 rounded-full bg-surface-dark flex items-center justify-center border border-white/10 group-hover:border-primary/50 transition-colors">
+                                <span className="material-symbols-outlined text-gray-400 group-hover:text-primary">arrow_back</span>
+                            </div>
+                            <div>
+                                <p className="text-xs text-gray-500 uppercase tracking-wider font-bold">Projeto Anterior</p>
+                                <p className="text-white font-bold text-lg group-hover:text-primary transition-colors">App Financeiro</p>
+                            </div>
+                        </a>
+                        <div className="hidden md:block h-12 w-px bg-white/10"></div>
+                        <a className="group flex items-center gap-4 text-right justify-end w-full md:w-auto p-4 rounded-xl hover:bg-surface-dark transition-colors" href="#">
+                            <div>
+                                <p className="text-xs text-gray-500 uppercase tracking-wider font-bold">Próximo Projeto</p>
+                                <p className="text-white font-bold text-lg group-hover:text-primary transition-colors">Rede Social Pet</p>
+                            </div>
+                            <div className="size-12 rounded-full bg-surface-dark flex items-center justify-center border border-white/10 group-hover:border-primary/50 transition-colors">
+                                <span className="material-symbols-outlined text-gray-400 group-hover:text-primary">arrow_forward</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    );
+};
+
+export default ProjectDetail;
