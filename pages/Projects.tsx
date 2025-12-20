@@ -79,7 +79,7 @@ const Projects: React.FC = () => {
   return (
     <main className="flex-grow flex flex-col items-center w-full py-10 px-4 md:px-10">
       <div className="layout-content-container flex flex-col max-w-[960px] w-full gap-8">
-        <div className="flex flex-col gap-6 p-4">
+        <header className="flex flex-col gap-6 p-4">
           <div className="flex flex-col gap-3">
             <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-[#112218] dark:text-white">
               Projetos & Aprendizados
@@ -88,7 +88,7 @@ const Projects: React.FC = () => {
               Explore minha jornada de desenvolvimento. Aqui detalho não apenas o código, mas os desafios reais que enfrentei e como apliquei novas tecnologias para criar soluções eficientes e escaláveis.
             </p>
           </div>
-          <section aria-label="Filtros de Projetos" className="flex gap-3 flex-wrap pt-2">
+          <nav aria-label="Filtros de Projetos" className="flex gap-3 flex-wrap pt-2">
             {['Todos', 'Front-end', 'Back-end', 'Mobile'].map((category) => (
               <button
                 key={category}
@@ -102,29 +102,31 @@ const Projects: React.FC = () => {
                 {category}
               </button>
             ))}
-          </section>
-        </div>
+          </nav>
+        </header>
 
         <section aria-label="Lista de Projetos" className="flex flex-col gap-8">
           {filteredProjects.map((project) => (
             <article key={project.id} className="group @container p-0 animate-fade-in">
               <div className="flex flex-col items-stretch justify-start rounded-2xl @xl:flex-row shadow-md hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] transition-all duration-300 bg-[#33363B] border border-transparent overflow-hidden">
-                <div
-                  className="w-full @xl:w-2/5 shrink-0 bg-center bg-no-repeat bg-cover min-h-[280px] @xl:min-h-full group-hover:scale-105 transition-transform duration-500 relative"
+                <figure
+                  className="w-full @xl:w-2/5 shrink-0 bg-center bg-no-repeat bg-cover min-h-[280px] @xl:min-h-full group-hover:scale-105 transition-transform duration-500 relative m-0"
                   style={{ backgroundImage: `url("${project.image}")` }}
                   data-alt={project.title}
+                  role="img"
+                  aria-label={`Preview do projeto ${project.title}`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1A1C20]/80 to-transparent @xl:hidden"></div>
-                </div>
+                </figure>
                 <div className="flex w-full flex-col p-6 gap-5">
-                  <div className="flex justify-between items-start">
+                  <header className="flex justify-between items-start">
                     <div>
                       <h3 className="text-xl md:text-2xl font-bold leading-tight mb-2 text-white group-hover:text-primary transition-colors">{project.title}</h3>
                       <p className="text-gray-300 text-sm md:text-base leading-relaxed">
                         {project.description}
                       </p>
                     </div>
-                  </div>
+                  </header>
                   <ul className="flex flex-wrap gap-2">
                     {project.tags.map((tag, index) => (
                       <li key={index} className={`px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold ${tag.color}`}>
@@ -133,22 +135,22 @@ const Projects: React.FC = () => {
                     ))}
                   </ul>
                   <div className="flex flex-col gap-3 p-4 rounded-xl bg-black/20 border border-transparent text-sm">
-                    <section className="flex gap-3 items-start">
+                    <div className="flex gap-3 items-start">
                       <span className="material-symbols-outlined text-orange-500 mt-0.5 text-lg shrink-0">psychology</span>
                       <div>
                         <span className="font-bold text-white block mb-0.5">O Desafio</span>
                         <p className="text-gray-400 text-xs leading-relaxed">{project.challenge}</p>
                       </div>
-                    </section>
-                    <section className="flex gap-3 items-start">
+                    </div>
+                    <div className="flex gap-3 items-start">
                       <span className="material-symbols-outlined text-primary mt-0.5 text-lg shrink-0">auto_awesome</span>
                       <div>
                         <span className="font-bold text-white block mb-0.5">Minha Solução e Aprendizado</span>
                         <p className="text-gray-400 text-xs leading-relaxed">{project.solution}</p>
                       </div>
-                    </section>
+                    </div>
                   </div>
-                  <div className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
+                  <footer className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
                     <div className="flex items-center gap-2 text-xs text-gray-400">
                       <span className="material-symbols-outlined text-sm">{project.category === 'Back-end' ? 'settings_suggest' : project.category === 'Mobile' ? 'architecture' : 'handyman'}</span>
                       <span>{project.techStack}</span>
@@ -168,7 +170,7 @@ const Projects: React.FC = () => {
                         <span className="material-symbols-outlined text-lg">code</span>
                       </a>
                     </div>
-                  </div>
+                  </footer>
                 </div>
               </div>
             </article>
