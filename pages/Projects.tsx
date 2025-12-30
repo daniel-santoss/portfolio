@@ -30,7 +30,7 @@ const projectsData: Project[] = [
     challenge: 'Sincronizar o estado do carrinho entre múltiplas abas e garantir segurança na transação financeira.',
     solution: 'Implementei Context API com persistência local e Webhooks para confirmação de pagamento real-time, aprofundando meu domínio no ciclo de vida do React.',
     techStack: 'MVC • TDD',
-    demoLink: '/project/1',
+    demoLink: '#',
     repoLink: '#'
   },
   {
@@ -52,20 +52,20 @@ const projectsData: Project[] = [
   },
   {
     id: 3,
-    title: 'Logistics High-Performance API',
-    description: 'Microsserviço de rastreamento focado em escalabilidade e baixa latência para simular ambiente de alta demanda.',
+    title: 'WebApi - API RESTful em C#',
+    description: 'API RESTful desenvolvida em C# (.NET) para gerenciamento de dados, utilizando boas práticas de desenvolvimento e arquitetura limpa.',
     category: 'Back-end',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAB2czSi86cNwOsp4l_ynuPVx-RjDqknjrGD8yi0DUWgb3viZqBxuv7vtPxDAz1oQ7ooWdlNHDTzdPoB0rBZUdRhzCsrby5zCxO_woDrGi1ZA6kKq0zFmOxOwHZfoB13nLHTmlWk_GNEgbMlWngRkx-NB0hGDvisSWrmBLUnOe0hJJ6FC4tRISu2WgmvOHdQOA_O_14lcvS6DeJusU2YBQGnYm0wYcRXYL-0GNxZosJobqmFOrwfxklMlG3e6bkFrmcqrGjyx-Meflk',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop',
     tags: [
-      { name: 'Go (Golang)', color: 'text-blue-200' },
-      { name: 'Redis', color: 'text-red-200' },
-      { name: 'Docker', color: 'text-sky-200' }
+      { name: 'C#', color: 'text-purple-200' },
+      { name: '.NET', color: 'text-violet-200' },
+      { name: 'REST API', color: 'text-blue-200' }
     ],
-    challenge: 'Processar milhares de requisições de status por segundo sem sobrecarregar o banco de dados principal.',
-    solution: 'Utilizei estratégia de caching com Redis e Goroutines para processamento concorrente. Aprendi na prática conceitos de Concorrência, Containerização e otimização de queries.',
-    techStack: 'DevOps • CI/CD',
-    demoLink: '#',
-    repoLink: '#'
+    challenge: 'Desenvolver uma API robusta e escalável seguindo padrões de mercado e boas práticas de arquitetura de software.',
+    solution: 'Implementei uma API RESTful utilizando C# e .NET, aplicando conceitos de Clean Architecture, validação de dados e tratamento de erros. Aprofundei conhecimentos em desenvolvimento backend e padrões de projeto.',
+    techStack: 'REST • Clean Architecture',
+    demoLink: '/project/1',
+    repoLink: 'https://github.com/daniel-santoss/WebApi'
   }
 ];
 

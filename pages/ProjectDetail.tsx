@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 const ProjectDetail: React.FC = () => {
 
     const project = {
-        title: 'Dashboard E-Commerce',
-        date: 'Out 2023',
-        type: 'Web App',
-        description: 'Uma plataforma responsiva full-stack para gestão de inventário e análise de vendas em tempo real, focada em performance e UX.',
+        title: 'WebApi',
+        date: '2024',
+        type: 'API REST',
+        description: 'API RESTful desenvolvida em C# (.NET) para gerenciamento de dados, utilizando boas práticas de desenvolvimento e arquitetura limpa.',
         heroImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBMZqjCSfnqSKmESiFaGh8LOnV6vs-DBKqTdGaPPvf2aF-lZdXASFy8NVj28OOCEyy_7t_yeDMw4blQ1UnCYsoVYFiSvrUCJap49IIT9iJJSU_qkRGapiz6YDyzb7nXY4fpKpPLcJquc7t8x0qizYUBEvzy7rV1TX05qEjomvB78yo9iYCQeRVsr7AyoBvh7k-UXU-3i80gMHt3uB1W9AN9Y_OBJodUM-yruoKm2_plXPpcgSv-FLPmV6QDHiV-2MqwJlaJ_NJ6QkNm',
-        challenge: 'Pequenos lojistas precisavam de uma maneira de visualizar dados complexos de vendas sem a latência de sistemas legados. O principal obstáculo foi renderizar milhares de transações no frontend mantendo a interface fluida e responsiva em dispositivos móveis.',
-        solution: 'Desenvolvi uma arquitetura baseada em componentes reutilizáveis. Utilizei <strong className="text-white">Redux Toolkit</strong> para gerenciamento de estado global eficiente e implementei virtualização de listas para lidar com grandes volumes de dados. O backend em Node.js utiliza cacheamento com Redis para reduzir o tempo de resposta das APIs em 40%.',
+        challenge: 'Desenvolver uma API robusta e escalável seguindo padrões de mercado e boas práticas de arquitetura de software, garantindo manutenibilidade e facilidade de extensão.',
+        solution: 'Implementei uma API RESTful utilizando <strong className="text-white">C#</strong> e <strong className="text-white">.NET</strong>, aplicando conceitos de Clean Architecture, validação de dados e tratamento de erros. A arquitetura permite fácil integração com diferentes bancos de dados e serviços externos.',
         techStack: [
-            { name: 'React', color: '#61DAFB' },
-            { name: 'Redux Toolkit', color: '#764ABC' },
-            { name: 'Tailwind CSS', color: '#38B2AC' },
-            { name: 'Node.js', color: '#339933' },
-            { name: 'Figma', color: '#F24E1E' }
+            { name: 'C#', color: '#9B4F96' },
+            { name: '.NET', color: '#512BD4' },
+            { name: 'REST API', color: '#61DAFB' },
+            { name: 'SQL Server', color: '#CC2927' },
+            { name: 'Entity Framework', color: '#68217A' }
         ],
         gallery: [
             { image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA5rgeuUyFBEBT4qGjHZ-ljUioYqfcthIuW0YKHejbO7V1v2DtrgAhIbszda3u1moG-OU8ZiQkFOUM0gQu9f5NcYg4kv0nhWH13zPlC94MkFbT_tZQw2ia4tVDgppFizYU53qLvuYlrTLQ9I391aoEQZKK8ScnSE3Zl9Q7UqOzoglh8cYvFX4-_IYW_p1pIdPVKPN_c4lL5514lDOOS-Zd76tvp0WgL29kySsQyXzDjuPilV7y5yrwwe-0nWOtLfjkcbFd-I-FHOUzI' },
@@ -24,10 +24,11 @@ const ProjectDetail: React.FC = () => {
             { image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAWS7SE2-yDZ3J16Rbb61XB0RadDLn5oJiSCD7ygnvPlg114HfNd6wh2NIS6NPIXDq7vaxl0XEtBXZxDQU3sHHwhY9HPAjeG-NwTOb3ZDKhrTNkix0_rkrXg3WLhwFZ6oTnIlXOK0vOu1AiWaadIFAXnmxjmgAHaQBAyWDSDIzJkOsJEZBYnmVT_OBqY6YWVqFQjD1iWGInLZBp_7lq8-b161n1tU9y226KJ02lzwayk2YQ3VjbmDDmPIra674jslGDbdjRmtvZ9Qv8', count: 5 }
         ],
         highlights: [
-            'Autenticação JWT segura com refresh tokens.',
-            'Design System próprio com suporte a Dark Mode.',
-            'Deploy automatizado via CI/CD (GitHub Actions).'
-        ]
+            'Arquitetura RESTful seguindo boas práticas de API design.',
+            'Estrutura de código organizada com Clean Architecture.',
+            'Validação de dados e tratamento de erros robusto.'
+        ],
+        repoLink: 'https://github.com/daniel-santoss/WebApi'
     };
 
     return (
@@ -115,14 +116,14 @@ const ProjectDetail: React.FC = () => {
                                         </span>
                                     </div>
                                     <h1 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
-                                        Dashboard <span className="text-primary">E-Commerce</span>
+                                        Web<span className="text-primary">Api</span>
                                     </h1>
                                     <p className="text-lg text-gray-400 leading-relaxed">
                                         {project.description}
                                     </p>
                                 </header>
                                 <div className="flex flex-col sm:flex-row gap-4">
-                                    <a className="flex-1 h-14 bg-primary text-background-dark font-bold text-base rounded-full flex items-center justify-center gap-2 hover:bg-accent-hover hover:shadow-[0_0_20px_rgba(57,255,20,0.4)] " href="#">
+                                    <a className="flex-1 h-14 bg-primary text-background-dark font-bold text-base rounded-full flex items-center justify-center gap-2 hover:bg-accent-hover hover:shadow-[0_0_20px_rgba(57,255,20,0.4)] " href={project.repoLink} target="_blank" rel="noopener noreferrer">
                                         <span className="material-symbols-outlined">code</span>
                                         Ver no GitHub
                                     </a>
