@@ -69,7 +69,7 @@ const Education: React.FC = () => {
             <div className="flex flex-col gap-2 z-10">
               <h3 className="text-[#111418] dark:text-white text-xl font-bold">Inspiração</h3>
               <p className="text-[#637588] dark:text-[#C5C6C7] text-base leading-relaxed">
-                Acredito que para realizar meu sonho de ser dev, é preciso ter persistência acima de tudo, mesmo que as oportunidades não surjam de imediato. O estudo nunca termina e a tecnologia evolui todo dia, e por isso minha missão é me manter sempre atualizado e em busca de novos conhecimentos. Para mim, cada desafio é uma oportunidade de aprender algo novo, e esse é o sentimento é o que me motiva a nunca parar de estudar e lutar.
+                Acredito que para realizar nossos sonhos é preciso ter persistência acima de tudo, mesmo que as oportunidades não surjam de imediato. O estudo nunca termina e a tecnologia evolui todo dia, e por isso minha missão é me manter sempre atualizado e em busca de novos conhecimentos. Para mim, cada desafio é uma oportunidade de aprender algo novo, e esse é o sentimento é o que me motiva a nunca parar de estudar e me dedicar.
               </p>
             </div>
           </div>

@@ -35,20 +35,20 @@ const projectsData: Project[] = [
   },
   {
     id: 2,
-    title: 'FinTrack Mobile - Offline First',
-    description: 'Aplicativo de finanças focado em experiência do usuário fluida e funcionamento sem internet.',
-    category: 'Mobile',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAOBvT4c6lbqxknZ-CTw12iYQf79QdzUGUvy7R0Rpp3rKO2r4oPtupsLGZCLG0yODJFDiBrjNV6AmBBVGUoLP8LKMAX6exCwG6aCazCFtoRIM5QyxPkjVMiYaXu22EWUMuZM0XLe3wtaYkcTJZtGw94e5GMeo0KBATPouTeDAMNvwtZMlpe3Dh1ZP6cYqfYZ3_2-5NebT30DsLou2X9dMiGxRdFYorA5hhLuvSfq7ScTKutZCUjQHRs2nUG0blkzuA3oApocQ8aEqwl',
+    title: 'PIM II - Sistema Escolar',
+    description: 'Sistema completo de gestão escolar via terminal, desenvolvido em C como projeto integrador do 2º semestre da faculdade.',
+    category: 'Back-end',
+    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop',
     tags: [
-      { name: 'Flutter', color: 'text-cyan-200' },
-      { name: 'Firebase', color: 'text-orange-200' },
-      { name: 'Hive DB', color: 'text-gray-200' }
+      { name: 'C', color: 'text-blue-200' },
+      { name: 'Terminal', color: 'text-gray-200' },
+      { name: 'File I/O', color: 'text-green-200' }
     ],
-    challenge: 'Garantir que o usuário possa registrar gastos sem internet e sincronizar automaticamente ao reconectar.',
-    solution: 'Desenvolvi uma camada de cache local com Hive e lógica de sincronização em background. Aprimorei meus conhecimentos em Gerência de Estado (BLoC) e Clean Architecture.',
-    techStack: 'Clean Arch • MVVM',
-    demoLink: '#',
-    repoLink: '#'
+    challenge: 'Desenvolver um sistema completo com múltiplos perfis de usuário (Admin, Professor, Aluno) e persistência de dados em arquivos.',
+    solution: 'Implementei uma arquitetura modular com 7 módulos principais e 6 estruturas de dados, totalizando ~2800 linhas de código em C ANSI. O sistema gerencia turmas, alunos, professores, aulas, atividades, notas e presenças.',
+    techStack: 'C • Modular • File System',
+    demoLink: '/project/2',
+    repoLink: 'https://github.com/daniel-santoss/PIM_II'
   },
   {
     id: 3,
