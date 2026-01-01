@@ -9,7 +9,7 @@ const Skills: React.FC = () => {
     'Back-end',
     'Banco de Dados',
     'Cloud & DevOps',
-    'IA & ML',
+    'Infraestrutura',
     'Ferramentas'
   ];
 
@@ -45,7 +45,7 @@ const Skills: React.FC = () => {
       id: 'Front-end',
       icon: 'html',
       title: 'Front-end',
-      skills: ['HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap', 'React', 'JavaScript', 'TypeScript', 'UI & UX Design']
+      skills: ['HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap', 'React', 'JavaScript', 'TypeScript', 'UI & UX Design', 'Figma']
     },
     {
       id: 'Back-end',
@@ -66,16 +66,16 @@ const Skills: React.FC = () => {
       skills: ['Azure', 'CI/CD', 'Build', 'Deploy', 'Git', 'GitHub', 'GitLab']
     },
     {
-      id: 'IA & ML',
-      icon: 'smart_toy',
-      title: 'IA & Machine Learning',
-      skills: ['IA Generativa', 'Notebook LM', 'Google Stitch', 'Google AI Studio']
+      id: 'Infraestrutura',
+      icon: 'security',
+      title: 'Infraestrutura e Segurança',
+      skills: ['TCP/IP', 'Endereçamento', 'Gateway', 'DNS', 'Firewalls', 'VPNs', 'CID']
     },
     {
       id: 'Ferramentas',
       icon: 'build',
       title: 'Ferramentas & Metodologias',
-      skills: ['Visual Studio Code', 'Google Anti-Gravity', 'Figma', 'Scrum', 'Kanban', 'Jira', 'Trello']
+      skills: ['Visual Studio Code', 'Google Anti-Gravity', 'Scrum', 'Kanban', 'Jira', 'Trello']
     }
   ];
 
