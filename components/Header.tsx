@@ -8,9 +8,10 @@ const Header: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const getLinkClass = (path: string) => {
+    const baseClass = "relative flex items-center gap-2 text-sm font-medium transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300";
     return isActive(path)
-      ? "flex items-center gap-2 text-primary text-sm font-medium transition-colors"
-      : "flex items-center gap-2 text-[#111418] dark:text-white text-sm font-medium hover:text-primary transition-colors";
+      ? `${baseClass} text-primary after:w-full`
+      : `${baseClass} text-[#111418] dark:text-white hover:text-primary after:w-0 hover:after:w-full`;
   };
 
   return (

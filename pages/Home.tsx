@@ -2,32 +2,40 @@ import React from 'react';
 
 const Home: React.FC = () => {
   const educationStacks = [
-    { name: 'JavaScript', icon: 'code', colorClass: 'text-yellow-400' },
-    { name: 'C#', icon: 'terminal', colorClass: 'text-purple-500' },
-    { name: '.NET', icon: 'deployed_code', colorClass: 'text-blue-600' },
-    { name: 'MySQL', icon: 'database', colorClass: 'text-orange-500' },
-    { name: 'Azure', icon: 'cloud', colorClass: 'text-blue-400' }
+    { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+    { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+    { name: '.NET', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg' },
+    { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+    { name: 'Azure', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' }
   ];
 
   const socialLinks = [
     {
-      name: 'GitHub',
-      icon: 'source',
-      url: 'https://github.com/daniel-santoss',
-      newTab: true
-    },
-    {
       name: 'LinkedIn',
-      icon: 'connect_without_contact',
+      logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg',
       url: 'https://www.linkedin.com/in/daniel-vinicius-07a278275/',
       newTab: true
     },
     {
+      name: 'GitHub',
+      logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg',
+      url: 'https://github.com/daniel-santoss',
+      newTab: true
+    },
+    {
       name: 'Email',
-      icon: 'mail',
+      logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg',
       url: 'mailto:danielvinicius.santos7@gmail.com',
       newTab: false
+    },
+    {
+      name: 'WhatsApp',
+      logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg',
+      url: 'https://wa.me/5511940564648',
+      newTab: true
     }
+
   ];
 
   return (
@@ -43,7 +51,7 @@ const Home: React.FC = () => {
                     Buscando vaga de Estágio / Júnior
                   </div>
                   <h1 className="text-4xl md:text-6xl font-black leading-tight tracking-[-0.033em] text-white">
-                    Bem-vindo! Eu sou o <span className="text-primary drop-shadow-[0_0_8px_rgba(57,255,20,0.3)]">Daniel Vinicius</span>
+                    Bem-vindo ao meu portfólio! Eu sou o <span className="text-primary drop-shadow-[0_0_8px_rgba(57,255,20,0.3)]">Daniel Vinicius</span>
                   </h1>
                   <h2 className="text-base md:text-lg font-normal text-gray-300 leading-relaxed max-w-xl mx-auto md:mx-0">
                     Sou um desenvolvedor apaixonado por criar soluções web e atualmente estou focado no desenvolvimento de back-end utilizando .NET. Estou em busca de uma oportunidade de <span className="text-primary font-medium">estágio ou júnior</span> para aprender com a equipe, aplicar meus conhecimentos e evoluir na carreira.
@@ -66,16 +74,16 @@ const Home: React.FC = () => {
           </div>
         </div>
       </header>
-      <section className="w-full bg-secondary/5 py-16 px-4 md:px-40 flex justify-center border-y border-secondary/10" aria-label="Principais Tecnologias">
+      <section className="group w-full bg-secondary/5 py-16 px-4 md:px-40 flex justify-center border-y border-secondary/10" aria-label="Principais Tecnologias">
         <div className="max-w-[960px] w-full flex flex-col gap-8">
           <div className="flex flex-col items-center gap-2">
             <h2 className="text-2xl md:text-3xl font-bold text-center text-white">Principais Stacks</h2>
-            <div className="h-1 w-20 bg-primary rounded-full shadow-[0_0_10px_#39FF14]"></div>
+            <div className="h-1 w-0 group-hover:w-full bg-primary rounded-full shadow-[0_0_10px_#39FF14] transition-all duration-500"></div>
           </div>
           <ul className="flex flex-wrap justify-center gap-4">
             {educationStacks.map((stack, index) => (
               <li key={index} className="flex h-10 items-center gap-x-3 rounded-full bg-surface-dark border border-secondary/20 pl-3 pr-5">
-                <span className={`material-symbols-outlined ${stack.colorClass}`}>{stack.icon}</span>
+                <img src={stack.logo} alt={stack.name} className="w-5 h-5" />
                 <p className="text-white text-sm font-medium">{stack.name}</p>
               </li>
             ))}
@@ -84,8 +92,8 @@ const Home: React.FC = () => {
       </section>
       <section className="w-full px-4 md:px-40 py-16 flex justify-center mb-10" aria-label="Links de Contato">
         <div className="max-w-[960px] w-full flex flex-col items-center gap-10">
-          <h2 className="text-2xl font-bold text-center text-white">Conecte-se Comigo</h2>
-          <nav className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-3xl">
+          <h2 className="text-2xl font-bold text-center text-white">Redes e Contato</h2>
+          <nav className="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full max-w-4xl">
             {socialLinks.map((link, index) => (
               <a
                 key={index}
@@ -95,7 +103,7 @@ const Home: React.FC = () => {
                 rel={link.newTab ? "noopener noreferrer" : undefined}
               >
                 <div className="rounded-full bg-background-dark p-4 text-white transition-colors border border-secondary/10 group-hover:bg-primary group-hover:text-black group-hover:border-primary">
-                  <span className="material-symbols-outlined text-[32px]">{link.icon}</span>
+                  <img src={link.logo} alt={link.name} className="w-8 h-8 invert group-hover:invert-0" />
                 </div>
                 <span className="font-medium text-sm text-white group-hover:text-white transition-colors">{link.name}</span>
               </a>

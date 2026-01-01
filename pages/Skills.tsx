@@ -57,7 +57,7 @@ const Skills: React.FC = () => {
       id: 'Banco de Dados',
       icon: 'database',
       title: 'Banco de Dados',
-      skills: ['MySQL', 'SQL Server']
+      skills: ['MySQL', 'SQL Server', 'Supabase']
     },
     {
       id: 'Cloud & DevOps',
@@ -178,7 +178,7 @@ const Skills: React.FC = () => {
               <h3 className="text-primary text-sm font-bold uppercase tracking-wider">Proficiência Técnica</h3>
               <p id="proficiencia-titulo" className="text-3xl font-black leading-tight text-white">Níveis de Experiência</p>
               <p className="mt-4 text-gray-300 text-base leading-relaxed">
-                <strong className="text-primary">Avançado:</strong> Uso diário com maior autonomia; <br></br> <strong className="text-cyan-400">Intermediário:</strong> Já utilizada em projetos e com boa compreensão; <br></br> <strong className="text-[#BB86FC]">Estudos:</strong> Entendimento de conceitos e suas principais utilizações, porém ainda em fase de aprendizado.
+                <strong className="text-primary">Avançado:</strong> Uso diário com maior autonomia; <br></br> <strong className="text-cyan-400">Intermediário:</strong> Já utilizei em projetos possuo boa compreensão; <br></br> <strong className="text-[#BB86FC]">Estudos / Básico:</strong> Entendo conceitos e suas principais utilizações, porém ainda não utilizei em projetos.
               </p>
             </header>
 
