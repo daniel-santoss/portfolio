@@ -55,23 +55,11 @@ const Education: React.FC = () => {
         <section className="flex flex-col gap-6 animate-fade-in" >
           <div className="flex flex-col gap-3">
             <h1 className="text-[#111418] dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">
-              Minha Jornada <span className="text-primary">Acadêmica</span>
+              Minha Jornada Acadêmica
             </h1>
             <p className="text-[#637588] dark:text-[#C5C6C7] text-lg font-normal leading-normal max-w-2xl">
               Abaixo descrevo minha trajetória acadêmica, com as instituições de ensino, cursos e bootcamps que fazem parte da minha formação.
             </p>
-          </div>
-          <div className="bg-white dark:bg-card-dark border border-[#e5e7eb] dark:border-primary/30 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start shadow-sm relative overflow-hidden shadow-sm hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
-            <div className="absolute right-0 top-0 w-32 h-32 bg-primary/10 rounded-bl-full -mr-8 -mt-8 z-0"></div>
-            <div className="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0 z-10">
-              <span className="material-symbols-outlined text-2xl">rocket_launch</span>
-            </div>
-            <div className="flex flex-col gap-2 z-10">
-              <h3 className="text-[#111418] dark:text-white text-xl font-bold">Inspiração</h3>
-              <p className="text-[#637588] dark:text-[#C5C6C7] text-base leading-relaxed">
-                Acredito que para realizar nossos sonhos é preciso ter persistência acima de tudo, mesmo que as oportunidades não surjam de imediato. O estudo nunca termina e a tecnologia evolui todo dia, e por isso minha missão é me manter sempre atualizado e em busca de novos conhecimentos. Para mim, cada desafio é uma oportunidade de aprender algo novo, e esse é o sentimento é o que me motiva a nunca parar de estudar e me dedicar.
-              </p>
-            </div>
           </div>
         </section>
 
@@ -129,11 +117,26 @@ const Education: React.FC = () => {
                 ))}
               </ul>
             </div>
+
+            {/* Inspiração */}
+            <div className="flex-1 bg-white dark:bg-card-dark border border-[#e5e7eb] dark:border-primary/30 rounded-2xl p-6 md:p-8 flex flex-col gap-4 items-start shadow-sm relative overflow-hidden hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
+              <div className="flex items-center gap-3">
+                <div className="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0 z-10">
+                  <span className="material-symbols-outlined text-2xl">rocket_launch</span>
+                </div>
+                <h3 className="text-[#111418] dark:text-white text-xl font-bold z-10">Inspiração</h3>
+              </div>
+              <div className="flex flex-col gap-2 z-10">
+                <p className="text-[#637588] dark:text-[#C5C6C7] text-base leading-relaxed">
+                  Acredito que para realizar nossos sonhos é preciso ter persistência acima de tudo, mesmo que as oportunidades não surjam de imediato. O estudo nunca termina e a tecnologia evolui todo dia, e por isso minha missão é me manter sempre atualizado e em busca de novos conhecimentos. Para mim, cada desafio é uma oportunidade de aprender algo novo, e esse é o sentimento é o que me motiva a nunca parar de estudar e me dedicar.
+                </p>
+              </div>
+            </div>
           </section>
         </div>
 
         {/* CTA */}
-        <aside className="mt-12 rounded-2xl bg-card-dark relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-primary/30 shadow-sm hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
+        <aside className="mt-4 rounded-2xl bg-card-dark relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-primary/30 shadow-sm hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
           <div className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-overlay" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAy50DfwNdRFmrx1uVE-DE8i3ar8Tlfvm9zNnUQdvLvOKb_mtkQ8UEStsPE0ZPPbgaRIKYseRvD7OlttQijnOj3ZEhAr5_PeL41fukUsw1kR6Y1Pco3t7Yh__gR9ONDAVhuQ4RfRvA3lLoL4SmgRo4Ck-5JhTxQXvcZwhWavFsmzQ5H9-JzHPa7ICdBYMDXxX-hmGJvg-i_FGdYS20vAA98erH67iM9YJHt7QCaX0v9wzfN6lEdzezxlgRbEwpkYmev9YMH5EVhn8sF')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
           <div className="relative z-10 flex flex-col gap-3 text-center md:text-left">
             <h2 className="text-white text-3xl font-bold">Interessado no meu perfil?</h2>
@@ -146,6 +149,8 @@ const Education: React.FC = () => {
             </button>
           </div>
         </aside>
+
+
       </div>
     </main>
   );

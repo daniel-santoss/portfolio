@@ -9,8 +9,8 @@ const Skills: React.FC = () => {
     'Back-end',
     'Banco de Dados',
     'Cloud & DevOps',
-    'Infraestrutura',
-    'Ferramentas'
+    'Infra e Segurança',
+    'Metodologias'
   ];
 
   const handleCategoryClick = (category: string) => {
@@ -72,9 +72,9 @@ const Skills: React.FC = () => {
       skills: ['TCP/IP', 'VLANs', 'Gateway', 'DNS', 'Firewalls', 'VPNs', 'Antivírus', 'CID']
     },
     {
-      id: 'Metodologias e Ferramentas',
+      id: 'Metodologias Ágeis',
       icon: 'sprint',
-      title: 'Metodologias e Ferramentas',
+      title: 'Metodologias Ágeis',
       skills: ['Scrum', 'Kanban', 'Jira', 'Trello']
     }
   ];
@@ -89,6 +89,7 @@ const Skills: React.FC = () => {
       items: [
         { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
         { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+        { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
         { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' }
       ]
     },
@@ -100,18 +101,19 @@ const Skills: React.FC = () => {
       hoverBorder: 'hover:border-cyan-400/30',
       items: [
         { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+        { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
         { name: 'C# / .NET', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
-        { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-        { name: 'Cloud Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' }
+        { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' }
       ]
     },
     {
-      level: 'Estudos',
+      level: 'Básico',
       icon: 'school',
       colorClass: 'text-[#BB86FC]',
       borderColor: 'border-[#BB86FC]',
       hoverBorder: 'hover:border-[#BB86FC]/30',
       items: [
+        { name: 'Cloud Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
         { name: 'DevOps', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg' },
         { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
         { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' }
@@ -126,7 +128,7 @@ const Skills: React.FC = () => {
           <div className="flex flex-col gap-3">
             <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-white">Habilidades e Tecnologias</h1>
             <p className="text-gray-300 text-lg font-normal leading-normal max-w-3xl opacity-90">
-              Essas são as ferramentas e tecnologias que utilizo no meu dia a dia.
+              Esses são os meus conhecimentos e ferramentas que utilizo no meu dia a dia.
             </p>
           </div>
         </header>
@@ -174,10 +176,10 @@ const Skills: React.FC = () => {
         <section className="mt-8 rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8 backdrop-blur-md" aria-labelledby="proficiencia-titulo">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
             <header className="flex-1 flex flex-col gap-4">
-              <h3 className="text-primary text-sm font-bold uppercase tracking-wider">Proficiência Técnica</h3>
+              <h3 className="text-primary text-lg font-bold uppercase tracking-wider">Proficiência Técnica</h3>
               <p id="proficiencia-titulo" className="text-3xl font-black leading-tight text-white">Níveis de Experiência</p>
               <p className="mt-4 text-gray-300 text-base leading-relaxed">
-                <strong className="text-primary">Avançado:</strong> Uso diário com maior autonomia; <br></br> <strong className="text-cyan-400">Intermediário:</strong> Boa compreensão da tecnologia e grande participação em projetos; <br></br> <strong className="text-[#BB86FC]">Estudos / Básico:</strong> Entendimento de conceitos e suas principais utilizações, porém com poucas práticas.
+                <strong className="text-primary text-lg">Avançado:</strong> Uso diário com autonomia. <br></br> <strong className="text-cyan-400 text-lg">Intermediário:</strong> Boa compreensão da tecnologia e grande participação em projetos. <br></br> <strong className="text-[#BB86FC] text-lg">Básico / Estudos:</strong> Entendimento de conceitos e suas principais utilizações, porém com poucas práticas.
               </p>
             </header>
 
