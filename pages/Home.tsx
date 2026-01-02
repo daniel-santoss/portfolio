@@ -15,27 +15,30 @@ const Home: React.FC = () => {
       name: 'LinkedIn',
       logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg',
       url: 'https://www.linkedin.com/in/daniel-vinicius-07a278275/',
-      newTab: true
+      newTab: true,
+      hoverColor: '#0A66C2' // Azul do LinkedIn
     },
     {
       name: 'GitHub',
       logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg',
       url: 'https://github.com/daniel-santoss',
-      newTab: true
+      newTab: true,
+      hoverColor: '#ffffff' // Branco para GitHub
     },
     {
       name: 'Email',
       logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg',
       url: 'mailto:danielvinicius.santos7@gmail.com',
-      newTab: false
+      newTab: false,
+      hoverColor: '#EA4335' // Vermelho do Gmail
     },
     {
       name: 'WhatsApp',
       logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg',
       url: 'https://wa.me/5511940564648',
-      newTab: true
+      newTab: true,
+      hoverColor: '#25D366' // Verde do WhatsApp
     }
-
   ];
 
   return (
@@ -54,7 +57,7 @@ const Home: React.FC = () => {
                     Bem-vindo ao meu portfólio! Eu sou o <span className="text-primary drop-shadow-[0_0_8px_rgba(57,255,20,0.3)]">Daniel Vinicius</span>
                   </h1>
                   <h2 className="text-base md:text-lg font-normal text-gray-300 leading-relaxed max-w-xl mx-auto md:mx-0">
-                    Sou um desenvolvedor apaixonado por criar soluções web e atualmente estou focado no desenvolvimento Full Stack utilizando React e .NET. Estou em busca de uma oportunidade de <span className="text-primary font-medium">estágio ou júnior</span> para aprender com a equipe, aplicar meus conhecimentos e evoluir na carreira.
+                    Sou um desenvolvedor apaixonado por criar soluções web e atualmente estou focado no desenvolvimento Full Stack utilizando o ecossistema React e .NET. Além disso, possuo grande interesse por cibersegurança, área à qual também venho dedicando meus estudos com o propósito de desenvolver aplicações cada vez mais robustas e protegidas. Estou em busca de uma oportunidade de <span className="text-primary font-medium">estágio ou júnior</span> para aprender com a equipe, aplicar meus conhecimentos e evoluir na carreira.
                   </h2>
                 </div>
               </section>
@@ -97,12 +100,33 @@ const Home: React.FC = () => {
             {socialLinks.map((link, index) => (
               <a
                 key={index}
-                className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-surface-dark border border-secondary/10 hover:border-primary/40 hover:shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:-translate-y-1 transition-all group"
+                className="social-card flex flex-col items-center gap-4 p-6 rounded-2xl bg-surface-dark border border-secondary/10 hover:-translate-y-1 transition-all group"
                 href={link.url}
                 target={link.newTab ? "_blank" : undefined}
                 rel={link.newTab ? "noopener noreferrer" : undefined}
+                style={{ '--icon-hover-color': link.hoverColor } as React.CSSProperties}
+                onMouseEnter={(e) => {
+                  const iconContainer = e.currentTarget.querySelector('.icon-container') as HTMLElement;
+                  if (iconContainer) {
+                    iconContainer.style.backgroundColor = link.hoverColor;
+                    iconContainer.style.borderColor = link.hoverColor;
+                    iconContainer.style.boxShadow = `0 0 15px ${link.hoverColor}`;
+                  }
+                  e.currentTarget.style.borderColor = link.hoverColor + '66';
+                  e.currentTarget.style.boxShadow = `0 0 15px ${link.hoverColor}22`;
+                }}
+                onMouseLeave={(e) => {
+                  const iconContainer = e.currentTarget.querySelector('.icon-container') as HTMLElement;
+                  if (iconContainer) {
+                    iconContainer.style.backgroundColor = 'rgb(15 15 15)';
+                    iconContainer.style.borderColor = 'rgba(163, 163, 163, 0.1)';
+                    iconContainer.style.boxShadow = 'none';
+                  }
+                  e.currentTarget.style.borderColor = 'rgba(163, 163, 163, 0.1)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
               >
-                <div className="rounded-full bg-background-dark p-4 text-white transition-colors border border-secondary/10 group-hover:bg-primary group-hover:text-black group-hover:border-primary">
+                <div className="icon-container rounded-full bg-background-dark p-4 text-white transition-all duration-300 border border-secondary/10">
                   <img src={link.logo} alt={link.name} className="w-8 h-8 invert group-hover:invert-0" />
                 </div>
                 <span className="font-medium text-sm text-white group-hover:text-white transition-colors">{link.name}</span>

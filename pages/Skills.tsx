@@ -45,13 +45,13 @@ const Skills: React.FC = () => {
       id: 'Front-end',
       icon: 'html',
       title: 'Front-end',
-      skills: ['HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap', 'React', 'JavaScript', 'TypeScript', 'UI & UX Design', 'Figma']
+      skills: ['HTML', 'CSS', 'Tailwind CSS', 'Bootstrap', 'React', 'JavaScript', 'TypeScript', 'UI & UX Design', 'Figma']
     },
     {
       id: 'Back-end',
       icon: 'dns',
       title: 'Back-end',
-      skills: ['C#', '.NET', 'Java', 'Spring Boot', 'SQL', 'APIs REST']
+      skills: ['.NET', 'C#', 'Entity Framework', 'C', 'SQL', 'APIs REST']
     },
     {
       id: 'Banco de Dados',
@@ -63,19 +63,19 @@ const Skills: React.FC = () => {
       id: 'Cloud & DevOps',
       icon: 'cloud',
       title: 'Cloud & DevOps',
-      skills: ['Azure', 'CI/CD', 'Build', 'Deploy', 'Git', 'GitHub', 'GitLab']
+      skills: ['Azure', 'Docker', 'CI/CD', 'Git', 'GitHub', 'GitLab']
     },
     {
-      id: 'Infraestrutura',
+      id: 'Infraestrutura e Segurança',
       icon: 'security',
       title: 'Infraestrutura e Segurança',
-      skills: ['TCP/IP', 'Endereçamento', 'Gateway', 'DNS', 'Firewalls', 'VPNs', 'CID']
+      skills: ['TCP/IP', 'VLANs', 'Gateway', 'DNS', 'Firewalls', 'VPNs', 'Antivírus', 'CID']
     },
     {
-      id: 'Ferramentas',
-      icon: 'build',
-      title: 'Ferramentas & Metodologias',
-      skills: ['Visual Studio Code', 'Google Anti-Gravity', 'Scrum', 'Kanban', 'Jira', 'Trello']
+      id: 'Metodologias e Ferramentas',
+      icon: 'sprint',
+      title: 'Metodologias e Ferramentas',
+      skills: ['Scrum', 'Kanban', 'Jira', 'Trello']
     }
   ];
 
@@ -101,7 +101,6 @@ const Skills: React.FC = () => {
       items: [
         { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
         { name: 'C# / .NET', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
-        { name: 'Java / Spring Boot', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
         { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
         { name: 'Cloud Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' }
       ]
@@ -113,7 +112,7 @@ const Skills: React.FC = () => {
       borderColor: 'border-[#BB86FC]',
       hoverBorder: 'hover:border-[#BB86FC]/30',
       items: [
-        { name: 'Azure DevOps', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg' },
+        { name: 'DevOps', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg' },
         { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
         { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' }
       ]
@@ -178,7 +177,7 @@ const Skills: React.FC = () => {
               <h3 className="text-primary text-sm font-bold uppercase tracking-wider">Proficiência Técnica</h3>
               <p id="proficiencia-titulo" className="text-3xl font-black leading-tight text-white">Níveis de Experiência</p>
               <p className="mt-4 text-gray-300 text-base leading-relaxed">
-                <strong className="text-primary">Avançado:</strong> Uso diário com maior autonomia; <br></br> <strong className="text-cyan-400">Intermediário:</strong> Já utilizei em projetos possuo boa compreensão; <br></br> <strong className="text-[#BB86FC]">Estudos / Básico:</strong> Entendo conceitos e suas principais utilizações, porém ainda não utilizei em projetos.
+                <strong className="text-primary">Avançado:</strong> Uso diário com maior autonomia; <br></br> <strong className="text-cyan-400">Intermediário:</strong> Boa compreensão da tecnologia e grande participação em projetos; <br></br> <strong className="text-[#BB86FC]">Estudos / Básico:</strong> Entendimento de conceitos e suas principais utilizações, porém com poucas práticas.
               </p>
             </header>
 
