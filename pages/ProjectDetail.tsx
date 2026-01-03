@@ -32,7 +32,7 @@ const projectsData: Record<string, ProjectData> = {
             { name: 'C#', color: '#9B4F96' },
             { name: '.NET', color: '#512BD4' },
             { name: 'REST API', color: '#61DAFB' },
-            { name: 'SQL Server', color: '#CC2927' },
+            { name: 'MySQL', color: '#4479A1' },
             { name: 'Entity Framework', color: '#68217A' }
         ],
         gallery: [
@@ -125,7 +125,6 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
             onKeyDown={handleKeyDown}
             tabIndex={0}
         >
-            {/* Close button */}
             <button
                 className="absolute top-6 right-6 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
                 onClick={onClose}
@@ -133,12 +132,10 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
                 <span className="material-symbols-outlined text-white text-2xl">close</span>
             </button>
 
-            {/* Counter */}
             <div className="absolute top-6 left-6 text-white/70 text-sm font-medium">
                 {currentIndex + 1} / {images.length}
             </div>
 
-            {/* Previous button */}
             <button
                 className="absolute left-4 md:left-8 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
                 onClick={(e) => { e.stopPropagation(); handlePrev(); }}
@@ -146,7 +143,6 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
                 <span className="material-symbols-outlined text-white text-3xl">chevron_left</span>
             </button>
 
-            {/* Image */}
             <div
                 className="max-w-[90vw] max-h-[85vh] flex items-center justify-center"
                 onClick={(e) => e.stopPropagation()}
@@ -158,7 +154,6 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
                 />
             </div>
 
-            {/* Next button */}
             <button
                 className="absolute right-4 md:right-8 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
                 onClick={(e) => { e.stopPropagation(); handleNext(); }}
@@ -166,7 +161,6 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
                 <span className="material-symbols-outlined text-white text-3xl">chevron_right</span>
             </button>
 
-            {/* Thumbnails */}
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 px-4 py-2 bg-black/50 rounded-full max-w-[90vw] overflow-x-auto">
                 {images.map((img, idx) => (
                     <button
@@ -232,7 +226,7 @@ const ProjectDetail: React.FC = () => {
                         <Link className="text-sm font-medium hover:text-primary transition-colors" to="/#sobre">Sobre</Link>
                         <Link className="text-sm font-medium text-primary" to="/#projetos">Projetos</Link>
                         <Link className="text-sm font-medium hover:text-primary transition-colors" to="/#habilidades">Habilidades</Link>
-                        <Link className="text-sm font-medium hover:text-primary transition-colors" to="/#sobre">Contato</Link>
+                        <Link className="text-sm font-medium hover:text-primary transition-colors" to="/#contato">Contato</Link>
                     </nav>
                     <button className="hidden sm:flex items-center justify-center rounded-full h-10 px-6 bg-primary hover:bg-accent-hover text-background-dark text-sm font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(57,255,20,0.3)]">
                         <span className="mr-2 material-symbols-outlined text-lg">download</span>
@@ -350,8 +344,8 @@ const ProjectDetail: React.FC = () => {
                                 <div className="space-y-8">
                                     <section className="group">
                                         <div className="flex items-center gap-3 mb-3">
-                                            <div className="p-2 rounded-lg bg-red-500/10 text-red-400 border border-red-500/20">
-                                                <span className="material-symbols-outlined">warning</span>
+                                            <div className="size-10 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 flex items-center justify-center">
+                                                <span className="material-symbols-outlined">flag</span>
                                             </div>
                                             <h3 className="text-xl font-bold text-white">O Desafio</h3>
                                         </div>
@@ -359,7 +353,7 @@ const ProjectDetail: React.FC = () => {
                                     </section>
                                     <section className="group">
                                         <div className="flex items-center gap-3 mb-3">
-                                            <div className="p-2 rounded-lg bg-primary/10 text-primary border border-primary/20">
+                                            <div className="size-10 rounded-full bg-primary/10 text-primary border border-primary/20 flex items-center justify-center">
                                                 <span className="material-symbols-outlined">lightbulb</span>
                                             </div>
                                             <h3 className="text-xl font-bold text-white">A Solução</h3>

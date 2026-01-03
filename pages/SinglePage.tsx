@@ -164,13 +164,13 @@ const SkillsSection: React.FC = () => {
             skills: ['Azure', 'Docker', 'CI/CD', 'Git', 'GitHub', 'GitLab']
         },
         {
-            id: 'Infraestrutura e Segurança',
+            id: 'Infra e Segurança',
             icon: 'security',
             title: 'Infraestrutura e Segurança',
             skills: ['TCP/IP', 'VLANs', 'Gateway', 'DNS', 'Firewalls', 'VPNs', 'Antivírus', 'CID']
         },
         {
-            id: 'Metodologias Ágeis',
+            id: 'Metodologias',
             icon: 'sprint',
             title: 'Metodologias Ágeis',
             skills: ['Scrum', 'Kanban', 'Jira', 'Trello']
@@ -470,8 +470,12 @@ const projectsData: Project[] = [
         image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA69yISlUf4zqvEn7KTpGqD7KbkVbTefTDILsNe0QCb0lAfdhTE0WpgN63f2EcayB8sFjD2tdPt8Qh9BQEuTt_aebMSMZAciGKSJuWfwvULkIyt4t8LKwerUAleA9W-I3nvfn07aclgpc58c5CdSs3A91ojSTsrONQoLEEsfMXcd1Pn1-pFyL16fj5eZXSyIu5RS6sOndo4ctmeYUTYKdaczW2myMC3ovcNfKi5o0k-IYRbDWLxleuNeuCUQnQAQ4fz7X8Yzt35wuFv',
         tags: [
             { name: 'React', color: 'text-blue-200' },
+            { name: 'TypeScript', color: 'text-blue-300' },
             { name: 'Node.js', color: 'text-green-200' },
-            { name: 'Stripe API', color: 'text-purple-200' }
+            { name: 'Express', color: 'text-gray-200' },
+            { name: 'MongoDB', color: 'text-green-300' },
+            { name: 'Stripe API', color: 'text-purple-200' },
+            { name: 'TailwindCSS', color: 'text-cyan-200' }
         ],
         challenge: 'Sincronizar o estado do carrinho entre múltiplas abas e garantir segurança na transação financeira.',
         solution: 'Implementei Context API com persistência local e Webhooks para confirmação de pagamento real-time, aprofundando meu domínio no ciclo de vida do React.',
@@ -487,8 +491,10 @@ const projectsData: Project[] = [
         image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop',
         tags: [
             { name: 'C', color: 'text-blue-200' },
-            { name: 'Terminal', color: 'text-gray-200' },
-            { name: 'File I/O', color: 'text-green-200' }
+            { name: 'GCC', color: 'text-yellow-200' },
+            { name: 'File I/O', color: 'text-green-200' },
+            { name: 'Modular', color: 'text-blue-300' },
+            { name: 'Terminal', color: 'text-gray-200' }
         ],
         challenge: 'Desenvolver um sistema completo com múltiplos perfis de usuário (Admin, Professor, Aluno) e persistência de dados em arquivos.',
         solution: 'Implementei uma arquitetura modular com 7 módulos principais e 6 estruturas de dados, totalizando ~2800 linhas de código em C ANSI. O sistema gerencia turmas, alunos, professores, aulas, atividades, notas e presenças.',
@@ -505,15 +511,18 @@ const projectsData: Project[] = [
         tags: [
             { name: 'C#', color: 'text-purple-200' },
             { name: '.NET', color: 'text-violet-200' },
-            { name: 'REST API', color: 'text-blue-200' }
+            { name: 'REST API', color: 'text-blue-200' },
+            { name: 'MySQL', color: 'text-orange-200' },
+            { name: 'Entity Framework', color: 'text-purple-300' }
         ],
-        challenge: 'Desenvolver uma API robusta e escalável seguindo padrões de mercado e boas práticas de arquitetura de software.',
+        challenge: 'Desenvolver uma API robusta e escalável seguindo as boas práticas de arquitetura de software.',
         solution: 'Implementei uma API RESTful utilizando C# e .NET, aplicando conceitos de Clean Architecture, validação de dados e tratamento de erros. Aprofundei conhecimentos em desenvolvimento backend e padrões de projeto.',
         techStack: 'REST • Clean Architecture',
         demoLink: '/project/1',
         repoLink: 'https://github.com/daniel-santoss/WebApi'
     }
 ];
+
 
 const ProjectsSection: React.FC = () => {
     const [filter, setFilter] = useState('Todos');
@@ -528,10 +537,10 @@ const ProjectsSection: React.FC = () => {
                 <header className="flex flex-col gap-6">
                     <div className="flex flex-col gap-3">
                         <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-[#112218] dark:text-white">
-                            Projetos & Aprendizados
+                            Projetos
                         </h1>
                         <p className="text-gray-600 dark:text-gray-300 text-lg font-normal leading-relaxed max-w-2xl">
-                            Explore minha jornada de desenvolvimento. Aqui detalho não apenas o código, mas os desafios reais que enfrentei e como apliquei novas tecnologias para criar soluções eficientes e escaláveis.
+                            Aqui detalho não apenas o código, mas os desafios reais que enfrentei e como apliquei novas tecnologias para criar soluções eficientes e escaláveis.
                         </p>
                     </div>
                     <nav aria-label="Filtros de Projetos" className="flex gap-3 flex-wrap pt-2">
@@ -551,73 +560,48 @@ const ProjectsSection: React.FC = () => {
                     </nav>
                 </header>
 
-                <section aria-label="Lista de Projetos" className="flex flex-col gap-8">
+                <section aria-label="Lista de Projetos" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredProjects.map((project) => (
-                        <article key={project.id} className="group @container p-0 animate-fade-in">
-                            <div className="flex flex-col items-stretch justify-start rounded-2xl @xl:flex-row shadow-md hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] transition-all duration-300 bg-[#33363B] border border-transparent overflow-hidden">
-                                <figure
-                                    className="w-full @xl:w-2/5 shrink-0 bg-center bg-no-repeat bg-cover min-h-[280px] @xl:min-h-full group-hover:scale-105 transition-transform duration-500 relative m-0"
-                                    style={{ backgroundImage: `url("${project.image}")` }}
-                                    data-alt={project.title}
-                                    role="img"
-                                    aria-label={`Preview do projeto ${project.title}`}
-                                >
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A1C20]/80 to-transparent @xl:hidden"></div>
-                                </figure>
-                                <div className="flex w-full flex-col p-6 gap-5">
-                                    <header className="flex justify-between items-start">
-                                        <div>
-                                            <h3 className="text-xl md:text-2xl font-bold leading-tight mb-2 text-white group-hover:text-primary transition-colors">{project.title}</h3>
-                                            <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-                                                {project.description}
-                                            </p>
-                                        </div>
-                                    </header>
-                                    <ul className="flex flex-wrap gap-2">
-                                        {project.tags.map((tag, index) => (
-                                            <li key={index} className={`px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold ${tag.color}`}>
-                                                {tag.name}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <div className="flex flex-col gap-3 p-4 rounded-xl bg-black/20 border border-transparent text-sm">
-                                        <div className="flex gap-3 items-start">
-                                            <span className="material-symbols-outlined text-orange-500 mt-0.5 text-lg shrink-0">psychology</span>
-                                            <div>
-                                                <span className="font-bold text-white block mb-0.5">O Desafio</span>
-                                                <p className="text-gray-400 text-xs leading-relaxed">{project.challenge}</p>
-                                            </div>
-                                        </div>
-                                        <div className="flex gap-3 items-start">
-                                            <span className="material-symbols-outlined text-primary mt-0.5 text-lg shrink-0">auto_awesome</span>
-                                            <div>
-                                                <span className="font-bold text-white block mb-0.5">Minha Solução e Aprendizado</span>
-                                                <p className="text-gray-400 text-xs leading-relaxed">{project.solution}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <footer className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
-                                        <div className="flex items-center gap-2 text-xs text-gray-400">
-                                            <span className="material-symbols-outlined text-sm">{project.category === 'Back-end' ? 'settings_suggest' : project.category === 'Mobile' ? 'architecture' : 'handyman'}</span>
-                                            <span>{project.techStack}</span>
-                                        </div>
-                                        <div className="flex gap-3">
-                                            {project.demoLink && project.demoLink !== '#' && (
-                                                <Link to={project.demoLink} className="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-primary text-white hover:text-[#1A1C20] transition-colors group/btn" title="Ver Live Demo">
-                                                    <span className="material-symbols-outlined group-hover/btn:scale-110 transition-transform">visibility</span>
-                                                </Link>
-                                            )}
-                                            {project.demoLink === '#' && (
-                                                <a className="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-primary text-white hover:text-[#1A1C20] transition-colors group/btn" href="#" title="Ver Design">
-                                                    <span className="material-symbols-outlined group-hover/btn:scale-110 transition-transform">visibility</span>
-                                                </a>
-                                            )}
-                                            <a className="flex items-center justify-center size-10 rounded-full bg-primary hover:bg-[#32d411] text-[#1A1C20] transition-colors shadow-lg shadow-primary/20" href={project.repoLink} title="GitHub">
-                                                <span className="material-symbols-outlined text-lg">code</span>
+                        <article key={project.id} className="group animate-fade-in flex flex-col rounded-xl shadow-md hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] transition-all duration-300 bg-[#33363B] border border-transparent hover:border-primary/30 overflow-hidden">
+                            <figure
+                                className="w-full h-48 bg-center bg-no-repeat bg-cover group-hover:scale-105 transition-transform duration-500 relative m-0"
+                                style={{ backgroundImage: `url("${project.image}")` }}
+                                role="img"
+                                aria-label={`Preview do projeto ${project.title}`}
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#33363B] to-transparent opacity-60"></div>
+                            </figure>
+                            <div className="flex flex-col p-5 gap-3 flex-1">
+                                <header>
+                                    <h3 className="text-lg font-bold leading-tight mb-1 text-white group-hover:text-primary transition-colors">{project.title}</h3>
+                                    <p className="text-gray-400 text-sm leading-relaxed">
+                                        {project.description}
+                                    </p>
+                                </header>
+                                <ul className="flex flex-wrap gap-1.5 mt-auto">
+                                    {project.tags.map((tag, index) => (
+                                        <li key={index} className={`px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-xs font-medium ${tag.color}`}>
+                                            {tag.name}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <footer className="pt-3 border-t border-white/10 flex items-center justify-end">
+                                    <div className="flex gap-2">
+                                        {project.demoLink && project.demoLink !== '#' && (
+                                            <Link to={project.demoLink} className="flex items-center justify-center size-9 rounded-full bg-white/10 hover:bg-primary text-white hover:text-[#1A1C20] transition-colors group/btn" title="Ver Detalhes">
+                                                <span className="material-symbols-outlined text-xl group-hover/btn:scale-110 transition-transform">visibility</span>
+                                            </Link>
+                                        )}
+                                        {project.demoLink === '#' && (
+                                            <a className="flex items-center justify-center size-9 rounded-full bg-white/10 hover:bg-primary text-white hover:text-[#1A1C20] transition-colors group/btn" href="#" title="Ver Design">
+                                                <span className="material-symbols-outlined text-xl group-hover/btn:scale-110 transition-transform">visibility</span>
                                             </a>
-                                        </div>
-                                    </footer>
-                                </div>
+                                        )}
+                                        <a className="flex items-center justify-center size-9 rounded-full bg-primary hover:bg-[#32d411] text-[#1A1C20] transition-colors shadow-lg shadow-primary/20" href={project.repoLink} title="GitHub">
+                                            <span className="material-symbols-outlined text-lg">code</span>
+                                        </a>
+                                    </div>
+                                </footer>
                             </div>
                         </article>
                     ))}
