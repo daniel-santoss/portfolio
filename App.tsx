@@ -1,9 +1,6 @@
 import React from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
-import Home from './pages/Home';
-import Skills from './pages/Skills';
-import Education from './pages/Education';
-import Projects from './pages/Projects';
+import SinglePage from './pages/SinglePage';
 import ProjectDetail from './pages/ProjectDetail';
 import Header from './components/Header';
 
@@ -16,10 +13,7 @@ const AppContent: React.FC = () => {
     <>
       {!isProjectDetail && <Header />}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/education" element={<Education />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/" element={<SinglePage />} />
         <Route path="/project/:id" element={<ProjectDetail />} />
       </Routes>
     </>

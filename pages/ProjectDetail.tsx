@@ -201,7 +201,7 @@ const ProjectDetail: React.FC = () => {
             <div className="bg-background-dark min-h-screen text-white font-public flex items-center justify-center">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold mb-4">Projeto não encontrado</h1>
-                    <Link to="/projects" className="text-primary hover:underline">Voltar para Projetos</Link>
+                    <Link to="/#projetos" className="text-primary hover:underline">Voltar para Projetos</Link>
                 </div>
             </div>
         );
@@ -229,10 +229,10 @@ const ProjectDetail: React.FC = () => {
                         <h2 className="text-xl font-bold leading-tight tracking-tight">DevPortfolio</h2>
                     </Link>
                     <nav className="hidden md:flex items-center gap-8">
-                        <Link className="text-sm font-medium hover:text-primary transition-colors" to="/">Sobre</Link>
-                        <Link className="text-sm font-medium text-primary" to="/projects">Projetos</Link>
-                        <Link className="text-sm font-medium hover:text-primary transition-colors" to="/skills">Habilidades</Link>
-                        <Link className="text-sm font-medium hover:text-primary transition-colors" to="/#contact">Contato</Link>
+                        <Link className="text-sm font-medium hover:text-primary transition-colors" to="/#sobre">Sobre</Link>
+                        <Link className="text-sm font-medium text-primary" to="/#projetos">Projetos</Link>
+                        <Link className="text-sm font-medium hover:text-primary transition-colors" to="/#habilidades">Habilidades</Link>
+                        <Link className="text-sm font-medium hover:text-primary transition-colors" to="/#sobre">Contato</Link>
                     </nav>
                     <button className="hidden sm:flex items-center justify-center rounded-full h-10 px-6 bg-primary hover:bg-accent-hover text-background-dark text-sm font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(57,255,20,0.3)]">
                         <span className="mr-2 material-symbols-outlined text-lg">download</span>
@@ -247,7 +247,7 @@ const ProjectDetail: React.FC = () => {
             <main className="flex-grow">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
                     <div className="mb-8">
-                        <Link to="/projects" className="inline-flex items-center text-sm text-gray-400 hover:text-primary transition-colors group">
+                        <Link to="/#projetos" className="inline-flex items-center text-sm text-gray-400 hover:text-primary transition-colors group">
                             <span className="material-symbols-outlined mr-1 text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
                             Voltar para Projetos
                         </Link>
