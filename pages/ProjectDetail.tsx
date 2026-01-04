@@ -257,10 +257,10 @@ const ProjectDetail: React.FC = () => {
                         <Link className="text-sm font-medium hover:text-primary transition-colors" to="/#habilidades">Habilidades</Link>
                         <Link className="text-sm font-medium hover:text-primary transition-colors" to="/#contato">Contato</Link>
                     </nav>
-                    <button className="hidden sm:flex items-center justify-center rounded-full h-10 px-6 bg-primary hover:bg-accent-hover text-background-dark text-sm font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(57,255,20,0.3)]">
+                    <a href="/CV/Daniel_Vinicius_TI_Curriculo.pdf" download className="hidden sm:flex items-center justify-center rounded-full h-10 px-6 bg-primary hover:bg-accent-hover text-background-dark text-sm font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(57,255,20,0.3)]">
                         <span className="mr-2 material-symbols-outlined text-lg">download</span>
                         Baixar CV
-                    </button>
+                    </a>
                     <button className="md:hidden p-2 text-white">
                         <span className="material-symbols-outlined">menu</span>
                     </button>
@@ -346,6 +346,21 @@ const ProjectDetail: React.FC = () => {
                                     </figure>
                                 ))}
                             </section>
+
+                            <section className="bg-surface-dark rounded-2xl p-6 border border-white/5" aria-labelledby="destaques-tecnicos">
+                                <h4 id="destaques-tecnicos" className="text-white font-bold mb-4 flex items-center gap-2">
+                                    <span className="material-symbols-outlined text-primary">stars</span>
+                                    Destaques Técnicos
+                                </h4>
+                                <ul className="space-y-3">
+                                    {project.highlights.map((highlight, index) => (
+                                        <li key={index} className="flex items-start gap-3 text-gray-300 text-sm">
+                                            <span className="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                                            <span>{highlight}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </section>
                         </div>
 
                         <div className="lg:col-span-5 flex flex-col h-full">
@@ -390,20 +405,6 @@ const ProjectDetail: React.FC = () => {
                                         <p className="text-gray-400 leading-relaxed pl-[3.25rem]" dangerouslySetInnerHTML={{ __html: project.solution }}></p>
                                     </section>
                                 </div>
-                                <section className="bg-surface-dark rounded-2xl p-6 border border-white/5 mt-4" aria-labelledby="destaques-tecnicos">
-                                    <h4 id="destaques-tecnicos" className="text-white font-bold mb-4 flex items-center gap-2">
-                                        <span className="material-symbols-outlined text-primary">stars</span>
-                                        Destaques Técnicos
-                                    </h4>
-                                    <ul className="space-y-3">
-                                        {project.highlights.map((highlight, index) => (
-                                            <li key={index} className="flex items-start gap-3 text-gray-300 text-sm">
-                                                <span className="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
-                                                <span>{highlight}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </section>
                             </div>
                         </div>
                     </div>
