@@ -484,7 +484,7 @@ const projectsData: Project[] = [
         title: 'PIM II - Sistema Escolar',
         description: 'Sistema completo de gestão escolar via terminal, desenvolvido em C como projeto integrador do 2º semestre da faculdade.',
         category: 'Back-end',
-        image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop',
+        image: '/images/PimConsole/ImagemCapaPim.png',
         tags: [
             { name: 'C', color: 'text-blue-200' },
             { name: 'Terminal', color: 'text-gray-200' },
