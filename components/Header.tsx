@@ -40,31 +40,67 @@ const Header: React.FC = () => {
   useEffect(() => {
     if (!isMainPage) return;
 
+    // Track which sections are currently visible
+    const visibleSections = new Set<string>();
+
     const observerOptions = {
       root: null,
-      rootMargin: '-10% 0px -40% 0px',
+      rootMargin: '-10% 0px -30% 0px',
       threshold: 0.1
+    };
+
+    const updateActiveSection = () => {
+      // Check if scrolled to bottom of page - if so, show "contato"
+      const scrolledToBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 50);
+      if (scrolledToBottom) {
+        setActiveSection('contato');
+        return;
+      }
+
+      // Get the order of nav items
+      const sectionOrder = ['sobre', 'habilidades', 'jornada', 'projetos', 'contato'];
+
+      // Find the first visible section in document order
+      for (const sectionId of sectionOrder) {
+        if (visibleSections.has(sectionId)) {
+          setActiveSection(sectionId);
+          return;
+        }
+      }
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+          visibleSections.add(entry.target.id);
+        } else {
+          visibleSections.delete(entry.target.id);
         }
       });
+
+      updateActiveSection();
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
     // Observe all sections
     navItems.forEach(item => {
-      const element = document.getElementById(item.id);
-      if (element) {
-        observer.observe(element);
+      const el = document.getElementById(item.id);
+      if (el) {
+        observer.observe(el);
       }
     });
 
-    return () => observer.disconnect();
+    // Also listen to scroll events to detect bottom of page
+    const handleScroll = () => {
+      updateActiveSection();
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [isMainPage, location.pathname]);
 
   // Handle hash in URL on page load
