@@ -25,7 +25,7 @@ const projectsData: Record<string, ProjectData> = {
         type: 'API REST',
         description: 'API RESTful desenvolvida em C# (.NET) para gerenciamento de dados, utilizando boas práticas de desenvolvimento e arquitetura limpa.',
         heroVideo: '/images/webAPI/demo.mp4',
-        heroImage: '/images/webAPI/foto1_index.png',
+        heroImage: '/images/webAPI/ImagemCapaApi.jpg',
         challenge: 'Desenvolver uma API robusta e escalável seguindo padrões de mercado e boas práticas de arquitetura de software, garantindo manutenibilidade e facilidade de extensão.',
         solution: 'Implementei uma API RESTful utilizando <strong class="text-white">C#</strong> e <strong class="text-white">.NET</strong>, aplicando conceitos de Clean Architecture, validação de dados e tratamento de erros. A arquitetura permite fácil integração com diferentes bancos de dados e serviços externos.',
         techStack: [
