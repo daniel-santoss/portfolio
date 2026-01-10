@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import OptimizedImage from '../components/OptimizedImage';
 
 interface ProjectData {
     title: string;
@@ -376,7 +377,7 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
                     onTouchMove={handleTouchMove}
                     onTouchEnd={handleTouchEnd}
                 >
-                    <img
+                    <OptimizedImage
                         src={images[currentIndex]}
                         alt={`Gallery image ${currentIndex + 1}`}
                         className={`max-w-full max-h-[55vh] md:max-h-[65vh] object-contain rounded-lg shadow-2xl select-none ${isDragging ? '' : 'transition-transform duration-200'}`}
@@ -404,7 +405,7 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
                             onClick={(e) => { e.stopPropagation(); setZoom(1); setPosition({ x: 0, y: 0 }); onNavigate(idx); }}
                             className={`w-10 h-10 md:w-12 md:h-12 rounded-lg overflow-hidden border-2 transition-all shrink-0 ${idx === currentIndex ? 'border-primary scale-110' : 'border-transparent opacity-60 hover:opacity-100'}`}
                         >
-                            <img src={img} alt="" className="w-full h-full object-cover" />
+                            <OptimizedImage src={img} alt="" className="w-full h-full object-cover" />
                         </button>
                     ))}
                 </div>

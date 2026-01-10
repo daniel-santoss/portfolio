@@ -1,47 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import OptimizedImage from '../components/OptimizedImage';
+
+// ==================== STATIC DATA ====================
+// Moving static data outside components to prevent re-creation on re-renders
+const educationStacks = [
+    { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+    { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { name: '.NET', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg' },
+    { name: 'C#', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
+    { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+    { name: 'Azure', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' }
+];
+
+const homeSocialLinks = [
+    {
+        name: 'LinkedIn',
+        logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg',
+        url: 'https://www.linkedin.com/in/daniel-vinicius-07a278275/',
+        newTab: true,
+        hoverColor: '#0A66C2'
+    },
+    {
+        name: 'GitHub',
+        logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg',
+        url: 'https://github.com/daniel-santoss',
+        newTab: true,
+        hoverColor: '#ffffff'
+    },
+    {
+        name: 'Email',
+        logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg',
+        url: 'mailto:danielvinicius.santos7@gmail.com',
+        newTab: false,
+        hoverColor: '#EA4335'
+    },
+    {
+        name: 'WhatsApp',
+        logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg',
+        url: 'https://wa.me/5511940564648',
+        newTab: true,
+        hoverColor: '#25D366'
+    }
+];
 
 // ==================== HOME SECTION ====================
 const HomeSection: React.FC = () => {
-    const educationStacks = [
-        { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
-        { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-        { name: '.NET', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg' },
-        { name: 'C#', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
-        { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-        { name: 'Azure', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' }
-    ];
-
-    const socialLinks = [
-        {
-            name: 'LinkedIn',
-            logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg',
-            url: 'https://www.linkedin.com/in/daniel-vinicius-07a278275/',
-            newTab: true,
-            hoverColor: '#0A66C2'
-        },
-        {
-            name: 'GitHub',
-            logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg',
-            url: 'https://github.com/daniel-santoss',
-            newTab: true,
-            hoverColor: '#ffffff'
-        },
-        {
-            name: 'Email',
-            logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg',
-            url: 'mailto:danielvinicius.santos7@gmail.com',
-            newTab: false,
-            hoverColor: '#EA4335'
-        },
-        {
-            name: 'WhatsApp',
-            logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg',
-            url: 'https://wa.me/5511940564648',
-            newTab: true,
-            hoverColor: '#25D366'
-        }
-    ];
 
     return (
         <section id="sobre" className="scroll-mt-20">
@@ -66,12 +70,12 @@ const HomeSection: React.FC = () => {
                             <figure className="w-full lg:w-[400px] flex justify-center">
                                 <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
                                     <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-secondary opacity-10 blur-3xl "></div>
-                                    <div
-                                        className="relative w-full h-full rounded-full animate-border-pulse overflow-hidden bg-surface-dark bg-cover bg-center"
-                                        style={{ backgroundImage: "url('/images/foto-d.jpeg')" }}
-                                        role="img"
-                                        aria-label="Portrait of a smiling software developer with a clean background"
-                                    >
+                                    <div className="relative w-full h-full rounded-full animate-border-pulse overflow-hidden bg-surface-dark">
+                                        <OptimizedImage
+                                            src="/images/foto-d.jpeg"
+                                            alt="Daniel Vinicius"
+                                            className="w-full h-full object-cover"
+                                        />
                                     </div>
                                 </div>
                             </figure>
@@ -88,7 +92,7 @@ const HomeSection: React.FC = () => {
                     <ul className="flex flex-wrap justify-center gap-4">
                         {educationStacks.map((stack, index) => (
                             <li key={index} className="flex h-10 items-center gap-x-3 rounded-full bg-surface-dark border border-secondary/20 pl-3 pr-5">
-                                <img src={stack.logo} alt={stack.name} className="w-5 h-5" />
+                                <OptimizedImage src={stack.logo} alt={stack.name} className="w-5 h-5" />
                                 <p className="text-white text-sm font-medium">{stack.name}</p>
                             </li>
                         ))}
@@ -100,20 +104,101 @@ const HomeSection: React.FC = () => {
 };
 
 // ==================== SKILLS SECTION ====================
-import { useState } from 'react';
+// useState já importado no topo
+
+const categories = [
+    'Todas',
+    'Front-end',
+    'Back-end',
+    'Banco de Dados',
+    'Cloud & DevOps',
+    'Infra e Segurança',
+    'Metodologias'
+];
+
+const skillCategories = [
+    {
+        id: 'Front-end',
+        icon: 'html',
+        title: 'Front-end',
+        skills: ['HTML', 'CSS', 'Tailwind CSS', 'Bootstrap', 'React', 'JavaScript', 'TypeScript', 'UI & UX Design', 'Figma']
+    },
+    {
+        id: 'Back-end',
+        icon: 'dns',
+        title: 'Back-end',
+        skills: ['.NET', 'C#', 'Entity Framework', 'C', 'SQL', 'APIs REST']
+    },
+    {
+        id: 'Banco de Dados',
+        icon: 'database',
+        title: 'Banco de Dados',
+        skills: ['MySQL', 'SQL Server', 'Supabase']
+    },
+    {
+        id: 'Cloud & DevOps',
+        icon: 'cloud',
+        title: 'Cloud & DevOps',
+        skills: ['Azure', 'Docker', 'CI/CD', 'Git', 'GitHub', 'GitLab']
+    },
+    {
+        id: 'Infra e Segurança',
+        icon: 'security',
+        title: 'Infraestrutura e Segurança',
+        skills: ['TCP/IP', 'VLANs', 'Gateway', 'DNS', 'Firewalls', 'VPNs', 'Antivírus', 'CID']
+    },
+    {
+        id: 'Metodologias',
+        icon: 'sprint',
+        title: 'Metodologias Ágeis',
+        skills: ['Scrum', 'Kanban', 'Jira', 'Trello']
+    }
+];
+
+const proficiencyLevels = [
+    {
+        level: 'Avançado',
+        icon: 'verified',
+        colorClass: 'text-primary',
+        borderColor: 'border-primary',
+        hoverBorder: 'hover:border-primary/30',
+        items: [
+            { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+            { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+            { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+            { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' }
+        ]
+    },
+    {
+        level: 'Intermediário',
+        icon: 'handyman',
+        colorClass: 'text-cyan-400',
+        borderColor: 'border-cyan-400',
+        hoverBorder: 'hover:border-cyan-400/30',
+        items: [
+            { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+            { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+            { name: 'C# / .NET', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
+            { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' }
+        ]
+    },
+    {
+        level: 'Básico',
+        icon: 'school',
+        colorClass: 'text-[#BB86FC]',
+        borderColor: 'border-[#BB86FC]',
+        hoverBorder: 'hover:border-[#BB86FC]/30',
+        items: [
+            { name: 'Cloud Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
+            { name: 'DevOps', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg' },
+            { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+            { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' }
+        ]
+    }
+];
 
 const SkillsSection: React.FC = () => {
     const [selectedCategories, setSelectedCategories] = useState<string[]>(['Todas']);
-
-    const categories = [
-        'Todas',
-        'Front-end',
-        'Back-end',
-        'Banco de Dados',
-        'Cloud & DevOps',
-        'Infra e Segurança',
-        'Metodologias'
-    ];
 
     const handleCategoryClick = (category: string) => {
         if (category === 'Todas') {
@@ -137,87 +222,6 @@ const SkillsSection: React.FC = () => {
 
     const isSelected = (category: string) => selectedCategories.includes(category);
     const shouldShow = (category: string) => selectedCategories.includes('Todas') || selectedCategories.includes(category);
-
-    const skillCategories = [
-        {
-            id: 'Front-end',
-            icon: 'html',
-            title: 'Front-end',
-            skills: ['HTML', 'CSS', 'Tailwind CSS', 'Bootstrap', 'React', 'JavaScript', 'TypeScript', 'UI & UX Design', 'Figma']
-        },
-        {
-            id: 'Back-end',
-            icon: 'dns',
-            title: 'Back-end',
-            skills: ['.NET', 'C#', 'Entity Framework', 'C', 'SQL', 'APIs REST']
-        },
-        {
-            id: 'Banco de Dados',
-            icon: 'database',
-            title: 'Banco de Dados',
-            skills: ['MySQL', 'SQL Server', 'Supabase']
-        },
-        {
-            id: 'Cloud & DevOps',
-            icon: 'cloud',
-            title: 'Cloud & DevOps',
-            skills: ['Azure', 'Docker', 'CI/CD', 'Git', 'GitHub', 'GitLab']
-        },
-        {
-            id: 'Infra e Segurança',
-            icon: 'security',
-            title: 'Infraestrutura e Segurança',
-            skills: ['TCP/IP', 'VLANs', 'Gateway', 'DNS', 'Firewalls', 'VPNs', 'Antivírus', 'CID']
-        },
-        {
-            id: 'Metodologias',
-            icon: 'sprint',
-            title: 'Metodologias Ágeis',
-            skills: ['Scrum', 'Kanban', 'Jira', 'Trello']
-        }
-    ];
-
-    const proficiencyLevels = [
-        {
-            level: 'Avançado',
-            icon: 'verified',
-            colorClass: 'text-primary',
-            borderColor: 'border-primary',
-            hoverBorder: 'hover:border-primary/30',
-            items: [
-                { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-                { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-                { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
-                { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' }
-            ]
-        },
-        {
-            level: 'Intermediário',
-            icon: 'handyman',
-            colorClass: 'text-cyan-400',
-            borderColor: 'border-cyan-400',
-            hoverBorder: 'hover:border-cyan-400/30',
-            items: [
-                { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-                { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-                { name: 'C# / .NET', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
-                { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' }
-            ]
-        },
-        {
-            level: 'Básico',
-            icon: 'school',
-            colorClass: 'text-[#BB86FC]',
-            borderColor: 'border-[#BB86FC]',
-            hoverBorder: 'hover:border-[#BB86FC]/30',
-            items: [
-                { name: 'Cloud Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
-                { name: 'DevOps', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg' },
-                { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-                { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' }
-            ]
-        }
-    ];
 
     return (
         <section id="habilidades" className="scroll-mt-20 flex flex-col items-center py-10 px-4 md:px-40 border-t border-white/10">
@@ -291,7 +295,7 @@ const SkillsSection: React.FC = () => {
                                     <ul className="flex flex-col gap-3">
                                         {levelData.items.map((item) => (
                                             <li key={item.name} className={`flex items-center gap-3 bg-white/5 p-3 rounded-lg border border-transparent ${levelData.hoverBorder} transition-colors`}>
-                                                <img alt={item.name} className="size-6 object-contain" src={item.icon} />
+                                                <OptimizedImage alt={item.name} className="size-6 object-contain" src={item.icon} />
                                                 <span className="font-semibold text-sm text-gray-200">{item.name}</span>
                                             </li>
                                         ))}
@@ -306,56 +310,57 @@ const SkillsSection: React.FC = () => {
     );
 };
 
+// ==================== STATIC DATA: EDUCATION ====================
+const educationTimeline = [
+    {
+        icon: 'code',
+        date: 'Previsão: 28/03/2026',
+        title: 'Bootcamp XP Inc. - Full Stack Developer',
+        institution: 'DIO (Digital Innovation One)',
+        description: 'Programa intensivo focado na formação Full Stack, abordando tecnologias como React com JavaScript e TypeScript, Next.js, .NET com C#, NoSQL, cloud com Azure e DevOps com docker.',
+        animate: true,
+        hasLine: true,
+        dateColor: 'text-primary font-bold'
+    },
+    {
+        icon: 'school',
+        date: 'Fev 2025 - Dez 2026 (Previsão)',
+        title: 'Análise e Desenvolvimento de Sistemas',
+        institution: 'Universidade Paulista (UNIP)',
+        description: 'Aprofundamento técnico com foco nos conteúdos estudados: Engenharia de Software, Banco de Dados, Programação Web e Mobile, além de Arquitetura de Sistemas e práticas ágeis de desenvolvimento.',
+        animate: true,
+        hasLine: true,
+        dateColor: 'text-primary font-bold'
+    },
+    {
+        icon: 'school',
+        date: 'Concluído em Dez 2024',
+        title: 'Técnico em Informática',
+        institution: 'ITB Brasílio Flores de Azevedo - FIEB',
+        description: 'Esta formação foi a base essencial para o meu começo em desenvolvimento de software, consolidando minha lógica de programação e introduzindo conceitos fundamentais de algoritmos e hardware.',
+        animate: false,
+        hasLine: false,
+        dateColor: 'text-[#637588] dark:text-primary font-medium'
+    }
+];
+
+const languages = [
+    {
+        flag: 'https://flagcdn.com/w40/br.png',
+        alt: 'Bandeira do Brasil',
+        name: 'Português',
+        level: 'Nativo'
+    },
+    {
+        flag: 'https://flagcdn.com/w40/us.png',
+        alt: 'Bandeira dos EUA',
+        name: 'Inglês',
+        level: 'Nível Técnico'
+    }
+];
+
 // ==================== EDUCATION SECTION ====================
 const EducationSection: React.FC = () => {
-    const educationTimeline = [
-        {
-            icon: 'code',
-            date: 'Previsão: 28/03/2026',
-            title: 'Bootcamp XP Inc. - Full Stack Developer',
-            institution: 'DIO (Digital Innovation One)',
-            description: 'Programa intensivo focado na formação Full Stack, abordando tecnologias como React com JavaScript e TypeScript, Next.js, .NET com C#, NoSQL, cloud com Azure e DevOps com docker.',
-            animate: true,
-            hasLine: true,
-            dateColor: 'text-primary font-bold'
-        },
-        {
-            icon: 'school',
-            date: 'Fev 2025 - Dez 2026 (Previsão)',
-            title: 'Análise e Desenvolvimento de Sistemas',
-            institution: 'Universidade Paulista (UNIP)',
-            description: 'Aprofundamento técnico com foco nos conteúdos estudados: Engenharia de Software, Banco de Dados, Programação Web e Mobile, além de Arquitetura de Sistemas e práticas ágeis de desenvolvimento.',
-            animate: true,
-            hasLine: true,
-            dateColor: 'text-primary font-bold'
-        },
-        {
-            icon: 'school',
-            date: 'Concluído em Dez 2024',
-            title: 'Técnico em Informática',
-            institution: 'ITB Brasílio Flores de Azevedo - FIEB',
-            description: 'Esta formação foi a base essencial para o meu começo em desenvolvimento de software, consolidando minha lógica de programação e introduzindo conceitos fundamentais de algoritmos e hardware.',
-            animate: false,
-            hasLine: false,
-            dateColor: 'text-[#637588] dark:text-primary font-medium'
-        }
-    ];
-
-    const languages = [
-        {
-            flag: 'https://flagcdn.com/w40/br.png',
-            alt: 'Bandeira do Brasil',
-            name: 'Português',
-            level: 'Nativo'
-        },
-        {
-            flag: 'https://flagcdn.com/w40/us.png',
-            alt: 'Bandeira dos EUA',
-            name: 'Inglês',
-            level: 'Nível Técnico'
-        }
-    ];
-
     return (
         <section id="jornada" className="scroll-mt-20 flex flex-col items-center px-4 md:px-40 py-10 border-t border-white/10">
             <div className="layout-content-container flex flex-col max-w-[1080px] w-full gap-10">
@@ -414,7 +419,7 @@ const EducationSection: React.FC = () => {
                                         <div className="flex-1">
                                             <div className="flex justify-between items-center">
                                                 <div className="flex items-center gap-3">
-                                                    <img alt={lang.alt} className="h-6 w-6 rounded-full object-cover shadow-sm" src={lang.flag} />
+                                                    <OptimizedImage alt={lang.alt} className="h-6 w-6 rounded-full object-cover shadow-sm" src={lang.flag} />
                                                     <p className="text-[#111418] dark:text-white font-bold text-lg">{lang.name}</p>
                                                 </div>
                                                 <span className="text-black text-xs font-bold bg-primary px-2 py-1 rounded">{lang.level}</span>
@@ -461,6 +466,7 @@ interface Project {
     repoLink: string;
 }
 
+// ==================== STATIC DATA: PROJECTS ====================
 const projectsData: Project[] = [
     {
         id: 1,
@@ -558,12 +564,12 @@ const ProjectsSection: React.FC = () => {
                 <section aria-label="Lista de Projetos" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredProjects.map((project) => (
                         <article key={project.id} className="group animate-fade-in flex flex-col rounded-xl shadow-md hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] transition-all duration-300 bg-[#33363B] border border-transparent hover:border-primary/30 overflow-hidden">
-                            <figure
-                                className="w-full h-48 bg-center bg-no-repeat bg-cover group-hover:scale-105 transition-transform duration-500 relative m-0"
-                                style={{ backgroundImage: `url("${project.image}")` }}
-                                role="img"
-                                aria-label={`Preview do projeto ${project.title}`}
-                            >
+                            <figure className="w-full h-48 relative m-0 overflow-hidden">
+                                <OptimizedImage
+                                    src={project.image}
+                                    alt={`Preview do projeto ${project.title}`}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
                             </figure>
                             <div className="flex flex-col p-5 gap-3 flex-1">
                                 <header>
@@ -605,39 +611,40 @@ const ProjectsSection: React.FC = () => {
     );
 };
 
+// ==================== STATIC DATA: CONTACT ====================
+const contactSocialLinks = [
+    {
+        name: 'LinkedIn',
+        logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg',
+        url: 'https://www.linkedin.com/in/daniel-vinicius-07a278275/',
+        newTab: true,
+        hoverColor: '#0A66C2'
+    },
+    {
+        name: 'GitHub',
+        logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg',
+        url: 'https://github.com/daniel-santoss',
+        newTab: true,
+        hoverColor: '#ffffff'
+    },
+    {
+        name: 'Email',
+        logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg',
+        url: 'mailto:danielvinicius.santos7@gmail.com',
+        newTab: false,
+        hoverColor: '#EA4335'
+    },
+    {
+        name: 'WhatsApp',
+        logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg',
+        url: 'https://wa.me/5511940564648',
+        newTab: true,
+        hoverColor: '#25D366'
+    }
+];
+
 // ==================== CONTACT SECTION ====================
 const ContactSection: React.FC = () => {
-    const socialLinks = [
-        {
-            name: 'LinkedIn',
-            logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg',
-            url: 'https://www.linkedin.com/in/daniel-vinicius-07a278275/',
-            newTab: true,
-            hoverColor: '#0A66C2'
-        },
-        {
-            name: 'GitHub',
-            logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg',
-            url: 'https://github.com/daniel-santoss',
-            newTab: true,
-            hoverColor: '#ffffff'
-        },
-        {
-            name: 'Email',
-            logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg',
-            url: 'mailto:danielvinicius.santos7@gmail.com',
-            newTab: false,
-            hoverColor: '#EA4335'
-        },
-        {
-            name: 'WhatsApp',
-            logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg',
-            url: 'https://wa.me/5511940564648',
-            newTab: true,
-            hoverColor: '#25D366'
-        }
-    ];
-
     return (
         <section id="contato" className="scroll-mt-20 w-full px-4 md:px-40 py-16 flex justify-center border-t border-white/10" aria-label="Links de Contato">
             <div className="max-w-[1080px] w-full flex flex-col items-center gap-10">
@@ -645,7 +652,7 @@ const ContactSection: React.FC = () => {
                     <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-white">Redes e Contato</h1>
                 </div>
                 <nav className="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full max-w-4xl">
-                    {socialLinks.map((link, index) => (
+                    {contactSocialLinks.map((link, index) => (
                         <a
                             key={index}
                             className="social-card flex flex-col items-center gap-4 p-6 rounded-2xl bg-surface-dark border border-secondary/10 hover:-translate-y-1 transition-all group"
@@ -675,7 +682,7 @@ const ContactSection: React.FC = () => {
                             }}
                         >
                             <div className="icon-container rounded-full bg-background-dark p-4 text-white transition-all duration-300 border border-secondary/10">
-                                <img src={link.logo} alt={link.name} className="w-8 h-8 invert group-hover:invert-0" />
+                                <OptimizedImage src={link.logo} alt={link.name} className="w-8 h-8 invert group-hover:invert-0" />
                             </div>
                             <span className="font-medium text-sm text-white group-hover:text-white transition-colors">{link.name}</span>
                         </a>

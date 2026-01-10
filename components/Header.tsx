@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
+// Navigation items for smooth scroll
+const navItems = [
+  { id: 'sobre', label: 'Sobre Mim' },
+  { id: 'habilidades', label: 'Habilidades e Tecnologias' },
+  { id: 'jornada', label: 'Jornada Acadêmica' },
+  { id: 'projetos', label: 'Projetos' },
+  { id: 'contato', label: 'Contato' },
+];
+
 const Header: React.FC = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,15 +18,6 @@ const Header: React.FC = () => {
   // Check if we're on the main single page (not project detail)
   const isMainPage = location.pathname === '/' || location.pathname === '';
   const isProjectDetail = location.pathname.includes('/project/');
-
-  // Navigation items for smooth scroll
-  const navItems = [
-    { id: 'sobre', label: 'Sobre Mim' },
-    { id: 'habilidades', label: 'Habilidades e Tecnologias' },
-    { id: 'jornada', label: 'Jornada Acadêmica' },
-    { id: 'projetos', label: 'Projetos' },
-    { id: 'contato', label: 'Contato' },
-  ];
 
   // Smooth scroll handler
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
