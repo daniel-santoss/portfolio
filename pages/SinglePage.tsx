@@ -464,24 +464,21 @@ interface Project {
 const projectsData: Project[] = [
     {
         id: 1,
-        title: 'E-commerce Fullstack Pro',
-        description: 'Plataforma de vendas completa desenvolvida para consolidar conhecimentos em fluxos de pagamento e gestão de estado complexa.',
+        title: 'Studio Tattoo INK',
+        description: 'Sistema web completo para gerenciamento de estúdio de tatuagem, com controle de agendamentos, artistas e galeria de trabalhos.',
         category: 'Front-end',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA69yISlUf4zqvEn7KTpGqD7KbkVbTefTDILsNe0QCb0lAfdhTE0WpgN63f2EcayB8sFjD2tdPt8Qh9BQEuTt_aebMSMZAciGKSJuWfwvULkIyt4t8LKwerUAleA9W-I3nvfn07aclgpc58c5CdSs3A91ojSTsrONQoLEEsfMXcd1Pn1-pFyL16fj5eZXSyIu5RS6sOndo4ctmeYUTYKdaczW2myMC3ovcNfKi5o0k-IYRbDWLxleuNeuCUQnQAQ4fz7X8Yzt35wuFv',
+        image: '/images/studioInk/capa.png',
         tags: [
-            { name: 'React', color: 'text-blue-200' },
+            { name: 'Tailwind CSS', color: 'text-blue-200' },
+            { name: 'React', color: 'text-cyan-200' },
             { name: 'TypeScript', color: 'text-blue-300' },
-            { name: 'Node.js', color: 'text-green-200' },
-            { name: 'Express', color: 'text-gray-200' },
-            { name: 'MongoDB', color: 'text-green-300' },
-            { name: 'Stripe API', color: 'text-purple-200' },
-            { name: 'TailwindCSS', color: 'text-cyan-200' }
+            { name: 'Vite', color: 'text-violet-200' }
         ],
-        challenge: 'Sincronizar o estado do carrinho entre múltiplas abas e garantir segurança na transação financeira.',
-        solution: 'Implementei Context API com persistência local e Webhooks para confirmação de pagamento real-time, aprofundando meu domínio no ciclo de vida do React.',
-        techStack: 'MVC • TDD',
-        demoLink: '#',
-        repoLink: '#'
+        challenge: 'Criar uma plataforma moderna e intuitiva para gestão de estúdio de tatuagem com múltiplas funcionalidades.',
+        solution: 'Desenvolvi uma aplicação web completa utilizando React 19 com TypeScript e Vite, implementando roteamento com React Router e uma interface responsiva e moderna.',
+        techStack: 'React • TypeScript • Vite',
+        demoLink: '/project/3',
+        repoLink: 'https://github.com/daniel-santoss/StudioTattooINK'
     },
     {
         id: 2,
@@ -493,7 +490,6 @@ const projectsData: Project[] = [
             { name: 'C', color: 'text-blue-200' },
             { name: 'GCC', color: 'text-yellow-200' },
             { name: 'File I/O', color: 'text-green-200' },
-            { name: 'Modular', color: 'text-blue-300' },
             { name: 'Terminal', color: 'text-gray-200' }
         ],
         challenge: 'Desenvolver um sistema completo com múltiplos perfis de usuário (Admin, Professor, Aluno) e persistência de dados em arquivos.',
@@ -511,7 +507,6 @@ const projectsData: Project[] = [
         tags: [
             { name: 'C#', color: 'text-purple-200' },
             { name: '.NET', color: 'text-violet-200' },
-            { name: 'REST API', color: 'text-blue-200' },
             { name: 'MySQL', color: 'text-orange-200' },
             { name: 'Entity Framework', color: 'text-purple-300' }
         ],

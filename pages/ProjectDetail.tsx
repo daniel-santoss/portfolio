@@ -7,7 +7,6 @@ interface ProjectData {
     date: string;
     type: string;
     description: string;
-    heroVideo?: string;
     heroImage?: string;
     challenge: string;
     solution: string;
@@ -15,16 +14,16 @@ interface ProjectData {
     gallery: string[];
     highlights: string[];
     repoLink: string;
+    deployLink?: string;
 }
 
 const projectsData: Record<string, ProjectData> = {
     '1': {
-        title: 'Web',
-        titleHighlight: 'Api',
-        date: '2024',
+        title: 'RESTful',
+        titleHighlight: ' API',
+        date: '2025',
         type: 'API REST',
         description: 'API RESTful desenvolvida em C# (.NET) para gerenciamento de dados, utilizando boas práticas de desenvolvimento e arquitetura limpa.',
-        heroVideo: '/images/webAPI/demo.mp4',
         heroImage: '/images/webAPI/ImagemCapaApi.jpg',
         challenge: 'Desenvolver uma API robusta e escalável seguindo padrões de mercado e boas práticas de arquitetura de software, garantindo manutenibilidade e facilidade de extensão.',
         solution: 'Implementei uma API RESTful utilizando <strong class="text-white">C#</strong> e <strong class="text-white">.NET</strong>, aplicando conceitos de Clean Architecture, validação de dados e tratamento de erros. A arquitetura permite fácil integração com diferentes bancos de dados e serviços externos.',
@@ -52,11 +51,12 @@ const projectsData: Record<string, ProjectData> = {
             'Estrutura de código organizada com Clean Architecture.',
             'Validação de dados e tratamento de erros robusto.'
         ],
-        repoLink: 'https://github.com/daniel-santoss/WebApi'
+        repoLink: 'https://github.com/daniel-santoss/WebApi',
+        deployLink: ''
     },
     '2': {
         title: 'PIM II - Sistema',
-        titleHighlight: 'Escolar',
+        titleHighlight: ' Escolar',
         date: '2024',
         type: 'SISTEMA CONSOLE',
         description: 'Sistema completo de gestão escolar via terminal, desenvolvido em C como projeto integrador do 2º semestre da faculdade.',
@@ -111,7 +111,69 @@ const projectsData: Record<string, ProjectData> = {
             'Persistência de dados em arquivos de texto com formato estruturado.',
             'Validação rigorosa de CPF, datas, notas e permissões por perfil.'
         ],
-        repoLink: 'https://github.com/daniel-santoss/PIM_II'
+        repoLink: 'https://github.com/daniel-santoss/PIM_II',
+        deployLink: ''
+    },
+    '3': {
+        title: 'Studio Tattoo',
+        titleHighlight: ' INK',
+        date: '2025',
+        type: 'WEB APP',
+        description: 'Sistema web completo para gerenciamento de estúdio de tatuagem, desenvolvido com React e TypeScript, oferecendo controle de agendamentos, artistas e galeria de trabalhos.',
+        heroImage: '/images/studioInk/capa.png',
+        challenge: 'Criar uma plataforma moderna e intuitiva para gestão de estúdio de tatuagem que permita gerenciar artistas, agendamentos e portfólio de trabalhos de forma eficiente.',
+        solution: 'Desenvolvi uma aplicação web completa utilizando <strong class="text-white">React 19</strong> com <strong class="text-white">TypeScript</strong> e <strong class="text-white">Vite</strong>, implementando roteamento com React Router e uma interface responsiva e moderna. O sistema permite gerenciamento de artistas, agendamentos e exibição de galeria de trabalhos.',
+        techStack: [
+            { name: 'React', color: '#61DAFB' },
+            { name: 'TypeScript', color: '#3178C6' },
+            { name: 'Vite', color: '#646CFF' },
+            { name: 'React Router', color: '#CA4245' },
+            { name: 'CSS', color: '#264DE4' }
+        ],
+        gallery: [
+            '/images/studioInk/imagem1.png',
+            '/images/studioInk/imagem2.png',
+            '/images/studioInk/imagem3.png',
+            '/images/studioInk/imagem4.png',
+            '/images/studioInk/imagem5.png',
+            '/images/studioInk/imagem6.png',
+            '/images/studioInk/imagem7.png',
+            '/images/studioInk/imagem8.png',
+            '/images/studioInk/imagem9.png',
+            '/images/studioInk/imagem10.png',
+            '/images/studioInk/imagem11.png',
+            '/images/studioInk/imagem12.png',
+            '/images/studioInk/imagem13.png',
+            '/images/studioInk/imagem14.png',
+            '/images/studioInk/imagem15.png',
+            '/images/studioInk/imagem16.png',
+            '/images/studioInk/imagem17.png',
+            '/images/studioInk/imagem18.png',
+            '/images/studioInk/imagem19.png',
+            '/images/studioInk/imagem20.png',
+            '/images/studioInk/imagem21.png',
+            '/images/studioInk/imagem22.png',
+            '/images/studioInk/imagem23.png',
+            '/images/studioInk/imagem24.png',
+            '/images/studioInk/imagem25.png',
+            '/images/studioInk/imagem26.png',
+            '/images/studioInk/imagem27.png',
+            '/images/studioInk/imagem28.png',
+            '/images/studioInk/imagem29.png',
+            '/images/studioInk/imagem30.png',
+            '/images/studioInk/imagem31.png',
+            '/images/studioInk/imagem32.png',
+            '/images/studioInk/imagem33.png'
+        ],
+        highlights: [
+            'Interface moderna e responsiva para dispositivos móveis e desktop.',
+            'Sistema de roteamento com React Router para navegação fluida.',
+            'Arquitetura modular e tipagem forte com TypeScript.',
+            'Build otimizado com Vite para performance máxima.',
+            'Gestão completa de artistas, agendamentos e galeria de trabalhos.'
+        ],
+        repoLink: 'https://github.com/daniel-santoss/StudioTattooINK',
+        deployLink: ''
     }
 };
 
@@ -149,57 +211,65 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
 
     return (
         <div
-            className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center"
+            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex flex-col"
             onClick={onClose}
             onKeyDown={handleKeyDown}
             tabIndex={0}
         >
-            <button
-                className="absolute top-6 right-6 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                onClick={onClose}
-            >
-                <span className="material-symbols-outlined text-white text-2xl">close</span>
-            </button>
-
-            <div className="absolute top-6 left-6 text-white/70 text-sm font-medium">
-                {currentIndex + 1} / {images.length}
+            {/* Header com contador e botão fechar */}
+            <div className="flex items-center justify-between px-6 py-4">
+                <div className="text-white/70 text-sm font-medium">
+                    {currentIndex + 1} / {images.length}
+                </div>
+                <button
+                    className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                    onClick={onClose}
+                >
+                    <span className="material-symbols-outlined text-white text-2xl">close</span>
+                </button>
             </div>
 
-            <button
-                className="absolute left-4 md:left-8 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                onClick={(e) => { e.stopPropagation(); handlePrev(); }}
-            >
-                <span className="material-symbols-outlined text-white text-3xl">chevron_left</span>
-            </button>
+            {/* Área principal da imagem */}
+            <div className="flex-1 flex items-center justify-center px-16 relative">
+                <button
+                    className="absolute left-4 md:left-8 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                    onClick={(e) => { e.stopPropagation(); handlePrev(); }}
+                >
+                    <span className="material-symbols-outlined text-white text-3xl">chevron_left</span>
+                </button>
 
-            <div
-                className="max-w-[90vw] max-h-[85vh] flex items-center justify-center"
-                onClick={(e) => e.stopPropagation()}
-            >
-                <img
-                    src={images[currentIndex]}
-                    alt={`Gallery image ${currentIndex + 1}`}
-                    className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
-                />
+                <div
+                    className="max-w-[85vw] max-h-[65vh] flex items-center justify-center"
+                    onClick={(e) => e.stopPropagation()}
+                >
+                    <img
+                        src={images[currentIndex]}
+                        alt={`Gallery image ${currentIndex + 1}`}
+                        className="max-w-full max-h-[65vh] object-contain rounded-lg shadow-2xl"
+                    />
+                </div>
+
+                <button
+                    className="absolute right-4 md:right-8 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                    onClick={(e) => { e.stopPropagation(); handleNext(); }}
+                >
+                    <span className="material-symbols-outlined text-white text-3xl">chevron_right</span>
+                </button>
             </div>
 
-            <button
-                className="absolute right-4 md:right-8 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                onClick={(e) => { e.stopPropagation(); handleNext(); }}
-            >
-                <span className="material-symbols-outlined text-white text-3xl">chevron_right</span>
-            </button>
-
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 px-4 py-2 bg-black/50 rounded-full max-w-[90vw] overflow-x-auto">
-                {images.map((img, idx) => (
-                    <button
-                        key={idx}
-                        onClick={(e) => { e.stopPropagation(); onNavigate(idx); }}
-                        className={`w-12 h-12 rounded-lg overflow-hidden border-2 transition-all shrink-0 ${idx === currentIndex ? 'border-primary scale-110' : 'border-transparent opacity-60 hover:opacity-100'}`}
-                    >
-                        <img src={img} alt="" className="w-full h-full object-cover" />
-                    </button>
-                ))}
+            {/* Barra de miniaturas */}
+            <div className="py-4 px-6">
+                <div className="flex gap-2 justify-center max-w-[90vw] mx-auto overflow-x-auto py-2">
+                    {images.map((img, idx) => (
+                        <button
+                            key={idx}
+                            onClick={(e) => { e.stopPropagation(); onNavigate(idx); }}
+                            className={`w-12 h-12 rounded-lg overflow-hidden border-2 transition-all shrink-0 ${idx === currentIndex ? 'border-primary scale-110' : 'border-transparent opacity-60 hover:opacity-100'}`}
+                        >
+                            <img src={img} alt="" className="w-full h-full object-cover" />
+                        </button>
+                    ))}
+                </div>
             </div>
         </div>
     );
@@ -212,7 +282,6 @@ const ProjectDetail: React.FC = () => {
 
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [lightboxIndex, setLightboxIndex] = useState(0);
-    const [videoError, setVideoError] = useState(false);
 
     const openLightbox = (index: number) => {
         setLightboxIndex(index);
@@ -229,9 +298,6 @@ const ProjectDetail: React.FC = () => {
             </div>
         );
     }
-
-    const previewImages = project.gallery.slice(0, 3);
-    const remainingCount = project.gallery.length - 3;
 
     return (
         <div className="bg-background-dark min-h-screen text-white font-public">
@@ -275,138 +341,93 @@ const ProjectDetail: React.FC = () => {
                             Voltar para Projetos
                         </Link>
                     </div>
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-                        <div className="lg:col-span-7 flex flex-col gap-6">
-                            <figure className="relative w-full rounded-2xl overflow-hidden bg-surface-dark border border-white/5 shadow-2xl aspect-video group">
-                                {project.heroVideo && !videoError ? (
-                                    <video
-                                        className="w-full h-full object-cover"
-                                        controls
-                                        poster={project.heroImage}
-                                        onError={() => setVideoError(true)}
-                                    >
-                                        <source src={project.heroVideo} type="video/mp4" />
-                                        <source src={project.heroVideo.replace('.mp4', '.webm')} type="video/webm" />
-                                        Seu navegador não suporta vídeos.
-                                    </video>
-                                ) : (
-                                    <>
-                                        <div className="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-end p-6">
-                                            <span className="text-white text-sm font-medium px-3 py-1 bg-black/50 backdrop-blur rounded-full border border-white/10">
-                                                {project.heroVideo ? 'Vídeo em breve' : 'Preview do projeto'}
-                                            </span>
-                                        </div>
-                                        <div
-                                            className="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-105 cursor-pointer"
-                                            style={{ backgroundImage: `url("${project.heroImage}")` }}
-                                            role="img"
-                                            aria-label="Preview do projeto"
-                                            onClick={() => openLightbox(0)}
-                                        />
-                                        {project.heroVideo && (
-                                            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                                <div className="size-16 rounded-full bg-primary/90 backdrop-blur flex items-center justify-center shadow-[0_0_30px_rgba(57,255,20,0.5)]">
-                                                    <span className="material-symbols-outlined text-background-dark text-4xl">play_arrow</span>
-                                                </div>
-                                            </div>
-                                        )}
-                                    </>
-                                )}
-                            </figure>
+                    {/* Hero Section - Layout 2 colunas */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12 items-start">
+                        {/* Coluna Esquerda - Informações */}
+                        <header className="space-y-6">
+                            <div className="flex items-center gap-3">
+                                <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 rounded-full border border-primary/20">{project.type}</span>
+                                <span className="text-gray-500 text-sm flex items-center gap-1">
+                                    <span className="material-symbols-outlined text-base">calendar_month</span>
+                                    {project.date}
+                                </span>
+                            </div>
+                            <h1 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
+                                {project.title}<span className="text-primary">{project.titleHighlight}</span>
+                            </h1>
+                            <p className="text-lg text-gray-400 leading-relaxed">{project.description}</p>
 
-                            <section aria-label="Tecnologias Utilizadas" className="flex flex-wrap gap-3">
+                            {/* Tech Stack */}
+                            <div className="flex flex-wrap gap-2">
                                 {project.techStack.map((tech, index) => (
-                                    <div key={index} className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors cursor-default">
+                                    <div key={index} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors">
                                         <span className="size-2 rounded-full" style={{ backgroundColor: tech.color }}></span>
                                         <span className="text-sm font-medium text-gray-300">{tech.name}</span>
                                     </div>
                                 ))}
-                            </section>
-
-                            <section aria-label="Galeria do Projeto" className="grid grid-cols-3 gap-4">
-                                {previewImages.map((image, index) => (
-                                    <figure
-                                        key={index}
-                                        className="aspect-[4/3] rounded-xl bg-surface-dark overflow-hidden cursor-pointer border-2 border-transparent hover:border-primary/50 relative group transition-all"
-                                        onClick={() => openLightbox(index)}
-                                    >
-                                        <img
-                                            src={image}
-                                            alt={`Project image ${index + 1}`}
-                                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                                        />
-                                        {index === 2 && remainingCount > 0 && (
-                                            <div className="absolute inset-0 bg-black/60 flex items-center justify-center group-hover:bg-black/70 transition-colors">
-                                                <span className="text-white text-lg font-bold">+{remainingCount} fotos</span>
-                                            </div>
-                                        )}
-                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                            <span className="material-symbols-outlined text-white text-3xl drop-shadow-lg">zoom_in</span>
-                                        </div>
-                                    </figure>
-                                ))}
-                            </section>
-
-                            <section className="bg-surface-dark rounded-2xl p-6 border border-white/5" aria-labelledby="destaques-tecnicos">
-                                <h4 id="destaques-tecnicos" className="text-white font-bold mb-4 flex items-center gap-2">
-                                    <span className="material-symbols-outlined text-primary">stars</span>
-                                    Destaques Técnicos
-                                </h4>
-                                <ul className="space-y-3">
-                                    {project.highlights.map((highlight, index) => (
-                                        <li key={index} className="flex items-start gap-3 text-gray-300 text-sm">
-                                            <span className="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
-                                            <span>{highlight}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </section>
-                        </div>
-
-                        <div className="lg:col-span-5 flex flex-col h-full">
-                            <div className="sticky top-24 flex flex-col gap-8">
-                                <header className="space-y-3">
-                                    <div className="flex items-center gap-3">
-                                        <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 rounded-full border border-primary/20">{project.type}</span>
-                                        <span className="text-gray-500 text-sm flex items-center gap-1">
-                                            <span className="material-symbols-outlined text-base">calendar_month</span>
-                                            {project.date}
-                                        </span>
-                                    </div>
-                                    <h1 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
-                                        {project.title}<span className="text-primary">{project.titleHighlight}</span>
-                                    </h1>
-                                    <p className="text-lg text-gray-400 leading-relaxed">{project.description}</p>
-                                </header>
-                                <div className="flex flex-col sm:flex-row gap-4">
-                                    <a className="flex-1 h-14 bg-primary text-background-dark font-bold text-base rounded-full flex items-center justify-center gap-2 hover:bg-accent-hover hover:shadow-[0_0_20px_rgba(57,255,20,0.4)] transition-all" href={project.repoLink} target="_blank" rel="noopener noreferrer">
-                                        <span className="material-symbols-outlined">code</span>
-                                        Ver no GitHub
-                                    </a>
-                                </div>
-                                <div className="border-t border-white/10 my-2"></div>
-                                <div className="space-y-8">
-                                    <section className="group">
-                                        <div className="flex items-center gap-3 mb-3">
-                                            <div className="size-10 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 flex items-center justify-center">
-                                                <span className="material-symbols-outlined">flag</span>
-                                            </div>
-                                            <h3 className="text-xl font-bold text-white">O Desafio</h3>
-                                        </div>
-                                        <p className="text-gray-400 leading-relaxed pl-[3.25rem]">{project.challenge}</p>
-                                    </section>
-                                    <section className="group">
-                                        <div className="flex items-center gap-3 mb-3">
-                                            <div className="size-10 rounded-full bg-primary/10 text-primary border border-primary/20 flex items-center justify-center">
-                                                <span className="material-symbols-outlined">lightbulb</span>
-                                            </div>
-                                            <h3 className="text-xl font-bold text-white">A Solução</h3>
-                                        </div>
-                                        <p className="text-gray-400 leading-relaxed pl-[3.25rem]" dangerouslySetInnerHTML={{ __html: project.solution }}></p>
-                                    </section>
-                                </div>
                             </div>
-                        </div>
+
+                            <div className="flex flex-wrap gap-3">
+                                <button
+                                    onClick={() => openLightbox(0)}
+                                    className="inline-flex h-12 px-6 bg-surface-dark text-white font-bold text-sm rounded-full items-center justify-center gap-2 border border-white/10 hover:border-primary/50 hover:bg-surface-dark/80 transition-all"
+                                >
+                                    <span className="material-symbols-outlined text-lg">photo_library</span>
+                                    Ver Fotos ({project.gallery.length})
+                                </button>
+                                <a className="inline-flex h-12 px-6 bg-primary text-background-dark font-bold text-sm rounded-full items-center justify-center gap-2 hover:bg-accent-hover hover:shadow-[0_0_20px_rgba(57,255,20,0.4)] transition-all" href={project.repoLink} target="_blank" rel="noopener noreferrer">
+                                    <span className="material-symbols-outlined text-lg">code</span>
+                                    Ver no GitHub
+                                </a>
+                                {project.deployLink && (
+                                    <a className="inline-flex h-12 px-6 bg-surface-dark text-white font-bold text-sm rounded-full items-center justify-center gap-2 border border-white/10 hover:border-primary/50 hover:bg-surface-dark/80 transition-all" href={project.deployLink} target="_blank" rel="noopener noreferrer">
+                                        <span className="material-symbols-outlined text-lg">rocket_launch</span>
+                                        Ver Deploy
+                                    </a>
+                                )}
+                            </div>
+                        </header>
+
+                        {/* Coluna Direita - Destaques Técnicos */}
+                        <section className="bg-surface-dark rounded-2xl p-6 border border-white/5" aria-labelledby="destaques-tecnicos">
+                            <h4 id="destaques-tecnicos" className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                <span className="material-symbols-outlined text-primary">stars</span>
+                                Destaques Técnicos
+                            </h4>
+                            <ul className="space-y-4">
+                                {project.highlights.map((highlight, index) => (
+                                    <li key={index} className="flex items-start gap-3 text-gray-300">
+                                        <span className="material-symbols-outlined text-primary text-xl mt-0.5">check_circle</span>
+                                        <span className="leading-relaxed">{highlight}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </section>
+                    </div>
+
+                    {/* Desafio e Solução - Grid de 2 colunas */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        {/* Desafio - Esquerda */}
+                        <section className="bg-surface-dark rounded-2xl p-6 border border-white/5">
+                            <div className="flex items-center gap-3 mb-4">
+                                <div className="size-10 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 flex items-center justify-center">
+                                    <span className="material-symbols-outlined">flag</span>
+                                </div>
+                                <h3 className="text-xl font-bold text-white">O Desafio</h3>
+                            </div>
+                            <p className="text-gray-400 leading-relaxed">{project.challenge}</p>
+                        </section>
+
+                        {/* Solução - Direita */}
+                        <section className="bg-surface-dark rounded-2xl p-6 border border-white/5">
+                            <div className="flex items-center gap-3 mb-4">
+                                <div className="size-10 rounded-full bg-primary/10 text-primary border border-primary/20 flex items-center justify-center">
+                                    <span className="material-symbols-outlined">lightbulb</span>
+                                </div>
+                                <h3 className="text-xl font-bold text-white">A Solução</h3>
+                            </div>
+                            <p className="text-gray-400 leading-relaxed" dangerouslySetInnerHTML={{ __html: project.solution }}></p>
+                        </section>
                     </div>
                     <nav aria-label="Navegação entre projetos" className="mt-20 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
                         {navigation.prev ? (
