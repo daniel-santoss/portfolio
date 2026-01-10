@@ -465,7 +465,7 @@ const projectsData: Project[] = [
     {
         id: 1,
         title: 'Studio Tattoo INK',
-        description: 'Sistema web completo para gerenciamento de estúdio de tatuagem, com controle de agendamentos, artistas e galeria de trabalhos.',
+        description: 'Interface web moderna para estúdio de tatuagem, focada em UI/UX. Projeto front-end com páginas de agendamento, portfólio de artistas e galeria.',
         category: 'Front-end',
         image: '/images/studioInk/capa.png',
         tags: [
@@ -477,12 +477,12 @@ const projectsData: Project[] = [
         challenge: 'Criar uma plataforma moderna e intuitiva para gestão de estúdio de tatuagem com múltiplas funcionalidades.',
         solution: 'Desenvolvi uma aplicação web completa utilizando React 19 com TypeScript e Vite, implementando roteamento com React Router e uma interface responsiva e moderna.',
         techStack: 'React • TypeScript • Vite',
-        demoLink: '/project/3',
+        demoLink: '/project/1',
         repoLink: 'https://github.com/daniel-santoss/StudioTattooINK'
     },
     {
         id: 2,
-        title: 'PIM II - Sistema Escolar',
+        title: 'Sistema Escolar',
         description: 'Sistema completo de gestão escolar via terminal, desenvolvido em C como projeto integrador do 2º semestre da faculdade.',
         category: 'Back-end',
         image: '/images/PimConsole/ImagemCapaPim.png',
@@ -505,15 +505,15 @@ const projectsData: Project[] = [
         category: 'Back-end',
         image: '/images/webAPI/ImagemCapaApi.jpg',
         tags: [
-            { name: 'C#', color: 'text-purple-200' },
             { name: '.NET', color: 'text-violet-200' },
+            { name: 'C#', color: 'text-purple-200' },
             { name: 'MySQL', color: 'text-orange-200' },
             { name: 'Entity Framework', color: 'text-purple-300' }
         ],
         challenge: 'Desenvolver uma API robusta e escalável seguindo as boas práticas de arquitetura de software.',
         solution: 'Implementei uma API RESTful utilizando C# e .NET, aplicando conceitos de Clean Architecture, validação de dados e tratamento de erros. Aprofundei conhecimentos em desenvolvimento backend e padrões de projeto.',
         techStack: 'REST • Clean Architecture',
-        demoLink: '/project/1',
+        demoLink: '/project/3',
         repoLink: 'https://github.com/daniel-santoss/WebApi'
     }
 ];
@@ -564,7 +564,6 @@ const ProjectsSection: React.FC = () => {
                                 role="img"
                                 aria-label={`Preview do projeto ${project.title}`}
                             >
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#33363B] to-transparent opacity-60"></div>
                             </figure>
                             <div className="flex flex-col p-5 gap-3 flex-1">
                                 <header>
@@ -592,7 +591,7 @@ const ProjectsSection: React.FC = () => {
                                                 <span className="material-symbols-outlined text-xl group-hover/btn:scale-110 transition-transform">visibility</span>
                                             </a>
                                         )}
-                                        <a className="flex items-center justify-center size-9 rounded-full bg-primary hover:bg-[#32d411] text-[#1A1C20] transition-colors shadow-lg shadow-primary/20" href={project.repoLink} title="GitHub">
+                                        <a className="flex items-center justify-center size-9 rounded-full bg-primary hover:bg-[#32d411] text-[#1A1C20] transition-colors shadow-lg shadow-primary/20" href={project.repoLink} target="_blank" rel="noopener noreferrer" title="GitHub">
                                             <span className="material-symbols-outlined text-lg">code</span>
                                         </a>
                                     </div>

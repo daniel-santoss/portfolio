@@ -19,55 +19,78 @@ interface ProjectData {
 
 const projectsData: Record<string, ProjectData> = {
     '1': {
-        title: 'RESTful',
-        titleHighlight: ' API',
+        title: 'Studio Tattoo',
+        titleHighlight: ' INK',
         date: '2025',
-        type: 'API REST',
-        description: 'API RESTful desenvolvida em C# (.NET) para gerenciamento de dados, utilizando boas práticas de desenvolvimento e arquitetura limpa.',
-        heroImage: '/images/webAPI/ImagemCapaApi.jpg',
-        challenge: 'Desenvolver uma API robusta e escalável seguindo padrões de mercado e boas práticas de arquitetura de software, garantindo manutenibilidade e facilidade de extensão.',
-        solution: 'Implementei uma API RESTful utilizando <strong class="text-white">C#</strong> e <strong class="text-white">.NET</strong>, aplicando conceitos de Clean Architecture, validação de dados e tratamento de erros. A arquitetura permite fácil integração com diferentes bancos de dados e serviços externos.',
+        type: 'FRONT-END',
+        description: 'Interface web moderna para estúdio de tatuagem, focada em UI/UX. Projeto front-end desenvolvido com React e TypeScript, apresentando páginas de agendamento, portfólio de artistas e galeria de trabalhos.',
+        heroImage: '/images/studioInk/capa.png',
+        challenge: 'Desenvolver uma interface moderna, responsiva e intuitiva para um estúdio de tatuagem, focando na experiência do usuário e na apresentação visual do conteúdo.',
+        solution: 'Criei uma aplicação <strong class="text-white">front-end completa</strong> utilizando <strong class="text-white">React 19</strong> com <strong class="text-white">TypeScript</strong> e <strong class="text-white">Vite</strong>. O projeto foca na experiência visual e navegação fluida, sem backend - ideal para demonstrar habilidades em componentização, roteamento e estilização.',
         techStack: [
-            { name: 'C#', color: '#9B4F96' },
-            { name: '.NET', color: '#512BD4' },
-            { name: 'REST API', color: '#61DAFB' },
-            { name: 'MySQL', color: '#4479A1' },
-            { name: 'Entity Framework', color: '#68217A' }
+            { name: 'Tailwind CSS', color: '#264DE4' },
+            { name: 'React', color: '#61DAFB' },
+            { name: 'TypeScript', color: '#3178C6' },
+            { name: 'Vite', color: '#646CFF' }
         ],
         gallery: [
-            '/images/webAPI/foto1_index.png',
-            '/images/webAPI/foto2_mario.png',
-            '/images/webAPI/foto3_bowser.png',
-            '/images/webAPI/foto4_get.png',
-            '/images/webAPI/foto5_getID.png',
-            '/images/webAPI/foto6_putP1.png',
-            '/images/webAPI/foto6_putP2.png',
-            '/images/webAPI/foto7_getAtualizado.png',
-            '/images/webAPI/foto8_delete.png',
-            '/images/webAPI/foto9_getFinal.png'
+            '/images/studioInk/imagem1.png',
+            '/images/studioInk/imagem2.png',
+            '/images/studioInk/imagem3.png',
+            '/images/studioInk/imagem4.png',
+            '/images/studioInk/imagem5.png',
+            '/images/studioInk/imagem6.png',
+            '/images/studioInk/imagem7.png',
+            '/images/studioInk/imagem8.png',
+            '/images/studioInk/imagem9.png',
+            '/images/studioInk/imagem10.png',
+            '/images/studioInk/imagem11.png',
+            '/images/studioInk/imagem12.png',
+            '/images/studioInk/imagem13.png',
+            '/images/studioInk/imagem14.png',
+            '/images/studioInk/imagem15.png',
+            '/images/studioInk/imagem16.png',
+            '/images/studioInk/imagem17.png',
+            '/images/studioInk/imagem18.png',
+            '/images/studioInk/imagem19.png',
+            '/images/studioInk/imagem20.png',
+            '/images/studioInk/imagem21.png',
+            '/images/studioInk/imagem22.png',
+            '/images/studioInk/imagem23.png',
+            '/images/studioInk/imagem24.png',
+            '/images/studioInk/imagem25.png',
+            '/images/studioInk/imagem26.png',
+            '/images/studioInk/imagem27.png',
+            '/images/studioInk/imagem28.png',
+            '/images/studioInk/imagem29.png',
+            '/images/studioInk/imagem30.png',
+            '/images/studioInk/imagem31.png',
+            '/images/studioInk/imagem32.png',
+            '/images/studioInk/imagem33.png'
         ],
         highlights: [
-            'Arquitetura RESTful seguindo boas práticas de API design.',
-            'Estrutura de código organizada com Clean Architecture.',
-            'Validação de dados e tratamento de erros robusto.'
+            'Interface moderna e totalmente responsiva para mobile e desktop.',
+            'Componentização eficiente com React e tipagem forte em TypeScript.',
+            'Navegação fluida entre páginas utilizando React Router.',
+            'Estilização com Tailwind CSS para design consistente e customizável.',
+            'Build otimizado com Vite para carregamento rápido.'
         ],
-        repoLink: 'https://github.com/daniel-santoss/WebApi',
+        repoLink: 'https://github.com/daniel-santoss/StudioTattooINK',
         deployLink: ''
     },
     '2': {
         title: 'PIM II - Sistema',
         titleHighlight: ' Escolar',
-        date: '2024',
+        date: '2025',
         type: 'SISTEMA CONSOLE',
         description: 'Sistema completo de gestão escolar via terminal, desenvolvido em C como projeto integrador do 2º semestre da faculdade.',
         heroImage: '/images/PimConsole/ImagemCapaPim.png',
-        challenge: 'Desenvolver um sistema completo com múltiplos perfis de usuário (Admin, Professor, Aluno) e persistência de dados em arquivos, garantindo integridade e validação rigorosa.',
+        challenge: 'Desenvolver um sistema completo com múltiplos perfis de usuário (Admin, Professor, Aluno), onde os dados possam ser salvos em arquivos de texto, além de validações de entradas e permissões por perfil.',
         solution: 'Implementei uma arquitetura modular com <strong class="text-white">7 módulos principais</strong> e <strong class="text-white">6 estruturas de dados</strong>, totalizando ~2800 linhas de código em C ANSI. O sistema gerencia turmas, alunos, professores, aulas, atividades, notas e presenças com controle de permissões por perfil.',
         techStack: [
             { name: 'C', color: '#A8B9CC' },
             { name: 'GCC', color: '#FFCB2B' },
             { name: 'File I/O', color: '#4CAF50' },
-            { name: 'Modular', color: '#2196F3' },
             { name: 'Terminal', color: '#607D8B' }
         ],
         gallery: [
@@ -108,71 +131,45 @@ const projectsData: Record<string, ProjectData> = {
             'Sistema de login com 3 perfis: Administrador, Professor e Aluno.',
             'Gestão completa de turmas, alunos, professores, aulas e atividades.',
             'Diário eletrônico com lançamento de notas e controle de presenças.',
-            'Persistência de dados em arquivos de texto com formato estruturado.',
-            'Validação rigorosa de CPF, datas, notas e permissões por perfil.'
+            'Dados salvos em arquivos de texto com formato estruturado.',
+            'Validação de CPF, datas, notas e permissões por perfil.'
         ],
         repoLink: 'https://github.com/daniel-santoss/PIM_II',
         deployLink: ''
     },
     '3': {
-        title: 'Studio Tattoo',
-        titleHighlight: ' INK',
+        title: 'RESTful',
+        titleHighlight: ' API',
         date: '2025',
-        type: 'WEB APP',
-        description: 'Sistema web completo para gerenciamento de estúdio de tatuagem, desenvolvido com React e TypeScript, oferecendo controle de agendamentos, artistas e galeria de trabalhos.',
-        heroImage: '/images/studioInk/capa.png',
-        challenge: 'Criar uma plataforma moderna e intuitiva para gestão de estúdio de tatuagem que permita gerenciar artistas, agendamentos e portfólio de trabalhos de forma eficiente.',
-        solution: 'Desenvolvi uma aplicação web completa utilizando <strong class="text-white">React 19</strong> com <strong class="text-white">TypeScript</strong> e <strong class="text-white">Vite</strong>, implementando roteamento com React Router e uma interface responsiva e moderna. O sistema permite gerenciamento de artistas, agendamentos e exibição de galeria de trabalhos.',
+        type: 'API REST',
+        description: 'API RESTful desenvolvida em C# (.NET) para gerenciamento de dados, utilizando boas práticas de desenvolvimento e arquitetura limpa.',
+        heroImage: '/images/webAPI/ImagemCapaApi.jpg',
+        challenge: 'Desenvolver uma API robusta e escalável seguindo as boas práticas de arquitetura de software, garantindo manutenibilidade e facilidade de extensão.',
+        solution: 'Implementei uma API RESTful utilizando <strong class="text-white">C#</strong> e <strong class="text-white">.NET</strong>, aplicando conceitos de Clean Architecture, validação de dados e tratamento de erros. A arquitetura permite fácil integração com diferentes bancos de dados e serviços externos.',
         techStack: [
-            { name: 'React', color: '#61DAFB' },
-            { name: 'TypeScript', color: '#3178C6' },
-            { name: 'Vite', color: '#646CFF' },
-            { name: 'React Router', color: '#CA4245' },
-            { name: 'CSS', color: '#264DE4' }
+            { name: '.NET', color: '#512BD4' },
+            { name: 'C#', color: '#9B4F96' },
+            { name: 'MySQL', color: '#4479A1' },
+            { name: 'Entity Framework', color: '#68217A' }
         ],
         gallery: [
-            '/images/studioInk/imagem1.png',
-            '/images/studioInk/imagem2.png',
-            '/images/studioInk/imagem3.png',
-            '/images/studioInk/imagem4.png',
-            '/images/studioInk/imagem5.png',
-            '/images/studioInk/imagem6.png',
-            '/images/studioInk/imagem7.png',
-            '/images/studioInk/imagem8.png',
-            '/images/studioInk/imagem9.png',
-            '/images/studioInk/imagem10.png',
-            '/images/studioInk/imagem11.png',
-            '/images/studioInk/imagem12.png',
-            '/images/studioInk/imagem13.png',
-            '/images/studioInk/imagem14.png',
-            '/images/studioInk/imagem15.png',
-            '/images/studioInk/imagem16.png',
-            '/images/studioInk/imagem17.png',
-            '/images/studioInk/imagem18.png',
-            '/images/studioInk/imagem19.png',
-            '/images/studioInk/imagem20.png',
-            '/images/studioInk/imagem21.png',
-            '/images/studioInk/imagem22.png',
-            '/images/studioInk/imagem23.png',
-            '/images/studioInk/imagem24.png',
-            '/images/studioInk/imagem25.png',
-            '/images/studioInk/imagem26.png',
-            '/images/studioInk/imagem27.png',
-            '/images/studioInk/imagem28.png',
-            '/images/studioInk/imagem29.png',
-            '/images/studioInk/imagem30.png',
-            '/images/studioInk/imagem31.png',
-            '/images/studioInk/imagem32.png',
-            '/images/studioInk/imagem33.png'
+            '/images/webAPI/foto1_index.png',
+            '/images/webAPI/foto2_mario.png',
+            '/images/webAPI/foto3_bowser.png',
+            '/images/webAPI/foto4_get.png',
+            '/images/webAPI/foto5_getID.png',
+            '/images/webAPI/foto6_putP1.png',
+            '/images/webAPI/foto6_putP2.png',
+            '/images/webAPI/foto7_getAtualizado.png',
+            '/images/webAPI/foto8_delete.png',
+            '/images/webAPI/foto9_getFinal.png'
         ],
         highlights: [
-            'Interface moderna e responsiva para dispositivos móveis e desktop.',
-            'Sistema de roteamento com React Router para navegação fluida.',
-            'Arquitetura modular e tipagem forte com TypeScript.',
-            'Build otimizado com Vite para performance máxima.',
-            'Gestão completa de artistas, agendamentos e galeria de trabalhos.'
+            'Implementação de persistência de dados utilizando Entity Framework Core como ORM e o provider Pomelo para MySQL.',
+            'Otimização de recursos e I/O através do uso extensivo do padrão async/await em todas as operações da API.',
+            'Documentação automática via Swagger e arquitetura desacoplada com uso nativo de Injeção de Dependência.'
         ],
-        repoLink: 'https://github.com/daniel-santoss/StudioTattooINK',
+        repoLink: 'https://github.com/daniel-santoss/WebApi',
         deployLink: ''
     }
 };
@@ -198,39 +195,142 @@ interface LightboxProps {
 }
 
 const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClose, onNavigate }) => {
+    const [zoom, setZoom] = useState(1);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [isDragging, setIsDragging] = useState(false);
+    const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+
     if (!isOpen) return null;
 
-    const handlePrev = () => onNavigate(currentIndex > 0 ? currentIndex - 1 : images.length - 1);
-    const handleNext = () => onNavigate(currentIndex < images.length - 1 ? currentIndex + 1 : 0);
+    const handlePrev = () => {
+        setZoom(1);
+        setPosition({ x: 0, y: 0 });
+        onNavigate(currentIndex > 0 ? currentIndex - 1 : images.length - 1);
+    };
+
+    const handleNext = () => {
+        setZoom(1);
+        setPosition({ x: 0, y: 0 });
+        onNavigate(currentIndex < images.length - 1 ? currentIndex + 1 : 0);
+    };
+
+    const zoomIn = () => setZoom(prev => Math.min(prev + 0.5, 4));
+    const zoomOut = () => {
+        setZoom(prev => {
+            const newZoom = Math.max(prev - 0.5, 1);
+            if (newZoom === 1) setPosition({ x: 0, y: 0 });
+            return newZoom;
+        });
+    };
+    const resetZoom = () => {
+        setZoom(1);
+        setPosition({ x: 0, y: 0 });
+    };
+
+    const handleWheel = (e: React.WheelEvent) => {
+        e.preventDefault();
+        if (e.deltaY < 0) {
+            zoomIn();
+        } else {
+            zoomOut();
+        }
+    };
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+        if (zoom > 1) {
+            setIsDragging(true);
+            setDragStart({ x: e.clientX - position.x, y: e.clientY - position.y });
+        }
+    };
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (isDragging && zoom > 1) {
+            // Limites baseados no viewport - permite explorar toda a imagem
+            const viewportWidth = window.innerWidth * 0.85;
+            const viewportHeight = window.innerHeight * 0.65;
+            const maxX = (viewportWidth * (zoom - 1)) / 2;
+            const maxY = (viewportHeight * (zoom - 1)) / 2;
+
+            let newX = e.clientX - dragStart.x;
+            let newY = e.clientY - dragStart.y;
+
+            // Limitar movimento
+            newX = Math.max(-maxX, Math.min(maxX, newX));
+            newY = Math.max(-maxY, Math.min(maxY, newY));
+
+            setPosition({ x: newX, y: newY });
+        }
+    };
+
+    const handleMouseUp = () => setIsDragging(false);
 
     const handleKeyDown = (e: React.KeyboardEvent) => {
         if (e.key === 'Escape') onClose();
         if (e.key === 'ArrowLeft') handlePrev();
         if (e.key === 'ArrowRight') handleNext();
+        if (e.key === '+' || e.key === '=') zoomIn();
+        if (e.key === '-') zoomOut();
+        if (e.key === '0') resetZoom();
     };
 
     return (
         <div
             className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex flex-col"
-            onClick={onClose}
+            onClick={() => { resetZoom(); onClose(); }}
             onKeyDown={handleKeyDown}
             tabIndex={0}
         >
-            {/* Header com contador e botão fechar */}
+            {/* Header com contador, zoom e botão fechar */}
             <div className="flex items-center justify-between px-6 py-4">
                 <div className="text-white/70 text-sm font-medium">
                     {currentIndex + 1} / {images.length}
                 </div>
+
+                {/* Controles de Zoom */}
+                <div className="flex items-center gap-2">
+                    <button
+                        className="size-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors disabled:opacity-30"
+                        onClick={(e) => { e.stopPropagation(); zoomOut(); }}
+                        disabled={zoom <= 1}
+                        title="Diminuir zoom (-)"
+                    >
+                        <span className="material-symbols-outlined text-white text-xl">zoom_out</span>
+                    </button>
+                    <span className="text-white/70 text-sm font-medium min-w-[3rem] text-center">
+                        {Math.round(zoom * 100)}%
+                    </span>
+                    <button
+                        className="size-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors disabled:opacity-30"
+                        onClick={(e) => { e.stopPropagation(); zoomIn(); }}
+                        disabled={zoom >= 4}
+                        title="Aumentar zoom (+)"
+                    >
+                        <span className="material-symbols-outlined text-white text-xl">zoom_in</span>
+                    </button>
+                    {zoom > 1 && (
+                        <button
+                            className="size-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors ml-2"
+                            onClick={(e) => { e.stopPropagation(); resetZoom(); }}
+                            title="Resetar zoom (0)"
+                        >
+                            <span className="material-symbols-outlined text-white text-xl">restart_alt</span>
+                        </button>
+                    )}
+                </div>
+
                 <button
-                    className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                    onClick={onClose}
+                    className="size-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                    onClick={() => { resetZoom(); onClose(); }}
                 >
                     <span className="material-symbols-outlined text-white text-2xl">close</span>
                 </button>
             </div>
 
             {/* Área principal da imagem */}
-            <div className="flex-1 flex items-center justify-center px-16 relative">
+            <div
+                className="flex-1 flex items-center justify-center px-16 relative overflow-hidden"
+                onWheel={handleWheel}
+            >
                 <button
                     className="absolute left-4 md:left-8 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
                     onClick={(e) => { e.stopPropagation(); handlePrev(); }}
@@ -239,13 +339,21 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
                 </button>
 
                 <div
-                    className="max-w-[85vw] max-h-[65vh] flex items-center justify-center"
-                    onClick={(e) => e.stopPropagation()}
+                    className={`max-w-[85vw] max-h-[65vh] flex items-center justify-center ${zoom > 1 ? 'cursor-grab' : 'cursor-zoom-in'} ${isDragging ? 'cursor-grabbing' : ''}`}
+                    onClick={(e) => { e.stopPropagation(); if (zoom === 1) zoomIn(); }}
+                    onMouseDown={handleMouseDown}
+                    onMouseMove={handleMouseMove}
+                    onMouseUp={handleMouseUp}
+                    onMouseLeave={handleMouseUp}
                 >
                     <img
                         src={images[currentIndex]}
                         alt={`Gallery image ${currentIndex + 1}`}
-                        className="max-w-full max-h-[65vh] object-contain rounded-lg shadow-2xl"
+                        className={`max-w-full max-h-[65vh] object-contain rounded-lg shadow-2xl select-none ${isDragging ? '' : 'transition-transform duration-200'}`}
+                        style={{
+                            transform: `scale(${zoom}) translate(${position.x / zoom}px, ${position.y / zoom}px)`,
+                        }}
+                        draggable={false}
                     />
                 </div>
 
@@ -263,7 +371,7 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
                     {images.map((img, idx) => (
                         <button
                             key={idx}
-                            onClick={(e) => { e.stopPropagation(); onNavigate(idx); }}
+                            onClick={(e) => { e.stopPropagation(); setZoom(1); setPosition({ x: 0, y: 0 }); onNavigate(idx); }}
                             className={`w-12 h-12 rounded-lg overflow-hidden border-2 transition-all shrink-0 ${idx === currentIndex ? 'border-primary scale-110' : 'border-transparent opacity-60 hover:opacity-100'}`}
                         >
                             <img src={img} alt="" className="w-full h-full object-cover" />
@@ -287,6 +395,11 @@ const ProjectDetail: React.FC = () => {
         setLightboxIndex(index);
         setLightboxOpen(true);
     };
+
+    // Scroll para o topo quando mudar de projeto
+    React.useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [id]);
 
     if (!project) {
         return (
