@@ -197,6 +197,13 @@ const Header: React.FC = () => {
               {item.label}
             </a>
           ))}
+          <a
+            href="/CV/Daniel_Vinicius_TI_Curriculo.pdf"
+            download
+            className="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-black text-sm font-bold hover:bg-opacity-90 transition-all mt-2 shadow-[0_0_10px_rgba(57,255,20,0.3)]"
+          >
+            <span className="truncate">Baixar CV</span>
+          </a>
         </nav>
       )}
     </header>

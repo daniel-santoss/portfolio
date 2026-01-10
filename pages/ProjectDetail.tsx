@@ -264,6 +264,33 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
 
     const handleMouseUp = () => setIsDragging(false);
 
+    // Touch handlers para mobile
+    const handleTouchStart = (e: React.TouchEvent) => {
+        if (zoom > 1 && e.touches.length === 1) {
+            setIsDragging(true);
+            setDragStart({ x: e.touches[0].clientX - position.x, y: e.touches[0].clientY - position.y });
+        }
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        if (isDragging && zoom > 1 && e.touches.length === 1) {
+            const viewportWidth = window.innerWidth * 0.85;
+            const viewportHeight = window.innerHeight * 0.55;
+            const maxX = (viewportWidth * (zoom - 1)) / 2;
+            const maxY = (viewportHeight * (zoom - 1)) / 2;
+
+            let newX = e.touches[0].clientX - dragStart.x;
+            let newY = e.touches[0].clientY - dragStart.y;
+
+            newX = Math.max(-maxX, Math.min(maxX, newX));
+            newY = Math.max(-maxY, Math.min(maxY, newY));
+
+            setPosition({ x: newX, y: newY });
+        }
+    };
+
+    const handleTouchEnd = () => setIsDragging(false);
+
     const handleKeyDown = (e: React.KeyboardEvent) => {
         if (e.key === 'Escape') onClose();
         if (e.key === 'ArrowLeft') handlePrev();
@@ -328,7 +355,7 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
 
             {/* Área principal da imagem */}
             <div
-                className="flex-1 flex items-center justify-center px-16 relative overflow-hidden"
+                className="flex-1 flex items-center justify-center px-4 md:px-16 relative overflow-hidden"
                 onWheel={handleWheel}
             >
                 <button
@@ -345,11 +372,14 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
                     onMouseMove={handleMouseMove}
                     onMouseUp={handleMouseUp}
                     onMouseLeave={handleMouseUp}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
                 >
                     <img
                         src={images[currentIndex]}
                         alt={`Gallery image ${currentIndex + 1}`}
-                        className={`max-w-full max-h-[65vh] object-contain rounded-lg shadow-2xl select-none ${isDragging ? '' : 'transition-transform duration-200'}`}
+                        className={`max-w-full max-h-[55vh] md:max-h-[65vh] object-contain rounded-lg shadow-2xl select-none ${isDragging ? '' : 'transition-transform duration-200'}`}
                         style={{
                             transform: `scale(${zoom}) translate(${position.x / zoom}px, ${position.y / zoom}px)`,
                         }}
@@ -372,7 +402,7 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
                         <button
                             key={idx}
                             onClick={(e) => { e.stopPropagation(); setZoom(1); setPosition({ x: 0, y: 0 }); onNavigate(idx); }}
-                            className={`w-12 h-12 rounded-lg overflow-hidden border-2 transition-all shrink-0 ${idx === currentIndex ? 'border-primary scale-110' : 'border-transparent opacity-60 hover:opacity-100'}`}
+                            className={`w-10 h-10 md:w-12 md:h-12 rounded-lg overflow-hidden border-2 transition-all shrink-0 ${idx === currentIndex ? 'border-primary scale-110' : 'border-transparent opacity-60 hover:opacity-100'}`}
                         >
                             <img src={img} alt="" className="w-full h-full object-cover" />
                         </button>
@@ -465,7 +495,7 @@ const ProjectDetail: React.FC = () => {
                                     {project.date}
                                 </span>
                             </div>
-                            <h1 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight">
                                 {project.title}<span className="text-primary">{project.titleHighlight}</span>
                             </h1>
                             <p className="text-lg text-gray-400 leading-relaxed">{project.description}</p>
@@ -480,7 +510,7 @@ const ProjectDetail: React.FC = () => {
                                 ))}
                             </div>
 
-                            <div className="flex flex-wrap gap-3">
+                            <div className="flex flex-col sm:flex-row flex-wrap gap-3">
                                 <button
                                     onClick={() => openLightbox(0)}
                                     className="inline-flex h-12 px-6 bg-surface-dark text-white font-bold text-sm rounded-full items-center justify-center gap-2 border border-white/10 hover:border-primary/50 hover:bg-surface-dark/80 transition-all"

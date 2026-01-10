@@ -45,26 +45,26 @@ const HomeSection: React.FC = () => {
 
     return (
         <section id="sobre" className="scroll-mt-20">
-            <header className="w-full px-4 md:px-40 py-10 md:py-20 flex justify-center">
-                <div className="max-w-[1080px] w-full flex flex-col gap-10 md:gap-16">
+            <header className="w-full px-4 md:px-20 lg:px-40 py-10 lg:py-20 flex justify-center">
+                <div className="max-w-[1080px] w-full flex flex-col gap-10 lg:gap-16">
                     <div className="@container">
-                        <div className="flex flex-col-reverse md:flex-row gap-8 items-center">
-                            <section className="flex flex-col gap-6 flex-1 text-center md:text-left">
+                        <div className="flex flex-col-reverse lg:flex-row gap-8 items-center">
+                            <section className="flex flex-col gap-6 flex-1 text-center lg:text-left">
                                 <div className="flex flex-col gap-3">
-                                    <div className="inline-flex items-center gap-2 self-center md:self-start rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary tracking-wide uppercase border border-primary/20">
+                                    <div className="inline-flex items-center gap-2 self-center lg:self-start rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary tracking-wide uppercase border border-primary/20">
                                         <span className="size-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_#39FF14]"></span>
                                         Buscando vaga de Estágio / Júnior
                                     </div>
-                                    <h1 className="text-4xl md:text-6xl font-black leading-tight tracking-[-0.033em] text-white">
+                                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em] text-white">
                                         Bem-vindo ao meu portfólio! Eu sou o <span className="text-primary drop-shadow-[0_0_8px_rgba(57,255,20,0.3)]">Daniel Vinicius.</span>
                                     </h1>
-                                    <h2 className="text-base md:text-lg font-normal text-gray-300 leading-relaxed max-w-xl mx-auto md:mx-0">
+                                    <h2 className="text-sm sm:text-base lg:text-lg font-normal text-gray-300 leading-relaxed max-w-xl mx-auto lg:mx-0">
                                         Sou um desenvolvedor apaixonado por criar soluções web e atualmente estou focado no desenvolvimento Full Stack utilizando o ecossistema React e .NET. Além disso, possuo grande interesse por cibersegurança, área à qual também venho dedicando meus estudos com o propósito de desenvolver aplicações cada vez mais robustas e protegidas. Estou em busca de uma oportunidade de <span className="text-primary font-medium">estágio ou júnior</span> para aprender com a equipe, aplicar meus conhecimentos e evoluir na carreira.
                                     </h2>
                                 </div>
                             </section>
-                            <figure className="w-full md:w-[400px] flex justify-center">
-                                <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                            <figure className="w-full lg:w-[400px] flex justify-center">
+                                <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
                                     <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-secondary opacity-10 blur-3xl "></div>
                                     <div
                                         className="relative w-full h-full rounded-full animate-border-pulse overflow-hidden bg-surface-dark bg-cover bg-center"
@@ -230,18 +230,18 @@ const SkillsSection: React.FC = () => {
                         </p>
                     </div>
                 </header>
-                <nav aria-label="Filtro de Categorias" className="w-full overflow-x-auto pb-2 scrollbar-hide">
-                    <div className="flex gap-3 min-w-max">
+                <nav aria-label="Filtro de Categorias" className="w-full pb-2">
+                    <div className="flex flex-wrap gap-2 md:gap-3">
                         {categories.map((category) => (
                             <button
                                 key={category}
                                 onClick={() => handleCategoryClick(category)}
-                                className={`flex h-9 items-center justify-center gap-x-2 rounded-full px-5 transition-all active:scale-95 border ${isSelected(category)
+                                className={`flex h-9 items-center justify-center gap-x-2 rounded-full px-4 md:px-5 transition-all active:scale-95 border text-xs md:text-sm ${isSelected(category)
                                     ? 'bg-primary border-primary shadow-[0_0_10px_rgba(57,255,20,0.2)]'
                                     : 'bg-white/5 border-white/10 hover:bg-primary hover:border-primary group'
                                     }`}
                             >
-                                <p className={`text-sm font-bold leading-normal ${isSelected(category)
+                                <p className={`font-bold leading-normal ${isSelected(category)
                                     ? 'text-[#1A1C20]'
                                     : 'text-gray-300 group-hover:text-background-dark'
                                     }`}>
