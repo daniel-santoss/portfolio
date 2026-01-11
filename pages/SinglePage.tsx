@@ -696,7 +696,7 @@ const ContactSection: React.FC = () => {
                         <p className="text-[#C5C6C7] text-lg max-w-md">Faça o download do meu currículo completo para ver detalhes sobre minha experiência profissional.</p>
                     </div>
                     <div className="relative z-10">
-                        <a href="/CV/Daniel_Vinicius_TI_Curriculo.pdf" download className="flex items-center gap-3 bg-primary hover:bg-accent-hover text-black px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_15px_rgba(57,255,20,0.3)] hover:shadow-[0_0_25px_rgba(57,255,20,0.5)]">
+                        <a href="/CV/CV_DanielVinicius_TI.pdf" download className="flex items-center gap-3 bg-primary hover:bg-accent-hover text-black px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_15px_rgba(57,255,20,0.3)] hover:shadow-[0_0_25px_rgba(57,255,20,0.5)]">
                             <span className="material-symbols-outlined">download</span>
                             Baixar CV PDF
                         </a>

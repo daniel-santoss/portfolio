@@ -172,7 +172,7 @@ const Header: React.FC = () => {
       </nav>
 
       <div className="hidden lg:flex items-center gap-4">
-        <a href="/CV/Daniel_Vinicius_TI_Curriculo.pdf" download className="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-black text-sm font-bold hover:bg-opacity-90 transition-all shrink-0 shadow-[0_0_10px_rgba(57,255,20,0.3)]">
+        <a href="/CV/CV_DanielVinicius_TI.pdf" download className="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-black text-sm font-bold hover:bg-opacity-90 transition-all shrink-0 shadow-[0_0_10px_rgba(57,255,20,0.3)]">
           <span className="truncate">Baixar CV</span>
         </a>
       </div>
@@ -198,7 +198,7 @@ const Header: React.FC = () => {
             </a>
           ))}
           <a
-            href="/CV/Daniel_Vinicius_TI_Curriculo.pdf"
+            href="/CV/CV_DanielVinicius_TI.pdf"
             download
             className="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-black text-sm font-bold hover:bg-opacity-90 transition-all mt-2 shadow-[0_0_10px_rgba(57,255,20,0.3)]"
           >
