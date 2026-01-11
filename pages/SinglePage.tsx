@@ -63,7 +63,7 @@ const HomeSection: React.FC = () => {
                                         Bem-vindo ao meu portfólio! Eu sou o <span className="text-primary drop-shadow-[0_0_8px_rgba(57,255,20,0.3)]">Daniel Vinicius.</span>
                                     </h1>
                                     <h2 className="text-sm sm:text-base lg:text-lg font-normal text-gray-300 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                                        Sou um desenvolvedor apaixonado por criar soluções web e atualmente estou focado no desenvolvimento Full Stack utilizando o ecossistema React e .NET. Além disso, possuo grande interesse por cibersegurança, área à qual também venho dedicando meus estudos com o propósito de desenvolver aplicações cada vez mais robustas e protegidas. Estou em busca de uma oportunidade de <span className="text-primary font-medium">estágio ou júnior</span> para aprender com a equipe, aplicar meus conhecimentos e evoluir na carreira.
+                                        Sou um desenvolvedor focado na criação de soluções web e atualmente me concentro no desenvolvimento Full Stack utilizando o ecossistema React e .NET. Além disso, possuo grande interesse por cibersegurança, área à qual também venho dedicando meus estudos com o propósito de desenvolver aplicações cada vez mais robustas e protegidas. Estou em busca de uma oportunidade de <span className="text-primary font-medium">estágio ou júnior</span> para aprender com a equipe, aplicar meus conhecimentos e evoluir na carreira.
                                     </h2>
                                 </div>
                             </section>
@@ -277,8 +277,8 @@ const SkillsSection: React.FC = () => {
                 <section className="mt-8 rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8 backdrop-blur-md" aria-labelledby="proficiencia-titulo">
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
                         <header className="flex-1 flex flex-col gap-4">
-                            <h3 className="text-primary text-lg font-bold uppercase tracking-wider">Proficiência Técnica</h3>
-                            <p id="proficiencia-titulo" className="text-3xl font-black leading-tight text-white">Níveis de Experiência</p>
+                            <h3 className="text-primary text-lg font-bold uppercase tracking-wider">Principais Tecnologias</h3>
+                            <p id="proficiencia-titulo" className="text-xl font-black leading-tight text-white">Proficiência Técnica</p>
                             <p className="mt-4 text-gray-300 text-base leading-relaxed">
                                 <strong className="text-primary text-lg">Avançado:</strong> Uso diário com autonomia. <br></br> <strong className="text-cyan-400 text-lg">Intermediário:</strong> Boa compreensão da tecnologia e grande participação em projetos. <br></br> <strong className="text-[#BB86FC] text-lg">Básico / Estudos:</strong> Entendimento de conceitos e suas principais utilizações, porém com poucas práticas.
                             </p>
