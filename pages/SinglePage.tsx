@@ -49,7 +49,7 @@ const HomeSection: React.FC = () => {
 
     return (
         <section id="sobre" className="scroll-mt-20">
-            <header className="w-full px-4 md:px-20 lg:px-40 py-10 lg:py-20 flex justify-center">
+            <header className="w-full px-4 md:px-20 xl:px-40 py-10 lg:py-20 flex justify-center">
                 <div className="max-w-[1080px] w-full flex flex-col gap-10 lg:gap-16">
                     <div className="@container">
                         <div className="flex flex-col-reverse lg:flex-row gap-8 items-center">
@@ -83,7 +83,7 @@ const HomeSection: React.FC = () => {
                     </div>
                 </div>
             </header>
-            <section className="group w-full bg-secondary/5 py-16 px-4 md:px-20 lg:px-40 flex justify-center border-y border-secondary/10" aria-label="Principais Tecnologias">
+            <section className="group w-full bg-secondary/5 py-16 px-4 md:px-20 xl:px-40 flex justify-center border-y border-secondary/10" aria-label="Principais Tecnologias">
                 <div className="max-w-[1080px] w-full flex flex-col gap-8">
                     <div className="flex flex-col items-center gap-2">
                         <h2 className="text-2xl md:text-3xl font-bold text-center text-white">Principais Stacks</h2>
@@ -223,7 +223,7 @@ const SkillsSection: React.FC = () => {
     const shouldShow = (category: string) => selectedCategories.includes('Todas') || selectedCategories.includes(category);
 
     return (
-        <section id="habilidades" className="scroll-mt-20 flex flex-col items-center py-10 px-4 md:px-20 lg:px-40 border-t border-white/10">
+        <section id="habilidades" className="scroll-mt-20 flex flex-col items-center py-10 px-4 md:px-20 xl:px-40 border-t border-white/10">
             <div className="w-full max-w-[1080px] flex flex-col gap-10">
                 <header className="flex flex-col gap-4">
                     <div className="flex flex-col gap-3">
@@ -275,7 +275,7 @@ const SkillsSection: React.FC = () => {
                 </div>
 
                 <section className="mt-8 rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8 backdrop-blur-md" aria-labelledby="proficiencia-titulo">
-                    <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+                    <div className="flex flex-col xl:flex-row gap-8 lg:gap-12">
                         <header className="flex-1 flex flex-col gap-4">
                             <h3 className="text-primary text-lg font-bold uppercase tracking-wider">Principais Tecnologias</h3>
                             <p id="proficiencia-titulo" className="text-xl font-black leading-tight text-white">Proficiência Técnica</p>
@@ -284,7 +284,7 @@ const SkillsSection: React.FC = () => {
                             </p>
                         </header>
 
-                        <div className="flex-[2] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="flex-[2] grid grid-cols-1 md:grid-cols-3 gap-6">
                             {proficiencyLevels.map((levelData) => (
                                 <article key={levelData.level} className="flex flex-col gap-4">
                                     <header className={`flex items-center gap-2 border-b-2 ${levelData.borderColor} pb-2 mb-2`}>
@@ -361,7 +361,7 @@ const languages = [
 // ==================== EDUCATION SECTION ====================
 const EducationSection: React.FC = () => {
     return (
-        <section id="jornada" className="scroll-mt-20 flex flex-col items-center px-4 md:px-20 lg:px-40 py-10 border-t border-white/10">
+        <section id="jornada" className="scroll-mt-20 flex flex-col items-center px-4 md:px-20 xl:px-40 py-10 border-t border-white/10">
             <div className="layout-content-container flex flex-col max-w-[1080px] w-full gap-10">
                 <section className="flex flex-col gap-6 animate-fade-in" >
                     <div className="flex flex-col gap-3">
@@ -532,7 +532,7 @@ const ProjectsSection: React.FC = () => {
     );
 
     return (
-        <section id="projetos" className="scroll-mt-20 flex flex-col items-center w-full py-10 px-4 md:px-20 lg:px-40 border-t border-white/10">
+        <section id="projetos" className="scroll-mt-20 flex flex-col items-center w-full py-10 px-4 md:px-20 xl:px-40 border-t border-white/10">
             <div className="layout-content-container flex flex-col max-w-[1080px] w-full gap-8">
                 <header className="flex flex-col gap-6">
                     <div className="flex flex-col gap-3">
@@ -645,7 +645,7 @@ const contactSocialLinks = [
 // ==================== CONTACT SECTION ====================
 const ContactSection: React.FC = () => {
     return (
-        <section id="contato" className="scroll-mt-20 w-full px-4 md:px-20 lg:px-40 py-16 flex justify-center border-t border-white/10" aria-label="Links de Contato">
+        <section id="contato" className="scroll-mt-20 w-full px-4 md:px-20 xl:px-40 py-16 flex justify-center border-t border-white/10" aria-label="Links de Contato">
             <div className="max-w-[1080px] w-full flex flex-col items-center gap-10">
                 <div className="flex flex-col gap-3 text-center">
                     <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-white">Redes e Contato</h1>

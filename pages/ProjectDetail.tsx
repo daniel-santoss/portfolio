@@ -11,7 +11,7 @@ interface ProjectData {
     heroImage?: string;
     challenge: string;
     solution: string;
-    techStack: { name: string; color: string }[];
+    techStack: { name: string; color: string; icon: string; iconType?: 'image' | 'font' }[];
     gallery: string[];
     highlights: string[];
     repoLink: string;
@@ -29,10 +29,10 @@ const projectsData: Record<string, ProjectData> = {
         challenge: 'Desenvolver uma interface moderna, responsiva e intuitiva para um estúdio de tatuagem, focando na experiência do usuário e na apresentação visual do conteúdo.',
         solution: 'Criei uma aplicação <strong class="text-white">front-end completa</strong> utilizando <strong class="text-white">React 19</strong> com <strong class="text-white">TypeScript</strong> e <strong class="text-white">Vite</strong>. O projeto foca na experiência visual e navegação fluida, sem backend - ideal para demonstrar habilidades em componentização, roteamento e estilização.',
         techStack: [
-            { name: 'Tailwind CSS', color: '#264DE4' },
-            { name: 'React', color: '#61DAFB' },
-            { name: 'TypeScript', color: '#3178C6' },
-            { name: 'Vite', color: '#646CFF' }
+            { name: 'Tailwind CSS', color: '#264DE4', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg', iconType: 'image' },
+            { name: 'React', color: '#61DAFB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', iconType: 'image' },
+            { name: 'TypeScript', color: '#3178C6', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', iconType: 'image' },
+            { name: 'Vite', color: '#646CFF', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg', iconType: 'image' }
         ],
         gallery: [
             '/images/studioInk/imagem1.png',
@@ -89,10 +89,10 @@ const projectsData: Record<string, ProjectData> = {
         challenge: 'Desenvolver um sistema completo com múltiplos perfis de usuário (Admin, Professor, Aluno), onde os dados possam ser salvos em arquivos de texto, além de validações de entradas e permissões por perfil.',
         solution: 'Implementei uma arquitetura modular com <strong class="text-white">7 módulos principais</strong> e <strong class="text-white">6 estruturas de dados</strong>, totalizando ~2800 linhas de código em C ANSI. O sistema gerencia turmas, alunos, professores, aulas, atividades, notas e presenças com controle de permissões por perfil.',
         techStack: [
-            { name: 'C', color: '#A8B9CC' },
-            { name: 'GCC', color: '#FFCB2B' },
-            { name: 'File I/O', color: '#4CAF50' },
-            { name: 'Terminal', color: '#607D8B' }
+            { name: 'C', color: '#A8B9CC', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg', iconType: 'image' },
+            { name: 'GCC', color: '#FFCB2B', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gcc/gcc-original.svg', iconType: 'image' },
+            { name: 'File I/O', color: '#4CAF50', icon: 'description', iconType: 'font' },
+            { name: 'Terminal', color: '#607D8B', icon: 'terminal', iconType: 'font' }
         ],
         gallery: [
             '/images/PimConsole/Imagem1.png',
@@ -148,10 +148,10 @@ const projectsData: Record<string, ProjectData> = {
         challenge: 'Desenvolver uma API robusta e escalável seguindo as boas práticas de arquitetura de software, garantindo manutenibilidade e facilidade de extensão.',
         solution: 'Implementei uma API RESTful utilizando <strong class="text-white">C#</strong> e <strong class="text-white">.NET</strong>, aplicando conceitos de Clean Architecture, validação de dados e tratamento de erros. A arquitetura permite fácil integração com diferentes bancos de dados e serviços externos.',
         techStack: [
-            { name: '.NET', color: '#512BD4' },
-            { name: 'C#', color: '#9B4F96' },
-            { name: 'MySQL', color: '#4479A1' },
-            { name: 'Entity Framework', color: '#68217A' }
+            { name: '.NET', color: '#512BD4', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg', iconType: 'image' },
+            { name: 'C#', color: '#9B4F96', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg', iconType: 'image' },
+            { name: 'MySQL', color: '#4479A1', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', iconType: 'image' },
+            { name: 'Entity Framework', color: '#68217A', icon: 'database', iconType: 'font' }
         ],
         gallery: [
             '/images/webAPI/foto1_index.png',
@@ -523,7 +523,11 @@ const ProjectDetail: React.FC = () => {
                             <div className="flex flex-wrap gap-2">
                                 {project.techStack.map((tech, index) => (
                                     <div key={index} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors">
-                                        <span className="size-2 rounded-full" style={{ backgroundColor: tech.color }}></span>
+                                        {tech.iconType === 'font' ? (
+                                            <span className="material-symbols-outlined text-sm" style={{ color: tech.color }}>{tech.icon}</span>
+                                        ) : (
+                                            <OptimizedImage src={tech.icon} alt={tech.name} className="size-4 object-contain" />
+                                        )}
                                         <span className="text-sm font-medium text-gray-300">{tech.name}</span>
                                     </div>
                                 ))}
