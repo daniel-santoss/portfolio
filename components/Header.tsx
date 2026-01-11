@@ -150,12 +150,12 @@ const Header: React.FC = () => {
       <a
         href="#sobre"
         onClick={(e) => handleScrollTo(e, 'sobre')}
-        className="flex items-center gap-4 text-[#111418] dark:text-white cursor-pointer"
+        className="flex items-center gap-3 text-[#111418] dark:text-white cursor-pointer group"
       >
-        <div className="size-8 rounded bg-primary/20 flex items-center justify-center text-primary">
-          <span className="material-symbols-outlined">terminal</span>
+        <div className="size-8 flex items-center justify-center text-primary transition-transform group-hover:scale-110">
+          <span className="material-symbols-outlined text-3xl">terminal</span>
         </div>
-        <h2 className="text-lg font-bold leading-tight tracking-[-0.015em]">Portfólio</h2>
+        <h2 className="text-xl font-bold leading-tight tracking-tight">D.V</h2>
       </a>
 
       <nav className="hidden lg:flex items-center gap-5 xl:gap-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">

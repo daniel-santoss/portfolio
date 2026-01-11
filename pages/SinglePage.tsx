@@ -83,7 +83,7 @@ const HomeSection: React.FC = () => {
                     </div>
                 </div>
             </header>
-            <section className="group w-full bg-secondary/5 py-16 px-4 md:px-40 flex justify-center border-y border-secondary/10" aria-label="Principais Tecnologias">
+            <section className="group w-full bg-secondary/5 py-16 px-4 md:px-20 lg:px-40 flex justify-center border-y border-secondary/10" aria-label="Principais Tecnologias">
                 <div className="max-w-[1080px] w-full flex flex-col gap-8">
                     <div className="flex flex-col items-center gap-2">
                         <h2 className="text-2xl md:text-3xl font-bold text-center text-white">Principais Stacks</h2>
@@ -99,7 +99,7 @@ const HomeSection: React.FC = () => {
                     </ul>
                 </div>
             </section>
-        </section>
+        </section >
     );
 };
 
@@ -223,7 +223,7 @@ const SkillsSection: React.FC = () => {
     const shouldShow = (category: string) => selectedCategories.includes('Todas') || selectedCategories.includes(category);
 
     return (
-        <section id="habilidades" className="scroll-mt-20 flex flex-col items-center py-10 px-4 md:px-40 border-t border-white/10">
+        <section id="habilidades" className="scroll-mt-20 flex flex-col items-center py-10 px-4 md:px-20 lg:px-40 border-t border-white/10">
             <div className="w-full max-w-[1080px] flex flex-col gap-10">
                 <header className="flex flex-col gap-4">
                     <div className="flex flex-col gap-3">
@@ -361,7 +361,7 @@ const languages = [
 // ==================== EDUCATION SECTION ====================
 const EducationSection: React.FC = () => {
     return (
-        <section id="jornada" className="scroll-mt-20 flex flex-col items-center px-4 md:px-40 py-10 border-t border-white/10">
+        <section id="jornada" className="scroll-mt-20 flex flex-col items-center px-4 md:px-20 lg:px-40 py-10 border-t border-white/10">
             <div className="layout-content-container flex flex-col max-w-[1080px] w-full gap-10">
                 <section className="flex flex-col gap-6 animate-fade-in" >
                     <div className="flex flex-col gap-3">
@@ -532,7 +532,7 @@ const ProjectsSection: React.FC = () => {
     );
 
     return (
-        <section id="projetos" className="scroll-mt-20 flex flex-col items-center w-full py-10 px-4 md:px-40 border-t border-white/10">
+        <section id="projetos" className="scroll-mt-20 flex flex-col items-center w-full py-10 px-4 md:px-20 lg:px-40 border-t border-white/10">
             <div className="layout-content-container flex flex-col max-w-[1080px] w-full gap-8">
                 <header className="flex flex-col gap-6">
                     <div className="flex flex-col gap-3">
@@ -645,7 +645,7 @@ const contactSocialLinks = [
 // ==================== CONTACT SECTION ====================
 const ContactSection: React.FC = () => {
     return (
-        <section id="contato" className="scroll-mt-20 w-full px-4 md:px-40 py-16 flex justify-center border-t border-white/10" aria-label="Links de Contato">
+        <section id="contato" className="scroll-mt-20 w-full px-4 md:px-20 lg:px-40 py-16 flex justify-center border-t border-white/10" aria-label="Links de Contato">
             <div className="max-w-[1080px] w-full flex flex-col items-center gap-10">
                 <div className="flex flex-col gap-3 text-center">
                     <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-white">Redes e Contato</h1>
@@ -689,9 +689,9 @@ const ContactSection: React.FC = () => {
                 </nav>
 
                 {/* CTA */}
-                <aside className="mt-6 rounded-2xl bg-card-dark relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-primary/30 shadow-sm hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] hover:border-primary/50 transition-all duration-300 backdrop-blur-sm w-full">
+                <aside className="mt-6 rounded-2xl bg-card-dark relative overflow-hidden p-8 md:p-12 flex flex-col items-center justify-between gap-8 border border-primary/30 shadow-sm hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] hover:border-primary/50 transition-all duration-300 backdrop-blur-sm w-full">
                     <div className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-overlay" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAy50DfwNdRFmrx1uVE-DE8i3ar8Tlfvm9zNnUQdvLvOKb_mtkQ8UEStsPE0ZPPbgaRIKYseRvD7OlttQijnOj3ZEhAr5_PeL41fukUsw1kR6Y1Pco3t7Yh__gR9ONDAVhuQ4RfRvA3lLoL4SmgRo4Ck-5JhTxQXvcZwhWavFsmzQ5H9-JzHPa7ICdBYMDXxX-hmGJvg-i_FGdYS20vAA98erH67iM9YJHt7QCaX0v9wzfN6lEdzezxlgRbEwpkYmev9YMH5EVhn8sF')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-                    <div className="relative z-10 flex flex-col gap-3 text-center md:text-left">
+                    <div className="relative z-10 flex flex-col gap-3 text-center">
                         <h2 className="text-white text-3xl font-bold">Interessado no meu perfil?</h2>
                         <p className="text-[#C5C6C7] text-lg max-w-md">Faça o download do meu currículo completo para ver detalhes sobre minha experiência profissional.</p>
                     </div>

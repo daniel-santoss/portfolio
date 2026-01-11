@@ -421,6 +421,7 @@ const ProjectDetail: React.FC = () => {
 
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [lightboxIndex, setLightboxIndex] = useState(0);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const openLightbox = (index: number) => {
         setLightboxIndex(index);
@@ -459,7 +460,7 @@ const ProjectDetail: React.FC = () => {
                         <div className="size-8 flex items-center justify-center text-primary transition-transform group-hover:scale-110">
                             <span className="material-symbols-outlined text-3xl">terminal</span>
                         </div>
-                        <h2 className="text-xl font-bold leading-tight tracking-tight">DevPortfolio</h2>
+                        <h2 className="text-xl font-bold leading-tight tracking-tight">D.V</h2>
                     </Link>
                     <nav className="hidden md:flex items-center gap-8">
                         <Link className="text-sm font-medium hover:text-primary transition-colors" to="/#sobre">Sobre</Link>
@@ -471,10 +472,27 @@ const ProjectDetail: React.FC = () => {
                         <span className="mr-2 material-symbols-outlined text-lg">download</span>
                         Baixar CV
                     </a>
-                    <button className="md:hidden p-2 text-white">
+                    <button
+                        className="md:hidden p-2 text-white"
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    >
                         <span className="material-symbols-outlined">menu</span>
                     </button>
                 </div>
+
+                {/* Mobile Menu Overlay */}
+                {mobileMenuOpen && (
+                    <nav className="absolute top-full left-0 w-full bg-background-dark border-b border-white/10 p-4 flex flex-col gap-4 md:hidden shadow-xl animate-fade-in z-50">
+                        <Link to="/#sobre" className="text-sm font-medium text-white hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>Sobre</Link>
+                        <Link to="/#projetos" className="text-sm font-medium text-white hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>Projetos</Link>
+                        <Link to="/#habilidades" className="text-sm font-medium text-white hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>Habilidades</Link>
+                        <Link to="/#contato" className="text-sm font-medium text-white hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>Contato</Link>
+                        <a href="/CV/CV_DanielVinicius_TI.pdf" download className="flex items-center justify-center rounded-full h-10 px-6 bg-primary hover:bg-accent-hover text-background-dark text-sm font-bold transition-all transform active:scale-95 shadow-[0_0_15px_rgba(57,255,20,0.3)]">
+                            <span className="mr-2 material-symbols-outlined text-lg">download</span>
+                            Baixar CV
+                        </a>
+                    </nav>
+                )}
             </header>
 
             <main className="flex-grow">
