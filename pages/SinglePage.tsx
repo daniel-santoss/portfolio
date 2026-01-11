@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import OptimizedImage from '../components/OptimizedImage';
 
 // ==================== STATIC DATA ====================
-// Moving static data outside components to prevent re-creation on re-renders
 const educationStacks = [
     { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
     { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
@@ -104,7 +103,7 @@ const HomeSection: React.FC = () => {
 };
 
 // ==================== SKILLS SECTION ====================
-// useState já importado no topo
+
 
 const categories = [
     'Todas',
@@ -375,7 +374,6 @@ const EducationSection: React.FC = () => {
                 </section>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-                    {/* Education Timeline */}
                     <section className="lg:col-span-7 flex flex-col gap-6">
                         <h2 className="text-[#111418] dark:text-white text-2xl font-bold flex items-center gap-3">
                             <span className="material-symbols-outlined text-primary">school</span>
@@ -405,7 +403,6 @@ const EducationSection: React.FC = () => {
                         </div>
                     </section>
 
-                    {/* Languages */}
                     <section className="lg:col-span-5 flex flex-col gap-8">
                         <div className="flex flex-col gap-6">
                             <h2 className="text-[#111418] dark:text-white text-2xl font-bold flex items-center gap-3">
@@ -429,7 +426,6 @@ const EducationSection: React.FC = () => {
                             </ul>
                         </div>
 
-                        {/* Inspiração */}
                         <div className="flex-1 bg-white dark:bg-card-dark border border-[#e5e7eb] dark:border-primary/30 rounded-2xl p-6 md:p-8 flex flex-col gap-4 items-start shadow-sm relative overflow-hidden hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
                             <div className="flex items-center gap-3">
                                 <div className="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0 z-10">
@@ -688,7 +684,6 @@ const ContactSection: React.FC = () => {
                     ))}
                 </nav>
 
-                {/* CTA */}
                 <aside className="mt-6 rounded-2xl bg-card-dark relative overflow-hidden p-8 md:p-12 flex flex-col items-center justify-between gap-8 border border-primary/30 shadow-sm hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] hover:border-primary/50 transition-all duration-300 backdrop-blur-sm w-full">
                     <div className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-overlay" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAy50DfwNdRFmrx1uVE-DE8i3ar8Tlfvm9zNnUQdvLvOKb_mtkQ8UEStsPE0ZPPbgaRIKYseRvD7OlttQijnOj3ZEhAr5_PeL41fukUsw1kR6Y1Pco3t7Yh__gR9ONDAVhuQ4RfRvA3lLoL4SmgRo4Ck-5JhTxQXvcZwhWavFsmzQ5H9-JzHPa7ICdBYMDXxX-hmGJvg-i_FGdYS20vAA98erH67iM9YJHt7QCaX0v9wzfN6lEdzezxlgRbEwpkYmev9YMH5EVhn8sF')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                     <div className="relative z-10 flex flex-col gap-3 text-center">

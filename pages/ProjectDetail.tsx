@@ -77,7 +77,7 @@ const projectsData: Record<string, ProjectData> = {
             'Build otimizado com Vite para carregamento rápido.'
         ],
         repoLink: 'https://github.com/daniel-santoss/StudioTattooINK',
-        deployLink: ''
+        deployLink: 'https://studio-tattoo-ink.vercel.app/'
     },
     '2': {
         title: 'PIM II - Sistema',
@@ -186,7 +186,7 @@ const getProjectNavigation = (currentId: string) => {
     };
 };
 
-// Simple Lightbox Component (no zoom)
+// Lightbox Component
 interface LightboxProps {
     images: string[];
     currentIndex: number;
@@ -265,7 +265,7 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
 
     const handleMouseUp = () => setIsDragging(false);
 
-    // Touch handlers para mobile
+
     const handleTouchStart = (e: React.TouchEvent) => {
         if (zoom > 1 && e.touches.length === 1) {
             setIsDragging(true);
@@ -308,13 +308,12 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
             onKeyDown={handleKeyDown}
             tabIndex={0}
         >
-            {/* Header com contador, zoom e botão fechar */}
             <div className="flex items-center justify-between px-6 py-4">
                 <div className="text-white/70 text-sm font-medium">
                     {currentIndex + 1} / {images.length}
                 </div>
 
-                {/* Controles de Zoom */}
+
                 <div className="flex items-center gap-2">
                     <button
                         className="size-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors disabled:opacity-30"
@@ -354,7 +353,6 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
                 </button>
             </div>
 
-            {/* Área principal da imagem */}
             <div
                 className="flex-1 flex items-center justify-center px-4 md:px-16 relative overflow-hidden"
                 onWheel={handleWheel}
@@ -396,7 +394,6 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, isOpen, onClo
                 </button>
             </div>
 
-            {/* Barra de miniaturas */}
             <div className="py-4 px-6">
                 <div className="flex gap-2 justify-center max-w-[90vw] mx-auto overflow-x-auto py-2">
                     {images.map((img, idx) => (
@@ -428,7 +425,7 @@ const ProjectDetail: React.FC = () => {
         setLightboxOpen(true);
     };
 
-    // Scroll para o topo quando mudar de projeto
+
     React.useEffect(() => {
         window.scrollTo(0, 0);
     }, [id]);
@@ -480,7 +477,6 @@ const ProjectDetail: React.FC = () => {
                     </button>
                 </div>
 
-                {/* Mobile Menu Overlay */}
                 {mobileMenuOpen && (
                     <nav className="absolute top-full left-0 w-full bg-background-dark border-b border-white/10 p-4 flex flex-col gap-4 md:hidden shadow-xl animate-fade-in z-50">
                         <Link to="/#sobre" className="text-sm font-medium text-white hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>Sobre</Link>
@@ -503,9 +499,7 @@ const ProjectDetail: React.FC = () => {
                             Voltar para Projetos
                         </Link>
                     </div>
-                    {/* Hero Section - Layout 2 colunas */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12 items-start">
-                        {/* Coluna Esquerda - Informações */}
                         <header className="space-y-6">
                             <div className="flex items-center gap-3">
                                 <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 rounded-full border border-primary/20">{project.type}</span>
@@ -519,7 +513,6 @@ const ProjectDetail: React.FC = () => {
                             </h1>
                             <p className="text-lg text-gray-400 leading-relaxed">{project.description}</p>
 
-                            {/* Tech Stack */}
                             <div className="flex flex-wrap gap-2">
                                 {project.techStack.map((tech, index) => (
                                     <div key={index} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors">
@@ -539,22 +532,21 @@ const ProjectDetail: React.FC = () => {
                                     className="inline-flex h-12 px-6 bg-surface-dark text-white font-bold text-sm rounded-full items-center justify-center gap-2 border border-white/10 hover:border-primary/50 hover:bg-surface-dark/80 transition-all"
                                 >
                                     <span className="material-symbols-outlined text-lg">photo_library</span>
-                                    Ver Fotos ({project.gallery.length})
+                                    Fotos do Projeto ({project.gallery.length})
                                 </button>
-                                <a className="inline-flex h-12 px-6 bg-primary text-background-dark font-bold text-sm rounded-full items-center justify-center gap-2 hover:bg-accent-hover hover:shadow-[0_0_20px_rgba(57,255,20,0.4)] transition-all" href={project.repoLink} target="_blank" rel="noopener noreferrer">
+                                <a className="inline-flex h-12 px-6 bg-surface-dark text-white font-bold text-sm rounded-full items-center justify-center gap-2 border border-white/10 hover:border-primary/50 hover:bg-surface-dark/80 transition-all" href={project.repoLink} target="_blank" rel="noopener noreferrer">
                                     <span className="material-symbols-outlined text-lg">code</span>
                                     Ver no GitHub
                                 </a>
                                 {project.deployLink && (
-                                    <a className="inline-flex h-12 px-6 bg-surface-dark text-white font-bold text-sm rounded-full items-center justify-center gap-2 border border-white/10 hover:border-primary/50 hover:bg-surface-dark/80 transition-all" href={project.deployLink} target="_blank" rel="noopener noreferrer">
+                                    <a className="inline-flex h-12 px-6 bg-primary text-background-dark font-bold text-sm rounded-full items-center justify-center gap-2 hover:bg-accent-hover hover:shadow-[0_0_20px_rgba(57,255,20,0.4)] transition-all" href={project.deployLink} target="_blank" rel="noopener noreferrer">
                                         <span className="material-symbols-outlined text-lg">rocket_launch</span>
-                                        Ver Deploy
+                                    Deploy
                                     </a>
                                 )}
                             </div>
                         </header>
 
-                        {/* Coluna Direita - Destaques Técnicos */}
                         <section className="bg-surface-dark rounded-2xl p-6 border border-white/5" aria-labelledby="destaques-tecnicos">
                             <h4 id="destaques-tecnicos" className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                                 <span className="material-symbols-outlined text-primary">stars</span>
@@ -571,9 +563,7 @@ const ProjectDetail: React.FC = () => {
                         </section>
                     </div>
 
-                    {/* Desafio e Solução - Grid de 2 colunas */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        {/* Desafio - Esquerda */}
                         <section className="bg-surface-dark rounded-2xl p-6 border border-white/5">
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="size-10 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 flex items-center justify-center">
@@ -584,7 +574,6 @@ const ProjectDetail: React.FC = () => {
                             <p className="text-gray-400 leading-relaxed">{project.challenge}</p>
                         </section>
 
-                        {/* Solução - Direita */}
                         <section className="bg-surface-dark rounded-2xl p-6 border border-white/5">
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="size-10 rounded-full bg-primary/10 text-primary border border-primary/20 flex items-center justify-center">
