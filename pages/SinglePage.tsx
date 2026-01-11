@@ -127,7 +127,7 @@ const skillCategories = [
         id: 'Back-end',
         icon: 'dns',
         title: 'Back-end',
-        skills: ['.NET', 'C#', 'Entity Framework', 'C', 'SQL', 'APIs REST']
+        skills: ['.NET', 'C#', 'C', 'Java', 'SQL', 'APIs REST']
     },
     {
         id: 'Banco de Dados',
@@ -145,7 +145,7 @@ const skillCategories = [
         id: 'Infra e Segurança',
         icon: 'security',
         title: 'Infraestrutura e Segurança',
-        skills: ['TCP/IP', 'VLANs', 'Gateway', 'DNS', 'Firewalls', 'VPNs', 'Antivírus', 'CID']
+        skills: ['TCP/IP', 'VLAN', 'Gateway', 'DNS', 'Linux', 'Terminal', 'Firewalls', 'VPN', 'Antivírus', 'Prevenção', 'CID']
     },
     {
         id: 'Metodologias',
@@ -178,8 +178,8 @@ const proficiencyLevels = [
         items: [
             { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
             { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-            { name: 'C# / .NET', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
-            { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' }
+            { name: 'C# | .NET', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
+            { name: 'MySQL | SQL Server', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' }
         ]
     },
     {
@@ -191,8 +191,7 @@ const proficiencyLevels = [
         items: [
             { name: 'Cloud Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
             { name: 'DevOps', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg' },
-            { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-            { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' }
+            { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' }
         ]
     }
 ];
