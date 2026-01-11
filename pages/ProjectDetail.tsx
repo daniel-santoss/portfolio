@@ -71,7 +71,7 @@ const projectsData: Record<string, ProjectData> = {
         ],
         highlights: [
             'Interface moderna e totalmente responsiva para mobile e desktop.',
-            'Componentização eficiente com React e tipagem forte em TypeScript.',
+            'Componentização eficiente com React e tipagem em TypeScript.',
             'Navegação fluida entre páginas utilizando React Router.',
             'Estilização com Tailwind CSS para design consistente e customizável.',
             'Build otimizado com Vite para carregamento rápido.'

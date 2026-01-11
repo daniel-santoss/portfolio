@@ -353,7 +353,7 @@ const languages = [
         flag: 'https://flagcdn.com/w40/us.png',
         alt: 'Bandeira dos EUA',
         name: 'Inglês',
-        level: 'Nível Técnico'
+        level: 'Técnico'
     }
 ];
 
@@ -684,14 +684,14 @@ const ContactSection: React.FC = () => {
                     ))}
                 </nav>
 
-                <aside className="mt-6 rounded-2xl bg-card-dark relative overflow-hidden p-8 md:p-12 flex flex-col items-center justify-between gap-8 border border-primary/30 shadow-sm hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] hover:border-primary/50 transition-all duration-300 backdrop-blur-sm w-full">
+                <aside className="mt-6 rounded-2xl bg-card-dark relative overflow-hidden px-6 py-6 md:px-10 md:py-6 flex flex-col md:flex-row items-center justify-between gap-6 border border-primary/30 shadow-sm hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] hover:border-primary/50 transition-all duration-300 backdrop-blur-sm w-full">
                     <div className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-overlay" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAy50DfwNdRFmrx1uVE-DE8i3ar8Tlfvm9zNnUQdvLvOKb_mtkQ8UEStsPE0ZPPbgaRIKYseRvD7OlttQijnOj3ZEhAr5_PeL41fukUsw1kR6Y1Pco3t7Yh__gR9ONDAVhuQ4RfRvA3lLoL4SmgRo4Ck-5JhTxQXvcZwhWavFsmzQ5H9-JzHPa7ICdBYMDXxX-hmGJvg-i_FGdYS20vAA98erH67iM9YJHt7QCaX0v9wzfN6lEdzezxlgRbEwpkYmev9YMH5EVhn8sF')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-                    <div className="relative z-10 flex flex-col gap-3 text-center">
-                        <h2 className="text-white text-3xl font-bold">Interessado no meu perfil?</h2>
-                        <p className="text-[#C5C6C7] text-lg max-w-md">Faça o download do meu currículo completo para ver detalhes sobre minha experiência profissional.</p>
+                    <div className="relative z-10 flex flex-col gap-1 text-center md:text-left">
+                        <h2 className="text-white text-2xl md:text-2xl lg:text-3xl font-bold">Ficou interessado no meu perfil?</h2>
+                        <p className="text-[#C5C6C7] text-base md:text-lg">Faça o download do meu currículo completo!</p>
                     </div>
-                    <div className="relative z-10">
-                        <a href="/CV/CV_DanielVinicius_TI.pdf" download className="flex items-center gap-3 bg-primary hover:bg-accent-hover text-black px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_15px_rgba(57,255,20,0.3)] hover:shadow-[0_0_25px_rgba(57,255,20,0.5)]">
+                    <div className="relative z-10 shrink-0">
+                        <a href="/CV/CV_DanielVinicius_TI.pdf" download className="flex items-center gap-3 bg-primary hover:bg-accent-hover text-black px-6 py-3 rounded-full font-bold text-base transition-all shadow-[0_0_15px_rgba(57,255,20,0.3)] hover:shadow-[0_0_25px_rgba(57,255,20,0.5)]">
                             <span className="material-symbols-outlined">download</span>
                             Baixar CV PDF
                         </a>
