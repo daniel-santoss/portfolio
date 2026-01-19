@@ -126,7 +126,7 @@ const skillCategories = [
         id: 'Back-end',
         icon: 'dns',
         title: 'Back-end',
-        skills: ['.NET', 'C#', 'C', 'Java', 'SQL', 'APIs REST']
+        skills: ['.NET', 'C#', 'C', 'Java', 'Python', 'SQL', 'APIs REST']
     },
     {
         id: 'Banco de Dados',
@@ -138,13 +138,13 @@ const skillCategories = [
         id: 'Cloud & DevOps',
         icon: 'cloud',
         title: 'Cloud & DevOps',
-        skills: ['Azure', 'Docker', 'CI/CD', 'Git', 'GitHub', 'GitLab']
+        skills: ['Azure', 'Mensageria', 'Docker', 'CI/CD', 'Git', 'GitHub', 'GitLab']
     },
     {
         id: 'Infra e Segurança',
         icon: 'security',
         title: 'Infraestrutura e Segurança',
-        skills: ['TCP/IP', 'VLAN', 'Gateway', 'DNS', 'Linux', 'Terminal', 'Firewalls', 'VPN', 'Antivírus', 'Prevenção', 'CID']
+        skills: ['TCP/IP', 'VLAN', 'Gateway', 'DNS', 'Linux', 'Ubuntu', 'PowerShell', 'Firewalls', 'VPN', 'Antivírus', 'CID']
     },
     {
         id: 'Metodologias',
