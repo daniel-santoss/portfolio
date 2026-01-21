@@ -504,7 +504,7 @@ const projectsData: Project[] = [
         title: 'WebApi - API RESTful em C#',
         description: 'API RESTful desenvolvida em C# (.NET) para gerenciamento de dados, utilizando boas práticas de desenvolvimento e arquitetura limpa.',
         category: 'Back-end',
-        image: '/images/webAPI/imagemCapaApi.jpg',
+        image: '/images/webAPI/capa.jpg',
         tags: [
             { name: '.NET', color: 'text-violet-200' },
             { name: 'C#', color: 'text-purple-200' },
