@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import OptimizedImage from '../components/OptimizedImage';
 
-// ==================== STATIC DATA ====================
 const educationStacks = [
     { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
     { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
@@ -43,7 +42,6 @@ const homeSocialLinks = [
     }
 ];
 
-// ==================== HOME SECTION ====================
 const HomeSection: React.FC = () => {
 
     return (
@@ -56,13 +54,13 @@ const HomeSection: React.FC = () => {
                                 <div className="flex flex-col gap-3">
                                     <div className="inline-flex items-center gap-2 self-center lg:self-start rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary tracking-wide uppercase border border-primary/20">
                                         <span className="size-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_#39FF14]"></span>
-                                        Buscando vaga de Estágio / Júnior
+                                        Estagiário em Desenvolvimento de Software
                                     </div>
                                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em] text-white">
                                         Bem-vindo ao meu portfólio! Eu sou o <span className="text-primary drop-shadow-[0_0_8px_rgba(57,255,20,0.3)]">Daniel Vinicius.</span>
                                     </h1>
                                     <h2 className="text-sm sm:text-base lg:text-lg font-normal text-gray-300 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                                        Sou um desenvolvedor focado na criação de soluções web e atualmente me concentro no desenvolvimento Full Stack utilizando o ecossistema React e .NET. Além disso, possuo grande interesse por cibersegurança, área à qual também venho dedicando meus estudos com o propósito de desenvolver aplicações cada vez mais robustas e protegidas. Estou em busca de uma oportunidade de <span className="text-primary font-medium">estágio ou júnior</span> para aprender com a equipe, aplicar meus conhecimentos e evoluir na carreira.
+                                        Sou um desenvolvedor focado na criação de soluções web e atualmente me concentro no desenvolvimento Full Stack utilizando o ecossistema React e .NET. Além disso, possuo grande interesse por cibersegurança, área à qual também venho dedicando meus estudos com o propósito de desenvolver aplicações cada vez mais robustas e protegidas.
                                     </h2>
                                 </div>
                             </section>
@@ -138,13 +136,13 @@ const skillCategories = [
         id: 'Cloud & DevOps',
         icon: 'cloud',
         title: 'Cloud & DevOps',
-        skills: ['Azure', 'Mensageria', 'Docker', 'CI/CD', 'Git', 'GitHub', 'GitLab']
+        skills: ['Microsoft Azure', 'Mensageria', 'Service Bus', 'Docker', 'CI/CD', 'Git', 'GitHub', 'GitLab']
     },
     {
         id: 'Infra e Segurança',
         icon: 'security',
         title: 'Infraestrutura e Segurança',
-        skills: ['TCP/IP', 'VLAN', 'Gateway', 'DNS', 'Linux', 'Ubuntu', 'PowerShell', 'Firewalls', 'VPN', 'Antivírus', 'CID']
+        skills: ['TCP/IP', 'VLAN', 'Gateway', 'DNS', 'Linux', 'Ubuntu Server', 'PowerShell', 'Firewalls', 'VPN', 'Malware', 'Antivírus']
     },
     {
         id: 'Metodologias',
