@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import OptimizedImage from '../components/OptimizedImage';
 
+// ==================== STATIC DATA ====================
 const educationStacks = [
     { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
     { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
     { name: '.NET', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg' },
     { name: 'C#', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
-    { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-    { name: 'Azure', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' }
+    { name: 'SQL Server', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg' },
+    { name: 'Microsoft Azure', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' }
 ];
 
 const homeSocialLinks = [
@@ -42,6 +43,7 @@ const homeSocialLinks = [
     }
 ];
 
+// ==================== HOME SECTION ====================
 const HomeSection: React.FC = () => {
 
     return (
@@ -55,6 +57,7 @@ const HomeSection: React.FC = () => {
                                     <div className="inline-flex items-center gap-2 self-center lg:self-start rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary tracking-wide uppercase border border-primary/20">
                                         <span className="size-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_#39FF14]"></span>
                                         Estagiário em Desenvolvimento de Software
+
                                     </div>
                                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em] text-white">
                                         Bem-vindo ao meu portfólio! Eu sou o <span className="text-primary drop-shadow-[0_0_8px_rgba(57,255,20,0.3)]">Daniel Vinicius.</span>
@@ -136,13 +139,13 @@ const skillCategories = [
         id: 'Cloud & DevOps',
         icon: 'cloud',
         title: 'Cloud & DevOps',
-        skills: ['Microsoft Azure', 'Mensageria', 'Service Bus', 'Docker', 'CI/CD', 'Git', 'GitHub', 'GitLab']
+        skills: ['Microsoft Azure', 'Mensageria', 'Docker', 'CI/CD', 'Git', 'GitHub', 'GitLab']
     },
     {
         id: 'Infra e Segurança',
         icon: 'security',
         title: 'Infraestrutura e Segurança',
-        skills: ['TCP/IP', 'VLAN', 'Gateway', 'DNS', 'Linux', 'Ubuntu Server', 'PowerShell', 'Firewalls', 'VPN', 'Malware', 'Antivírus']
+        skills: ['TCP/IP', 'VLAN', 'Gateway', 'DNS', 'Linux', 'Ubuntu', 'PowerShell', 'Firewalls', 'VPN', 'Antivírus']
     },
     {
         id: 'Metodologias',
@@ -186,7 +189,7 @@ const proficiencyLevels = [
         borderColor: 'border-[#BB86FC]',
         hoverBorder: 'hover:border-[#BB86FC]/30',
         items: [
-            { name: 'Cloud Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
+            { name: 'Microsoft Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
             { name: 'DevOps', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg' },
             { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' }
         ]
@@ -309,18 +312,8 @@ const SkillsSection: React.FC = () => {
 // ==================== STATIC DATA: EDUCATION ====================
 const educationTimeline = [
     {
-        icon: 'code',
-        date: 'Previsão: 28/03/2026',
-        title: 'Bootcamp XP Inc. - Full Stack Developer',
-        institution: 'DIO (Digital Innovation One)',
-        description: 'Programa intensivo focado na formação Full Stack, abordando tecnologias como React com JavaScript e TypeScript, Next.js, .NET com C#, NoSQL, cloud com Azure e DevOps com docker.',
-        animate: true,
-        hasLine: true,
-        dateColor: 'text-primary font-bold'
-    },
-    {
         icon: 'school',
-        date: 'Fev 2025 - Dez 2026 (Previsão)',
+        date: 'Fevereiro de 2025 - Dezembro de 2026 (Previsão)',
         title: 'Análise e Desenvolvimento de Sistemas',
         institution: 'Universidade Paulista (UNIP)',
         description: 'Aprofundamento técnico com foco nos conteúdos estudados: Engenharia de Software, Banco de Dados, Programação Web e Mobile, além de Arquitetura de Sistemas e práticas ágeis de desenvolvimento.',
@@ -330,13 +323,24 @@ const educationTimeline = [
     },
     {
         icon: 'school',
-        date: 'Concluído em Dez 2024',
+        date: 'Concluído em Dezembro de 2024',
         title: 'Técnico em Informática',
         institution: 'ITB Brasílio Flores de Azevedo - FIEB',
         description: 'Esta formação foi a base essencial para o meu começo em desenvolvimento de software, consolidando minha lógica de programação e introduzindo conceitos fundamentais de algoritmos e hardware.',
         animate: false,
         hasLine: false,
         dateColor: 'text-[#637588] dark:text-primary font-medium'
+    }
+];
+
+const certificationsData = [
+    {
+        icon: 'code',
+        title: 'Bootcamp XP Inc. - Full Stack Developer',
+        institution: 'DIO (Digital Innovation One)',
+        date: 'Concluído em Março de 2026',
+        description: 'Programa intensivo focado na formação Full Stack, abordando tecnologias como React com JavaScript e TypeScript, Next.js, .NET com C#, NoSQL, Cloud Azure, Docker e DevOps.',
+        certLink: 'https://hermes.dio.me/certificates/LSPX4EUY.pdf'
     }
 ];
 
@@ -371,7 +375,7 @@ const EducationSection: React.FC = () => {
                     </div>
                 </section>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
                     <section className="lg:col-span-7 flex flex-col gap-6">
                         <h2 className="text-[#111418] dark:text-white text-2xl font-bold flex items-center gap-3">
                             <span className="material-symbols-outlined text-primary">school</span>
@@ -424,18 +428,41 @@ const EducationSection: React.FC = () => {
                             </ul>
                         </div>
 
-                        <div className="flex-1 bg-white dark:bg-card-dark border border-[#e5e7eb] dark:border-primary/30 rounded-2xl p-6 md:p-8 flex flex-col gap-4 items-start shadow-sm relative overflow-hidden hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
-                            <div className="flex items-center gap-3">
-                                <div className="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0 z-10">
-                                    <span className="material-symbols-outlined text-2xl">rocket_launch</span>
+                        <div className="flex flex-col gap-6">
+                            <h2 className="text-[#111418] dark:text-white text-2xl font-bold flex items-center gap-3">
+                                <span className="material-symbols-outlined text-primary">workspace_premium</span>
+                                Cursos e Certificações
+                            </h2>
+                            {certificationsData.map((cert, index) => (
+                                <div key={index} className="flex-1 bg-white dark:bg-card-dark border border-[#e5e7eb] dark:border-primary/30 rounded-2xl p-6 md:p-8 flex flex-col gap-4 items-start shadow-sm relative overflow-hidden hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
+                                    <div className="flex items-center gap-3 w-full">
+                                        <div className="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0 z-10">
+                                            <span className="material-symbols-outlined text-xl">{cert.icon}</span>
+                                        </div>
+                                        <div className="flex-1 z-10">
+                                            <h3 className="text-[#111418] dark:text-white text-lg font-bold leading-tight">{cert.title}</h3>
+                                            <p className="text-[#637588] dark:text-[#C5C6C7] text-sm">{cert.institution}</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col gap-2 z-10">
+                                        <span className="text-primary text-sm font-bold">{cert.date}</span>
+                                        <p className="text-[#637588] dark:text-[#C5C6C7] text-sm leading-relaxed">
+                                            {cert.description}
+                                        </p>
+                                    </div>
+                                    {cert.certLink && (
+                                        <a
+                                            href={cert.certLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 text-sm font-bold text-primary hover:text-[#1A1C20] bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary px-4 py-2 rounded-lg transition-all duration-300 z-10 self-start hover:shadow-[0_0_12px_rgba(57,255,20,0.3)]"
+                                        >
+                                            <span className="material-symbols-outlined text-base">open_in_new</span>
+                                            Exibir Certificado
+                                        </a>
+                                    )}
                                 </div>
-                                <h3 className="text-[#111418] dark:text-white text-xl font-bold z-10">Inspiração</h3>
-                            </div>
-                            <div className="flex flex-col gap-2 z-10">
-                                <p className="text-[#637588] dark:text-[#C5C6C7] text-base leading-relaxed">
-                                    Acredito que para realizar nossos sonhos é preciso ter persistência acima de tudo, mesmo que as oportunidades não surjam de imediato. O estudo nunca termina e a tecnologia evolui todo dia, e por isso minha missão é me manter sempre atualizado e em busca de novos conhecimentos. Para mim, cada desafio é uma oportunidade de aprender algo novo, e esse é o sentimento é o que me motiva a nunca parar de estudar e me dedicar.
-                                </p>
-                            </div>
+                            ))}
                         </div>
                     </section>
                 </div>
