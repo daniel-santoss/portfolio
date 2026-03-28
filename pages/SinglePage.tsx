@@ -2,15 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import OptimizedImage from '../components/OptimizedImage';
 
-// ==================== STATIC DATA ====================
-const educationStacks = [
-    { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
-    { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-    { name: '.NET', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg' },
-    { name: 'C#', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
-    { name: 'SQL Server', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg' },
-    { name: 'Microsoft Azure', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' }
-];
 
 const homeSocialLinks = [
     {
@@ -33,17 +24,9 @@ const homeSocialLinks = [
         url: 'mailto:danielvinicius.santos7@gmail.com',
         newTab: false,
         hoverColor: '#EA4335'
-    },
-    {
-        name: 'WhatsApp',
-        logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg',
-        url: 'https://wa.me/5511940564648',
-        newTab: true,
-        hoverColor: '#25D366'
     }
 ];
 
-// ==================== HOME SECTION ====================
 const HomeSection: React.FC = () => {
 
     return (
@@ -82,145 +65,96 @@ const HomeSection: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </header>
-            <section className="group w-full bg-secondary/5 py-16 px-4 md:px-20 xl:px-40 flex justify-center border-y border-secondary/10" aria-label="Principais Tecnologias">
-                <div className="max-w-[1080px] w-full flex flex-col gap-8">
-                    <div className="flex flex-col items-center gap-2">
-                        <h2 className="text-2xl md:text-3xl font-bold text-center text-white">Principais Stacks</h2>
-                        <div className="h-1 w-0 group-hover:w-full bg-primary rounded-full shadow-[0_0_10px_#39FF14] transition-all duration-500"></div>
-                    </div>
-                    <ul className="flex flex-wrap justify-center gap-4">
-                        {educationStacks.map((stack, index) => (
-                            <li key={index} className="flex h-10 items-center gap-x-3 rounded-full bg-surface-dark border border-secondary/20 pl-3 pr-5">
-                                <OptimizedImage src={stack.logo} alt={stack.name} className="w-5 h-5" />
-                                <p className="text-white text-sm font-medium">{stack.name}</p>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </section>
+        </header>
         </section >
     );
 };
 
-// ==================== SKILLS SECTION ====================
+interface Skill {
+    name: string;
+    icon: string;
+    invert?: boolean;
+}
 
+interface SkillCategory {
+    id: string;
+    title: string;
+    skills: Skill[];
+}
 
-const categories = [
-    'Todas',
-    'Front-end',
-    'Back-end',
-    'Banco de Dados',
-    'Cloud & DevOps',
-    'Infra e Segurança',
-    'Metodologias'
-];
-
-const skillCategories = [
+const skillsData: SkillCategory[] = [
     {
         id: 'Front-end',
-        icon: 'html',
         title: 'Front-end',
-        skills: ['HTML', 'CSS', 'Tailwind CSS', 'Bootstrap', 'React', 'JavaScript', 'TypeScript', 'UI & UX Design', 'Figma']
-    },
-    {
-        id: 'Back-end',
-        icon: 'dns',
-        title: 'Back-end',
-        skills: ['.NET', 'C#', 'C', 'Java', 'Python', 'SQL', 'APIs REST']
-    },
-    {
-        id: 'Banco de Dados',
-        icon: 'database',
-        title: 'Banco de Dados',
-        skills: ['MySQL', 'SQL Server', 'Supabase']
-    },
-    {
-        id: 'Cloud & DevOps',
-        icon: 'cloud',
-        title: 'Cloud & DevOps',
-        skills: ['Microsoft Azure', 'Mensageria', 'Docker', 'CI/CD', 'Git', 'GitHub', 'GitLab']
-    },
-    {
-        id: 'Infra e Segurança',
-        icon: 'security',
-        title: 'Infraestrutura e Segurança',
-        skills: ['TCP/IP', 'VLAN', 'Gateway', 'DNS', 'Linux', 'Ubuntu', 'PowerShell', 'Firewalls', 'VPN', 'Antivírus']
-    },
-    {
-        id: 'Metodologias',
-        icon: 'sprint',
-        title: 'Metodologias Ágeis',
-        skills: ['Scrum', 'Kanban', 'Jira', 'Trello']
-    }
-];
-
-const proficiencyLevels = [
-    {
-        level: 'Avançado',
-        icon: 'verified',
-        colorClass: 'text-primary',
-        borderColor: 'border-primary',
-        hoverBorder: 'hover:border-primary/30',
-        items: [
+        skills: [
             { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
             { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
             { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
-            { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' }
-        ]
-    },
-    {
-        level: 'Intermediário',
-        icon: 'handyman',
-        colorClass: 'text-cyan-400',
-        borderColor: 'border-cyan-400',
-        hoverBorder: 'hover:border-cyan-400/30',
-        items: [
+            { name: 'Bootstrap', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
             { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+            { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
             { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-            { name: 'C# | .NET', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
-            { name: 'MySQL | SQL Server', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' }
         ]
     },
     {
-        level: 'Básico',
-        icon: 'school',
-        colorClass: 'text-[#BB86FC]',
-        borderColor: 'border-[#BB86FC]',
-        hoverBorder: 'hover:border-[#BB86FC]/30',
-        items: [
+        id: 'Back-end',
+        title: 'Back-end',
+        skills: [
+            { name: '.NET', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg' },
+            { name: 'C#', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
+            { name: 'APIs REST', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
+            { name: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
+        ]
+    },
+    {
+        id: 'Banco de Dados',
+        title: 'Banco de Dados',
+        skills: [
+            { name: 'SQL Server', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg' },
+            { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+        ]
+    },
+    {
+        id: 'Cloud & DevOps',
+        title: 'Cloud & DevOps',
+        skills: [
             { name: 'Microsoft Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
-            { name: 'DevOps', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg' },
-            { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' }
+            { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+            { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', invert: true },
+            { name: 'GitLab', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg' },
+            { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+            { name: 'CI/CD', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg' },
+        ]
+    },
+    {
+        id: 'Infra e Segurança',
+        title: 'Infraestrutura e Segurança',
+        skills: [
+            { name: 'TCP/IP', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg' },
+            { name: 'Gateway', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/putty/putty-original.svg' },
+            { name: 'Firewalls', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg' },
+            { name: 'VPN', icon: 'https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/domino_mask/default/48px.svg', invert: true },
+        ]
+    },
+    {
+        id: 'Metodologias',
+        title: 'Metodologias Ágeis',
+        skills: [
+            { name: 'Scrum', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg' },
+            { name: 'Jira', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg' },
+            { name: 'Trello', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-original.svg' },
         ]
     }
 ];
 
+const skillCategories = ['Todas', 'Front-end', 'Back-end', 'Banco de Dados', 'Cloud & DevOps', 'Infra e Segurança', 'Metodologias'];
+
 const SkillsSection: React.FC = () => {
-    const [selectedCategories, setSelectedCategories] = useState<string[]>(['Todas']);
+    const [selectedCategory, setSelectedCategory] = useState('Todas');
 
-    const handleCategoryClick = (category: string) => {
-        if (category === 'Todas') {
-            setSelectedCategories(['Todas']);
-            return;
-        }
-
-        setSelectedCategories(prev => {
-            if (prev.includes('Todas')) {
-                return [category];
-            }
-
-            if (prev.includes(category)) {
-                const newCategories = prev.filter(c => c !== category);
-                return newCategories.length === 0 ? ['Todas'] : newCategories;
-            }
-
-            return [...prev, category];
-        });
-    };
-
-    const isSelected = (category: string) => selectedCategories.includes(category);
-    const shouldShow = (category: string) => selectedCategories.includes('Todas') || selectedCategories.includes(category);
+    const filteredCategories = skillsData.filter(
+        cat => selectedCategory === 'Todas' || cat.id === selectedCategory
+    );
 
     return (
         <section id="habilidades" className="scroll-mt-20 flex flex-col items-center py-10 px-4 md:px-20 xl:px-40 border-t border-white/10">
@@ -233,18 +167,19 @@ const SkillsSection: React.FC = () => {
                         </p>
                     </div>
                 </header>
+
                 <nav aria-label="Filtro de Categorias" className="w-full pb-2">
                     <div className="flex flex-wrap gap-2 md:gap-3">
-                        {categories.map((category) => (
+                        {skillCategories.map((category) => (
                             <button
                                 key={category}
-                                onClick={() => handleCategoryClick(category)}
-                                className={`flex h-9 items-center justify-center gap-x-2 rounded-full px-4 md:px-5 transition-all active:scale-95 border text-xs md:text-sm ${isSelected(category)
+                                onClick={() => setSelectedCategory(category)}
+                                className={`flex h-9 items-center justify-center gap-x-2 rounded-full px-4 md:px-5 transition-all active:scale-95 border text-xs md:text-sm ${selectedCategory === category
                                     ? 'bg-primary border-primary shadow-[0_0_10px_rgba(57,255,20,0.2)]'
                                     : 'bg-white/5 border-white/10 hover:bg-primary hover:border-primary group'
                                     }`}
                             >
-                                <p className={`font-bold leading-normal ${isSelected(category)
+                                <p className={`font-bold leading-normal ${selectedCategory === category
                                     ? 'text-[#1A1C20]'
                                     : 'text-gray-300 group-hover:text-background-dark'
                                     }`}>
@@ -254,62 +189,39 @@ const SkillsSection: React.FC = () => {
                         ))}
                     </div>
                 </nav>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {skillCategories.map((cat) => (
-                        shouldShow(cat.id) && (
-                            <section key={cat.id} className="group flex flex-col gap-5 rounded-xl border border-white/10 bg-white/5 p-6 shadow-sm hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] hover:border-primary/50 transition-all duration-300 backdrop-blur-sm" aria-labelledby={`skill-${cat.id}`}>
-                                <div className="flex items-center gap-4">
-                                    <div className="flex items-center justify-center size-12 rounded-lg bg-primary/10 text-primary border border-primary/20 group-hover:bg-primary group-hover:text-background-dark transition-colors duration-300">
-                                        <span className="material-symbols-outlined text-3xl">{cat.icon}</span>
-                                    </div>
-                                    <h2 id={`skill-${cat.id}`} className="text-xl font-bold leading-tight text-white group-hover:text-primary transition-colors">{cat.title}</h2>
-                                </div>
-                                <ul className="flex flex-wrap gap-2">
-                                    {cat.skills.map(tech => (
-                                        <li key={tech} className="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-semibold text-gray-200">{tech}</li>
-                                    ))}
-                                </ul>
-                            </section>
-                        )
+
+                <div className="flex flex-col gap-10">
+                    {filteredCategories.map((cat) => (
+                        <section key={cat.id} className="flex flex-col gap-5" aria-labelledby={`skill-${cat.id}`}>
+                            <h2 id={`skill-${cat.id}`} className="text-xl font-bold text-white flex items-center gap-2">
+                                <span className="h-px flex-1 bg-white/10"></span>
+                                <span>{cat.title}</span>
+                                <span className="h-px flex-1 bg-white/10"></span>
+                            </h2>
+                            <div className="flex flex-wrap gap-2 justify-center">
+                                {cat.skills.map((skill) => (
+                                        <div
+                                            key={skill.name}
+                                            className="group flex flex-col items-center justify-center gap-3 w-[120px] h-[120px] rounded-2xl bg-background-dark"
+                                        >
+                                            <OptimizedImage
+                                                src={skill.icon}
+                                                alt={skill.name}
+                                                className={`w-10 h-10 object-contain${skill.invert ? ' invert' : ''}`}
+                                            />
+                                            <span className="text-sm font-semibold text-gray-200 text-center">{skill.name}</span>
+                                        </div>
+                                ))}
+                            </div>
+                        </section>
                     ))}
                 </div>
-
-                <section className="mt-8 rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8 backdrop-blur-md" aria-labelledby="proficiencia-titulo">
-                    <div className="flex flex-col xl:flex-row gap-8 lg:gap-12">
-                        <header className="flex-1 flex flex-col gap-4">
-                            <h3 className="text-primary text-lg font-bold uppercase tracking-wider">Principais Tecnologias</h3>
-                            <p id="proficiencia-titulo" className="text-xl font-black leading-tight text-white">Proficiência Técnica</p>
-                            <p className="mt-4 text-gray-300 text-base leading-relaxed">
-                                <strong className="text-primary text-lg">Avançado:</strong> Uso diário com autonomia. <br></br> <strong className="text-cyan-400 text-lg">Intermediário:</strong> Boa compreensão da tecnologia e grande participação em projetos. <br></br> <strong className="text-[#BB86FC] text-lg">Básico / Estudos:</strong> Entendimento de conceitos e suas principais utilizações, porém com poucas práticas.
-                            </p>
-                        </header>
-
-                        <div className="flex-[2] grid grid-cols-1 md:grid-cols-3 gap-6">
-                            {proficiencyLevels.map((levelData) => (
-                                <article key={levelData.level} className="flex flex-col gap-4">
-                                    <header className={`flex items-center gap-2 border-b-2 ${levelData.borderColor} pb-2 mb-2`}>
-                                        <span className={`material-symbols-outlined ${levelData.colorClass} text-xl`}>{levelData.icon}</span>
-                                        <h4 className={`font-bold text-lg ${levelData.colorClass}`}>{levelData.level}</h4>
-                                    </header>
-                                    <ul className="flex flex-col gap-3">
-                                        {levelData.items.map((item) => (
-                                            <li key={item.name} className={`flex items-center gap-3 bg-white/5 p-3 rounded-lg border border-transparent ${levelData.hoverBorder} transition-colors`}>
-                                                <OptimizedImage alt={item.name} className="size-6 object-contain" src={item.icon} />
-                                                <span className="font-semibold text-sm text-gray-200">{item.name}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </article>
-                            ))}
-                        </div>
-                    </div>
-                </section>
             </div>
         </section>
     );
 };
 
-// ==================== STATIC DATA: EDUCATION ====================
+
 const educationTimeline = [
     {
         icon: 'school',
@@ -325,7 +237,7 @@ const educationTimeline = [
         icon: 'school',
         date: 'Concluído em Dezembro de 2024',
         title: 'Técnico em Informática',
-        institution: 'ITB Brasílio Flores de Azevedo - FIEB',
+        institution: 'ITB Brasílio Flores de Azevedo (FIEB) - Ensino Médio Técnico',
         description: 'Esta formação foi a base essencial para o meu começo em desenvolvimento de software, consolidando minha lógica de programação e introduzindo conceitos fundamentais de algoritmos e hardware.',
         animate: false,
         hasLine: false,
@@ -359,7 +271,7 @@ const languages = [
     }
 ];
 
-// ==================== EDUCATION SECTION ====================
+
 const EducationSection: React.FC = () => {
     return (
         <section id="jornada" className="scroll-mt-20 flex flex-col items-center px-4 md:px-20 xl:px-40 py-10 border-t border-white/10">
@@ -471,7 +383,7 @@ const EducationSection: React.FC = () => {
     );
 };
 
-// ==================== PROJECTS SECTION ====================
+
 interface Project {
     id: number;
     title: string;
@@ -486,7 +398,7 @@ interface Project {
     repoLink: string;
 }
 
-// ==================== STATIC DATA: PROJECTS ====================
+
 const projectsData: Project[] = [
     {
         id: 1,
@@ -631,7 +543,7 @@ const ProjectsSection: React.FC = () => {
     );
 };
 
-// ==================== STATIC DATA: CONTACT ====================
+
 const contactSocialLinks = [
     {
         name: 'LinkedIn',
@@ -653,17 +565,10 @@ const contactSocialLinks = [
         url: 'mailto:danielvinicius.santos7@gmail.com',
         newTab: false,
         hoverColor: '#EA4335'
-    },
-    {
-        name: 'WhatsApp',
-        logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg',
-        url: 'https://wa.me/5511940564648',
-        newTab: true,
-        hoverColor: '#25D366'
     }
 ];
 
-// ==================== CONTACT SECTION ====================
+
 const ContactSection: React.FC = () => {
     return (
         <section id="contato" className="scroll-mt-20 w-full px-4 md:px-20 xl:px-40 py-16 flex justify-center border-t border-white/10" aria-label="Links de Contato">
@@ -671,7 +576,7 @@ const ContactSection: React.FC = () => {
                 <div className="flex flex-col gap-3 text-center">
                     <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-white">Redes e Contato</h1>
                 </div>
-                <nav className="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full max-w-4xl">
+                <nav className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-2xl">
                     {contactSocialLinks.map((link, index) => (
                         <a
                             key={index}
@@ -727,7 +632,7 @@ const ContactSection: React.FC = () => {
     );
 };
 
-// ==================== SINGLE PAGE COMPONENT ====================
+
 const SinglePage: React.FC = () => {
     return (
         <main className="flex-grow flex flex-col">
