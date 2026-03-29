@@ -119,6 +119,7 @@ const skillsData: SkillCategory[] = [
         title: 'Cloud & DevOps',
         skills: [
             { name: 'Microsoft Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
+            { name: 'Azure DevOps', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg' },
             { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
             { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', invert: true },
             { name: 'GitLab', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg' },
@@ -133,6 +134,7 @@ const skillsData: SkillCategory[] = [
             { name: 'TCP/IP', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg' },
             { name: 'Gateway', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/putty/putty-original.svg' },
             { name: 'Firewalls', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg' },
+            { name: 'Antivírus', icon: 'https://simpleicons.org/icons/caddy.svg', invert: true },
             { name: 'VPN', icon: 'https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/domino_mask/default/48px.svg', invert: true },
         ]
     },
@@ -343,7 +345,7 @@ const EducationSection: React.FC = () => {
                         <div className="flex flex-col gap-6">
                             <h2 className="text-[#111418] dark:text-white text-2xl font-bold flex items-center gap-3">
                                 <span className="material-symbols-outlined text-primary">workspace_premium</span>
-                                Cursos e Certificações
+                                Principais Certificações
                             </h2>
                             {certificationsData.map((cert, index) => (
                                 <div key={index} className="flex-1 bg-white dark:bg-card-dark border border-[#e5e7eb] dark:border-primary/30 rounded-2xl p-6 md:p-8 flex flex-col gap-4 items-start shadow-sm relative overflow-hidden hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
