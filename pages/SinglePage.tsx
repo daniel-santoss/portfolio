@@ -65,15 +65,17 @@ const HomeSection: React.FC = () => {
                         </div>
                     </div>
                 </div>
-        </header>
+            </header>
         </section >
     );
 };
 
 interface Skill {
     name: string;
-    icon: string;
+    icon?: string;
     invert?: boolean;
+    iconClass?: string;
+    iconColor?: string;
 }
 
 interface SkillCategory {
@@ -91,9 +93,10 @@ const skillsData: SkillCategory[] = [
             { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
             { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
             { name: 'Bootstrap', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
-            { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
             { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
             { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+            { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+            { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
         ]
     },
     {
@@ -103,7 +106,8 @@ const skillsData: SkillCategory[] = [
             { name: '.NET', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg' },
             { name: 'C#', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
             { name: 'APIs REST', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
-            { name: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
+            { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+            { name: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg' },
         ]
     },
     {
@@ -124,18 +128,18 @@ const skillsData: SkillCategory[] = [
             { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', invert: true },
             { name: 'GitLab', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg' },
             { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-            { name: 'CI/CD', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg' },
+            { name: 'CI/CD', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg' },
         ]
     },
     {
         id: 'Infra e Segurança',
         title: 'Infraestrutura e Segurança',
         skills: [
-            { name: 'TCP/IP', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg' },
-            { name: 'Gateway', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/putty/putty-original.svg' },
-            { name: 'Firewalls', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg' },
-            { name: 'Antivírus', icon: 'https://simpleicons.org/icons/caddy.svg', invert: true },
-            { name: 'VPN', icon: 'https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/domino_mask/default/48px.svg', invert: true },
+            { name: 'TCP/IP', iconClass: 'ti ti-network', iconColor: '#3B82F6' },
+            { name: 'Gateway', iconClass: 'ti ti-router', iconColor: '#22C55E' },
+            { name: 'Firewalls', iconClass: 'ti ti-wall', iconColor: '#ef9144ff' },
+            { name: 'Antivírus', iconClass: 'ti ti-shield-check', iconColor: '#FFFFFF' },
+            { name: 'VPN', iconClass: 'ti ti-lock', iconColor: '#5d13a1ff' },
         ]
     },
     {
@@ -202,17 +206,25 @@ const SkillsSection: React.FC = () => {
                             </h2>
                             <div className="flex flex-wrap gap-2 justify-center">
                                 {cat.skills.map((skill) => (
-                                        <div
-                                            key={skill.name}
-                                            className="group flex flex-col items-center justify-center gap-3 w-[120px] h-[120px] rounded-2xl bg-background-dark"
-                                        >
+                                    <div
+                                        key={skill.name}
+                                        className="group flex flex-col items-center justify-center gap-3 w-[120px] h-[120px] rounded-2xl transition-all duration-300 bg-background-dark"
+                                    >
+                                        {skill.icon ? (
                                             <OptimizedImage
                                                 src={skill.icon}
                                                 alt={skill.name}
                                                 className={`w-10 h-10 object-contain${skill.invert ? ' invert' : ''}`}
                                             />
-                                            <span className="text-sm font-semibold text-gray-200 text-center">{skill.name}</span>
-                                        </div>
+                                        ) : skill.iconClass ? (
+                                            <i
+                                                className={skill.iconClass}
+                                                style={{ color: skill.iconColor || '#FFFFFF', fontSize: '2.5rem' }}
+                                                aria-hidden="true"
+                                            />
+                                        ) : null}
+                                        <span className="text-sm font-semibold text-white text-center">{skill.name}</span>
+                                    </div>
                                 ))}
                             </div>
                         </section>
