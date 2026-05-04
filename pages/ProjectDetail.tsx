@@ -465,7 +465,7 @@ const ProjectDetail: React.FC = () => {
                         <Link className="text-sm font-medium hover:text-primary transition-colors" to="/#habilidades">Habilidades</Link>
                         <Link className="text-sm font-medium hover:text-primary transition-colors" to="/#contato">Contato</Link>
                     </nav>
-                    <a href="/CV/CV_DanielVinicius_TI.pdf" download className="hidden sm:flex items-center justify-center rounded-full h-10 px-6 bg-primary hover:bg-accent-hover text-background-dark text-sm font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(57,255,20,0.3)]">
+                    <a href="/CV/CV_DanielVinicius.pdf" download className="hidden sm:flex items-center justify-center rounded-full h-10 px-6 bg-primary hover:bg-accent-hover text-background-dark text-sm font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(57,255,20,0.3)]">
                         <span className="mr-2 material-symbols-outlined text-lg">download</span>
                         Baixar CV
                     </a>
@@ -483,7 +483,7 @@ const ProjectDetail: React.FC = () => {
                         <Link to="/#projetos" className="text-sm font-medium text-white hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>Projetos</Link>
                         <Link to="/#habilidades" className="text-sm font-medium text-white hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>Habilidades</Link>
                         <Link to="/#contato" className="text-sm font-medium text-white hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>Contato</Link>
-                        <a href="/CV/CV_DanielVinicius_TI.pdf" download className="flex items-center justify-center rounded-full h-10 px-6 bg-primary hover:bg-accent-hover text-background-dark text-sm font-bold transition-all transform active:scale-95 shadow-[0_0_15px_rgba(57,255,20,0.3)]">
+                        <a href="/CV/CV_DanielVinicius.pdf" download className="flex items-center justify-center rounded-full h-10 px-6 bg-primary hover:bg-accent-hover text-background-dark text-sm font-bold transition-all transform active:scale-95 shadow-[0_0_15px_rgba(57,255,20,0.3)]">
                             <span className="mr-2 material-symbols-outlined text-lg">download</span>
                             Baixar CV
                         </a>
