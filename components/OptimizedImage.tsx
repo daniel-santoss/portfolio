@@ -7,8 +7,7 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
 }
 
 const OptimizedImage: React.FC<OptimizedImageProps> = ({ src, alt, className, ...props }) => {
-    // Generate WebP path by replacing extension
-    // We assume the webp file sits next to the original file
+    // Gera o caminho da imagem WebP substituindo a extensão original
     const webpSrc = src.replace(/\.(png|jpg|jpeg)$/i, '.webp');
 
     return (

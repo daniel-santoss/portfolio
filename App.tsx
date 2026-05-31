@@ -6,7 +6,7 @@ import Header from './components/Header';
 // Lazy loading do ProjectDetail para reduzir bundle inicial
 const ProjectDetail = React.lazy(() => import('./pages/ProjectDetail'));
 
-// Loading fallback component
+// Componente fallback de carregamento
 const LoadingFallback: React.FC = () => (
   <div className="bg-background-dark min-h-screen flex items-center justify-center">
     <div className="flex flex-col items-center gap-4">
@@ -17,13 +17,9 @@ const LoadingFallback: React.FC = () => (
 );
 
 const AppContent: React.FC = () => {
-  const location = useLocation();
-  // ProjectDetail has its own specific header structure in the original HTML
-  const isProjectDetail = location.pathname.includes('/project/');
-
   return (
     <>
-      {!isProjectDetail && <Header />}
+      <Header />
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path="/" element={<SinglePage />} />
