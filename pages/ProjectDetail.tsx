@@ -94,13 +94,15 @@ const ProjectDetail: React.FC = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row flex-wrap gap-3">
-                <button
-                  onClick={() => openLightbox(0)}
-                  className="inline-flex h-12 px-6 bg-surface-dark text-white font-bold text-sm rounded-full items-center justify-center gap-2 border border-white/10 hover:border-primary/50 hover:bg-surface-dark/80 transition-all"
-                >
-                  <span className="material-symbols-outlined text-lg">photo_library</span>
-                  Fotos do Projeto ({project.gallery.length})
-                </button>
+                {project.gallery && project.gallery.length > 0 && (
+                  <button
+                    onClick={() => openLightbox(0)}
+                    className="inline-flex h-12 px-6 bg-surface-dark text-white font-bold text-sm rounded-full items-center justify-center gap-2 border border-white/10 hover:border-primary/50 hover:bg-surface-dark/80 transition-all"
+                  >
+                    <span className="material-symbols-outlined text-lg">photo_library</span>
+                    Fotos do Projeto ({project.gallery.length})
+                  </button>
+                )}
                 <a className="inline-flex h-12 px-6 bg-surface-dark text-white font-bold text-sm rounded-full items-center justify-center gap-2 border border-white/10 hover:border-primary/50 hover:bg-surface-dark/80 transition-all" href={project.repoLink} target="_blank" rel="noopener noreferrer">
                   <span className="material-symbols-outlined text-lg">code</span>
                   Ver no GitHub

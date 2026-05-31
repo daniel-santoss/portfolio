@@ -132,9 +132,7 @@ export const projectsData: Project[] = [
     description: 'Uma plataforma médica integrada projetada para centralizar e automatizar toda a jornada de atendimento clínico. A ferramenta resolve a complexidade na gestão de diferentes públicos (pacientes, médicos, enfermeiros e administradores), eliminando processos manuais em papel e erros na triagem de sintomas, garantindo um fluxo ágil, organizado e seguro desde o agendamento até a consulta final.',
     shortDescription: 'Plataforma clínica full-stack com controle de acesso (RBAC), auditoria e triagem inteligente de sintomas por IA (Gemini 2.5).',
     techStack: ['dotnet', 'csharp', 'react', 'typescript', 'sqlserver', 'gemini'],
-    gallery: [
-      '/images/clinica/capa.webp'
-    ],
+    gallery: [],
     highlights: [
       'Arquitetura limpa (Clean Architecture) estrita com desacoplamento total em .NET 10.',
       'Integração com IA (Gemini 2.5) para análise preditiva de sintomas e triagem de especialidades médicas.',
