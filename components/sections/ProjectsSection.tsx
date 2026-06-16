@@ -23,7 +23,7 @@ const ProjectsSection: React.FC = () => {
             </p>
           </div>
           <nav aria-label="Filtros de Projetos" className="flex gap-3 flex-wrap pt-2">
-            {['Todos', 'Full-stack', 'Front-end', 'Back-end', 'Mobile'].map((category) => (
+            {['Todos', 'Full-Stack', 'Front-end', 'Back-end', 'Mobile'].map((category) => (
               <button
                 key={category}
                 onClick={() => setFilter(category)}

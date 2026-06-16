@@ -5,28 +5,28 @@ export const TECHNOLOGIES: Record<string, TechItem & { tagColor: string }> = {
   dotnet10: {
     name: '.NET 10',
     color: '#512BD4',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg',
+    icon: 'https://skillicons.dev/icons?i=dotnet',
     iconType: 'image',
     tagColor: 'text-violet-200'
   },
   dotnet: {
     name: '.NET',
     color: '#512BD4',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg',
+    icon: 'https://skillicons.dev/icons?i=dotnet',
     iconType: 'image',
     tagColor: 'text-violet-200'
   },
   react19: {
     name: 'React 19',
     color: '#61DAFB',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    icon: 'https://skillicons.dev/icons?i=react',
     iconType: 'image',
     tagColor: 'text-cyan-200'
   },
   react: {
     name: 'React',
     color: '#61DAFB',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    icon: 'https://skillicons.dev/icons?i=react',
     iconType: 'image',
     tagColor: 'text-cyan-200'
   },
@@ -40,42 +40,42 @@ export const TECHNOLOGIES: Record<string, TechItem & { tagColor: string }> = {
   sqlserver: {
     name: 'SQL Server',
     color: '#CC292B',
-    icon: 'database',
-    iconType: 'font',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg',
+    iconType: 'image',
     tagColor: 'text-blue-200'
   },
   typescript: {
     name: 'TypeScript',
     color: '#3178C6',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+    icon: 'https://skillicons.dev/icons?i=ts',
     iconType: 'image',
     tagColor: 'text-blue-300'
   },
   tailwind: {
     name: 'Tailwind CSS',
     color: '#264DE4',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
+    icon: 'https://skillicons.dev/icons?i=tailwindcss',
     iconType: 'image',
     tagColor: 'text-blue-200'
   },
   vite: {
     name: 'Vite',
     color: '#646CFF',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg',
+    icon: 'https://skillicons.dev/icons?i=vite',
     iconType: 'image',
     tagColor: 'text-violet-200'
   },
   csharp: {
     name: 'C#',
     color: '#9B4F96',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
+    icon: 'https://skillicons.dev/icons?i=cs',
     iconType: 'image',
     tagColor: 'text-purple-200'
   },
   mysql: {
     name: 'MySQL',
     color: '#4479A1',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+    icon: 'https://skillicons.dev/icons?i=mysql',
     iconType: 'image',
     tagColor: 'text-orange-200'
   },
@@ -89,7 +89,7 @@ export const TECHNOLOGIES: Record<string, TechItem & { tagColor: string }> = {
   c: {
     name: 'C',
     color: '#A8B9CC',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg',
+    icon: 'https://skillicons.dev/icons?i=c',
     iconType: 'image',
     tagColor: 'text-blue-200'
   },
@@ -153,7 +153,7 @@ export const projectsData: Project[] = [
     type: 'SISTEMA DE AGENDAMENTO PARA ESTÚDIO DE TATUAGEM',
     description: 'Um site moderno projetado para estúdios de tatuagem com o objetivo de aproximar clientes e artistas. A aplicação soluciona a dificuldade em divulgar portfólios profissionais de forma organizada e facilita o agendamento de sessões, oferecendo uma experiência visual imersiva que destaca o talento artístico e os trabalhos realizados.',
     shortDescription: 'Interface web moderna para estúdio de tatuagem, focada em UI/UX. Projeto front-end com páginas de agendamento, portfólio de artistas e galeria.',
-    techStack: ['tailwind', 'react', 'typescript', 'vite'],
+    techStack: ['react', 'typescript', 'vite', 'tailwind'],
     gallery: generateGallery('/images/studioInk', 'imagem', 33, 'webp'),
     highlights: [
       'Interface moderna e totalmente responsiva para mobile e desktop.',

@@ -5,25 +5,25 @@ export const skillsData: SkillCategory[] = [
     id: 'Front-end',
     title: 'Front-end',
     skills: [
-      { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-      { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-      { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
-      { name: 'Bootstrap', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
-      { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-      { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-      { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-      { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+      { name: 'HTML5', icon: 'https://skillicons.dev/icons?i=html' },
+      { name: 'CSS3', icon: 'https://skillicons.dev/icons?i=css' },
+      { name: 'Tailwind CSS', icon: 'https://skillicons.dev/icons?i=tailwindcss' },
+      { name: 'Bootstrap', icon: 'https://skillicons.dev/icons?i=bootstrap' },
+      { name: 'JavaScript', icon: 'https://skillicons.dev/icons?i=js' },
+      { name: 'TypeScript', icon: 'https://skillicons.dev/icons?i=ts' },
+      { name: 'React', icon: 'https://skillicons.dev/icons?i=react' },
+      { name: 'Next.js', icon: 'https://skillicons.dev/icons?i=nextjs' },
     ]
   },
   {
     id: 'Back-end',
     title: 'Back-end',
     skills: [
-      { name: '.NET', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg' },
-      { name: 'C#', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
-      { name: 'APIs REST', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
-      { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-      { name: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg' },
+      { name: '.NET', icon: 'https://skillicons.dev/icons?i=dotnet' },
+      { name: 'C#', icon: 'https://skillicons.dev/icons?i=cs' },
+      { name: 'APIs REST', icon: 'https://skillicons.dev/icons?i=fastapi' },
+      { name: 'Python', icon: 'https://skillicons.dev/icons?i=python' },
+      { name: 'C', icon: 'https://skillicons.dev/icons?i=c' },
     ]
   },
   {
@@ -31,31 +31,19 @@ export const skillsData: SkillCategory[] = [
     title: 'Banco de Dados',
     skills: [
       { name: 'SQL Server', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg' },
-      { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+      { name: 'MySQL', icon: 'https://skillicons.dev/icons?i=mysql' },
     ]
   },
   {
     id: 'Cloud & DevOps',
     title: 'Cloud & DevOps',
     skills: [
-      { name: 'Microsoft Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
-      { name: 'Azure DevOps', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg' },
-      { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-      { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', invert: true },
-      { name: 'GitLab', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg' },
-      { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-      { name: 'CI/CD', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg' },
-    ]
-  },
-  {
-    id: 'Infra e Segurança',
-    title: 'Infraestrutura e Segurança',
-    skills: [
-      { name: 'TCP/IP', iconClass: 'ti ti-network', iconColor: '#3B82F6' },
-      { name: 'Gateway', iconClass: 'ti ti-router', iconColor: '#22C55E' },
-      { name: 'Firewalls', iconClass: 'ti ti-wall', iconColor: '#ef9144ff' },
-      { name: 'Antivírus', iconClass: 'ti ti-shield-check', iconColor: '#FFFFFF' },
-      { name: 'VPN', iconClass: 'ti ti-lock', iconColor: '#5d13a1ff' },
+      { name: 'Microsoft Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg' },
+      { name: 'Git', icon: 'https://skillicons.dev/icons?i=git' },
+      { name: 'GitHub', icon: 'https://skillicons.dev/icons?i=github', invert: true },
+      { name: 'GitLab', icon: 'https://skillicons.dev/icons?i=gitlab' },
+      { name: 'Docker', icon: 'https://skillicons.dev/icons?i=docker' },
+      { name: 'CI/CD', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg' },
     ]
   },
   {
@@ -69,4 +57,4 @@ export const skillsData: SkillCategory[] = [
   }
 ];
 
-export const skillCategories = ['Todas', 'Front-end', 'Back-end', 'Banco de Dados', 'Cloud & DevOps', 'Infra e Segurança', 'Metodologias'];
+export const skillCategories = ['Todas', 'Front-end', 'Back-end', 'Banco de Dados', 'Cloud & DevOps', 'Metodologias'];

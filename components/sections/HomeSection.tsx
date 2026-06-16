@@ -18,7 +18,7 @@ const HomeSection: React.FC = () => {
                     Bem-vindo ao meu portfólio! Eu sou o <span className="text-primary drop-shadow-[0_0_8px_rgba(57,255,20,0.3)]">Daniel Vinicius.</span>
                   </h1>
                   <h2 className="text-sm sm:text-base lg:text-lg font-normal text-gray-300 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                    Sou um desenvolvedor focado na criação de soluções web e atualmente me concentro no desenvolvimento Full Stack utilizando o ecossistema React e .NET. Além disso, possuo grande interesse por cibersegurança, área à qual também venho dedicando meus estudos com o propósito de desenvolver aplicações cada vez mais robustas e protegidas.
+                    Sou um desenvolvedor focado na criação de soluções web e atualmente me concentro no desenvolvimento Full Stack utilizando o ecossistema .NET e React. Além disso, possuo grande interesse por cibersegurança, área à qual também venho dedicando meus estudos com o propósito de desenvolver aplicações cada vez mais robustas e protegidas.
                   </h2>
                 </div>
               </section>
