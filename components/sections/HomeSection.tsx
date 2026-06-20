@@ -27,7 +27,7 @@ const HomeSection: React.FC = () => {
                   <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-secondary opacity-10 blur-3xl "></div>
                   <div className="relative w-full h-full rounded-full animate-border-pulse overflow-hidden bg-surface-dark">
                     <OptimizedImage
-                      src="/images/foto-d.jpeg"
+                      src="/images/foto-perfil.webp"
                       alt="Daniel Vinicius"
                       className="w-full h-full object-cover"
                     />
