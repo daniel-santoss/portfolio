@@ -73,7 +73,7 @@ const EducationSection: React.FC = () => {
             <div className="flex flex-col gap-6">
               <h2 className="text-[#111418] dark:text-white text-2xl font-bold flex items-center gap-3">
                 <span className="material-symbols-outlined text-primary">workspace_premium</span>
-                Principais Certificações
+                Principais Cursos e Certificações
               </h2>
               {certificationsData.map((cert, index) => (
                 <div key={index} className="flex-1 bg-white dark:bg-card-dark border border-[#e5e7eb] dark:border-primary/30 rounded-2xl p-6 md:p-8 flex flex-col gap-4 items-start shadow-sm relative overflow-hidden hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
