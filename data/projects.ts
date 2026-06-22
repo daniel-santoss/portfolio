@@ -113,6 +113,13 @@ export const TECHNOLOGIES: Record<string, TechItem & { tagColor: string }> = {
     icon: 'terminal',
     iconType: 'font',
     tagColor: 'text-gray-200'
+  },
+  nextjs: {
+    name: 'Next.js 16',
+    color: '#000000',
+    icon: 'https://skillicons.dev/icons?i=nextjs',
+    iconType: 'image',
+    tagColor: 'text-gray-300'
   }
 };
 
@@ -153,14 +160,14 @@ export const projectsData: Project[] = [
     type: 'SISTEMA DE AGENDAMENTO PARA ESTÚDIO DE TATUAGEM',
     description: 'Um site moderno projetado para estúdios de tatuagem com o objetivo de aproximar clientes e artistas. A aplicação soluciona a dificuldade em divulgar portfólios profissionais de forma organizada e facilita o agendamento de sessões, oferecendo uma experiência visual imersiva que destaca o talento artístico e os trabalhos realizados.',
     shortDescription: 'Interface web moderna para estúdio de tatuagem, focada em UI/UX. Projeto front-end com páginas de agendamento, portfólio de artistas e galeria.',
-    techStack: ['react', 'typescript', 'vite', 'tailwind'],
+    techStack: ['nextjs', 'react19', 'typescript', 'tailwind'],
     gallery: generateGallery('/images/studioInk', 'imagem', 33, 'webp'),
     highlights: [
-      'Interface moderna e totalmente responsiva para mobile e desktop.',
-      'Componentização de UI eficiente com React e tipagem estrita em TypeScript.',
-      'Navegação fluida e transições de rotas utilizando React Router.',
-      'Estilização modular com Tailwind CSS para design consistente, escalável e customizável.',
-      'Build de produção otimizado com Vite para carregamento rápido e performance de carregamento.'
+      'Geração de páginas otimizadas para produção via Next.js (SSG/ISR), garantindo carregamento ultrarrápido, alta performance e indexação máxima no Google (SEO).',
+      'Arquitetura organizada e escalável construída utilizando tipagem segura e estrita através do TypeScript.',
+      'Navegação rápida utilizando o roteamento avançado do Next.js (App Router).',
+      'Interface moderna e 100% responsiva para mobile e desktop, projetada com foco absoluto em experiência do usuário e interações fluidas.',
+      'Estilização visual consistente e de fácil manutenção com Tailwind CSS, integrado nativamente para carregamento otimizado de fontes globais.'
     ],
     repoLink: 'https://github.com/daniel-santoss/StudioTattooINK',
     deployLink: 'https://studio-tattoo-ink.vercel.app/'
