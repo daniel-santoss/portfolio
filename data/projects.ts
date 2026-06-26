@@ -132,7 +132,7 @@ export const projectsData: Project[] = [
   {
     id: 4,
     title: 'Clínica Mais Saúde',
-    category: 'Full-stack',
+    category: 'Full-Stack',
     image: '/images/clinica/capa.webp',
     date: '2026',
     type: 'SISTEMA DE GESTÃO PARA CLÍNICA MÉDICA COM IA INTEGRADA',
